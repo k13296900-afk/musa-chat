@@ -1,0 +1,1705 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"><meta name="theme-color" content="#090d18"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Musa.Chat"><link rel="apple-touch-icon" href="./icon-192.png"><link rel="manifest" href="/manifest.webmanifest">
+<title>Musa.Chat 3.13.0 — стикеры «Муся»</title>
+<meta name="description" content="Musa.Chat — чаты, голосовые сообщения и аудио- и видеозвонки."/>
+<link rel="canonical" href="https://musa-chat.vipchat/wwwnana"/>
+<meta property="og:title" content="Musa.Chat"/>
+<meta property="og:url" content="https://musa-chat.vipchat/wwwnana"/>
+<meta property="og:image" content="https://musa-chat.vipchat/avatar.jpg"/>
+<style>
+:root{--bg:#090d18;--panel:#101729;--panel2:#151e33;--line:#26314b;--text:#f4f7ff;--muted:#8e9ab7;--accent:#7b61ff;--accent2:#9a7cff;--good:#55d99a;--danger:#ff6178}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#22164b 0,#090d18 45%);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;height:100vh;overflow:hidden}button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}.login{height:100vh;display:grid;place-items:center;padding:20px}.login-card{width:min(430px,100%);background:rgba(16,23,41,.96);border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:0 25px 80px #0008;text-align:center}.logo-avatar{width:96px;height:96px;border-radius:28px;object-fit:cover;margin-bottom:15px}.login h1{margin:0;font-size:30px}.login p{color:var(--muted);line-height:1.5}.login-photo{width:min(190px,58vw);height:min(190px,58vw);border-radius:32px;object-fit:cover;margin:0 auto 16px;display:block;box-shadow:0 18px 55px #0008}.auth-switch{display:flex;gap:8px;margin:12px 0}.auth-switch button{flex:1;border:1px solid var(--line);background:#151d31;color:#aab5d0;border-radius:12px;padding:10px}.auth-switch button.active{background:#2a2250;color:#fff;border-color:#6f57e8}.auth-hint{font-size:12px;color:var(--muted);margin:8px 0 0}.login input{width:100%;padding:14px 15px;background:#0b1120;border:1px solid var(--line);border-radius:13px;color:white;outline:none;margin:14px 0}.primary{border:0;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;border-radius:13px;padding:13px 18px;font-weight:800}.app{height:100vh;display:flex;max-width:1500px;margin:auto;background:#0d1322}.sidebar{width:240px;background:#0c1220;border-right:1px solid var(--line);padding:20px 14px;display:flex;flex-direction:column}
+#peopleList{overflow-y:auto;overscroll-behavior:contain;min-height:0;max-height:calc(100vh - 250px);padding-bottom:12px;scrollbar-width:thin}
+#peopleList::-webkit-scrollbar{width:6px}#peopleList::-webkit-scrollbar-thumb{background:#394463;border-radius:8px}
+@media(max-width:760px){#peopleList{max-height:calc(100dvh - 220px)}}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:23px;padding:4px 10px 28px}.brand img{width:40px;height:40px;border-radius:12px;object-fit:cover}.brand span{color:#fff}.brand em{font-style:normal;color:#a891ff}.nav{display:grid;gap:6px}.nav button{display:flex;align-items:center;gap:12px;background:transparent;border:0;color:#9ba7c4;padding:13px;border-radius:12px;text-align:left}.nav button.active,.nav button:hover{background:#19213a;color:#fff}.side-user{margin-top:auto;background:#141c30;padding:11px;border-radius:15px;display:flex;align-items:center;gap:10px}.avatar{width:43px;height:43px;border-radius:50%;object-fit:cover;background:#30264e;display:grid;place-items:center;font-weight:800;flex:0 0 auto}.side-user .avatar{width:38px;height:38px}.side-user small{color:var(--good)}.content{min-width:0;flex:1;display:flex}.people{width:310px;border-right:1px solid var(--line);padding:20px 14px}.people h2{margin:0 0 3px}.muted{color:var(--muted);font-size:13px}.search{margin:15px 0;width:100%;padding:12px;background:#151d31;border:1px solid var(--line);border-radius:12px;color:white;outline:0}.person{width:100%;display:flex;gap:10px;align-items:center;border:0;background:transparent;color:white;text-align:left;padding:11px;border-radius:13px}.person:hover,.person.active{background:#19233d}.person .meta{min-width:0;flex:1}.person strong{display:block}.person small{color:var(--muted)}.dot{width:8px;height:8px;border-radius:50%;background:var(--good);display:inline-block;margin-right:5px}.chat{min-width:0;flex:1;display:flex;flex-direction:column}.chat-head{height:75px;border-bottom:1px solid var(--line);padding:13px 20px;display:flex;align-items:center;justify-content:space-between}.person-head{display:flex;gap:11px;align-items:center}.person-head strong{display:block}.actions{display:flex;gap:8px}.icon{width:42px;height:42px;border:0;border-radius:11px;background:#182139;color:#dce3f8}.messages{flex:1;overflow:auto;padding:25px;display:flex;flex-direction:column;gap:9px}.bubble{max-width:70%;padding:11px 14px;border-radius:16px;background:#19223a}.bubble.mine{align-self:flex-end;background:#674fe3}.bubble .bubble-actions{display:flex;justify-content:flex-end;gap:5px;margin-top:5px}.bubble .favorite-btn{border:0;background:transparent;color:#ffd85a;padding:2px 5px;border-radius:8px;font-size:15px;cursor:pointer}.bubble .favorite-btn:hover{background:#ffffff18}.bubble small{display:block;text-align:right;color:#aab5d0;font-size:10px;margin-top:5px}.bubble.mine small{color:#ded8ff}.composer{display:flex;gap:9px;padding:14px 18px;border-top:1px solid var(--line)}.composer input{flex:1;background:#151d31;border:1px solid var(--line);color:white;border-radius:13px;padding:13px;outline:0}.composer button{border:0;background:#182139;color:white;border-radius:12px;width:46px}.composer .send{background:var(--accent)}.empty{display:grid;place-items:center;height:100%;color:var(--muted);text-align:center;padding:30px}.page{padding:30px;overflow:auto;width:100%}.page h1{margin:0 0 5px}.call-row{max-width:760px;background:#131c30;border:1px solid var(--line);padding:14px;border-radius:15px;display:flex;align-items:center;gap:12px;margin:10px 0}.call-row .grow{flex:1}.call-row button{border:0;background:#1b2640;color:white;width:40px;height:40px;border-radius:10px}.profile-card{max-width:700px;background:#131c30;border:1px solid var(--line);border-radius:20px;padding:28px;text-align:center}.profile-card img{width:110px;height:110px;border-radius:30px;object-fit:cover}.profile-card h2{margin:12px 0 4px}.profile-card p{color:var(--muted)}.my-qr{width:300px;height:300px;min-width:300px;min-height:300px;background:#fff;padding:14px;border:4px solid #fff;border-radius:18px;object-fit:contain;display:block;box-shadow:0 10px 35px #0008;image-rendering:auto}.qr-id{font-size:16px;font-weight:800;color:#fff;margin-top:8px}.qr-friends .primary{min-height:48px}.qr-scan-button{min-width:180px;font-size:16px;padding:14px 18px}.qr-friends button{min-width:140px}.call-modal{position:fixed;inset:0;background:#050811dd;display:grid;place-items:center;z-index:10}.call-box{width:min(600px,calc(100% - 30px));background:#11192b;border:1px solid var(--line);border-radius:24px;padding:20px;text-align:center}.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.video-grid video{width:100%;aspect-ratio:16/10;background:#05070d;border-radius:15px;object-fit:cover}.call-controls{display:flex;justify-content:center;gap:10px;margin-top:15px}.call-controls button{border:0;background:#222d49;color:white;width:52px;height:52px;border-radius:50%}.call-controls .hang{background:var(--danger)}.toast{position:fixed;right:20px;bottom:20px;background:#17223a;border:1px solid var(--line);padding:13px 16px;border-radius:13px;z-index:20;box-shadow:0 10px 40px #0007}@media(max-width:900px){.sidebar{width:72px}.brand span,.nav button span,.side-user>div:not(.avatar){display:none}.brand{padding-left:5px}.nav button{justify-content:center}.people{width:260px}}@media(max-width:650px){.people{width:100%}.chat{display:none}.app.mobile-chat .people{display:none}.app.mobile-chat .chat{display:flex}.sidebar{display:none}.video-grid{grid-template-columns:1fr}.bubble{max-width:85%}}
+
+.mobile-nav{display:none}
+.video-card{max-width:900px;background:#131c30;border:1px solid var(--line);border-radius:20px;padding:20px}
+.video-preview{width:100%;max-height:60vh;aspect-ratio:16/9;object-fit:cover;background:#05070d;border-radius:16px}
+.video-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.video-actions button{border:0;background:#1b2640;color:white;border-radius:12px;padding:12px 16px}
+.video-actions .primary{background:linear-gradient(135deg,var(--accent),var(--accent2))}
+@media(max-width:650px){
+  .my-qr{width:min(82vw,320px);height:min(82vw,320px);min-width:0;min-height:0;padding:12px}
+  .qr-scan-button{width:100%;max-width:320px}
+  body{overflow:hidden}
+  .app{height:100dvh}
+  .content{padding-bottom:72px}
+  .mobile-nav{position:fixed;display:flex;left:10px;right:10px;bottom:10px;height:62px;background:rgba(16,23,41,.96);border:1px solid var(--line);border-radius:18px;z-index:30;justify-content:space-around;align-items:center;box-shadow:0 10px 40px #0008}
+  .mobile-nav button{border:0;background:transparent;color:#9ba7c4;min-width:58px;height:50px;border-radius:12px;font-size:12px}
+  .mobile-nav button.active{background:#19213a;color:#fff}
+  .mobile-nav button b{display:block;font-size:20px;line-height:20px}
+  .page{padding:20px 14px 20px}
+  .login{padding:14px}
+  .login-card{padding:26px 20px;border-radius:20px}
+  .logo-avatar{width:82px;height:82px}
+}
+
+.video-feed{max-width:980px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.video-item{background:#131c30;border:1px solid var(--line);border-radius:18px;overflow:hidden;cursor:pointer;transition:transform .15s,background .15s}
+.video-item:hover{transform:translateY(-2px);background:#17223a}
+.video-thumb{position:relative;aspect-ratio:16/9;background:#24133f;overflow:hidden}
+.video-thumb img{width:100%;height:100%;object-fit:cover}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;border:0;background:#ffffffee;color:#20133f;font-size:24px}
+.video-info{padding:13px 15px}.video-info h3{margin:0 0 6px;font-size:16px}.video-info p{margin:0;color:var(--muted);font-size:13px}
+.voice-btn.recording{background:var(--danger)!important}.voice-status{font-size:12px;color:var(--muted);align-self:center}
+.audio-message{width:min(280px,70vw);height:38px}.video-player-modal{position:fixed;inset:0;background:#050811ee;display:grid;place-items:center;z-index:25;padding:20px}
+.video-player-box{width:min(900px,100%);background:#11192b;border:1px solid var(--line);border-radius:20px;padding:18px}
+.video-player-box video{width:100%;aspect-ratio:16/9;background:#000;border-radius:14px}.video-player-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+@media(max-width:760px){.video-feed{grid-template-columns:1fr}}
+ .verified-check{display:inline-flex;align-items:center;justify-content:center;color:#55d99a;font-weight:900;margin-right:7px;font-size:.85em;}.musa-verified-badge{width:42px;height:42px;object-fit:contain;vertical-align:middle;margin-left:6px}.musa-verified-badge-small{width:18px!important;height:18px!important;object-fit:contain;vertical-align:-4px;margin-left:5px}.profile-badge{width:24px!important;height:24px!important;vertical-align:-5px}
+
+.support-layout{max-width:980px;display:grid;grid-template-columns:minmax(260px,.8fr) minmax(320px,1.2fr);gap:18px}.support-compose{height:max-content}.support-compose textarea{resize:vertical;min-height:110px}.support-chat{background:#11192b;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-height:430px}.support-chat-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center}.support-chat-head span{font-size:28px}.support-chat-head small{display:block;color:var(--muted);margin-top:2px}.support-messages{flex:1;padding:16px;display:flex;flex-direction:column;gap:9px;overflow:auto}.support-bubble{max-width:85%;padding:11px 13px;border-radius:15px;background:#19223a;white-space:pre-wrap}.support-bubble.mine{align-self:flex-end;background:#674fe3}.support-composer{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}.support-composer input{flex:1;background:#151d31;border:1px solid var(--line);color:white;border-radius:12px;padding:12px}.ai-contact{width:100%;border:1px solid #4d3a91;background:#1b1630;color:#fff;padding:11px 13px;border-radius:12px;text-align:left;margin-top:12px}.ai-contact small{display:block;color:#b9acd9;margin-top:3px}.community-avatar-preview{width:86px;height:86px;border-radius:24px;object-fit:cover;margin:4px auto 12px;display:block}.community-card{display:flex;align-items:center;gap:12px;background:#131c30;border:1px solid var(--line);padding:13px;border-radius:16px;margin-bottom:10px}.community-card img{width:56px;height:56px;border-radius:16px;object-fit:cover}.community-card .grow{flex:1;min-width:0}.community-card small{display:block;color:var(--muted);margin-top:4px}.video-comments{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}.video-comments h3{margin:0 0 10px}.video-comments-list{max-height:230px;overflow:auto;display:grid;gap:8px}.video-comment{padding:9px 11px;background:#19223a;border-radius:12px}.video-comment b{font-size:13px}.video-comment p{margin:3px 0 0;white-space:pre-wrap}.video-comment-compose{display:flex;gap:8px;margin-top:10px}.video-comment-compose input{flex:1;background:#151d31;border:1px solid var(--line);color:white;border-radius:12px;padding:11px}.video-comment-compose button{white-space:nowrap}@media(max-width:760px){.support-layout{grid-template-columns:1fr}}
+
+.community-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.community-plus{width:44px;height:44px;border:0;border-radius:13px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:28px;font-weight:900;line-height:1}
+.community-card{cursor:pointer}
+.community-card-actions{display:flex;gap:7px;flex-wrap:wrap}
+.community-card-actions button{border:0;background:#1b2640;color:#fff;border-radius:10px;padding:8px 10px}
+
+.community-chat-badge{font-size:12px;color:var(--muted);display:block;margin-top:3px}
+.giga-avatar{width:43px;height:43px;border-radius:50%;object-fit:cover;background:#e8dcff}
+.brand-verified{width:20px;height:20px;object-fit:contain;display:inline-block;vertical-align:middle;margin-left:3px}
+.ai-contact{display:flex;align-items:center;gap:10px}.ai-contact img{width:38px;height:38px;border-radius:50%}
+.chat-community-tools{display:flex;gap:8px}
+.community-message-author{font-size:11px;color:#b8c2dc;display:block;margin-bottom:3px}
+
+.chat-file{display:inline-block;color:#e8e1ff;text-decoration:none;font-weight:700;margin-top:6px}.chat-file span{font-weight:400;color:#b8c2dc}.chat-file-image{display:block;max-width:min(360px,100%);max-height:320px;border-radius:12px;margin:4px 0 8px}.community-card-actions{display:none}.community-chat-badge{display:block;color:#a9b5d2;font-size:12px;margin-top:5px}  .musa-verified-badge{width:22px;height:22px;object-fit:contain;vertical-align:middle;margin-left:5px;display:inline-block}
+
+.gdz-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.gdz-head h1{margin:0 0 6px}
+.gdz-frame-wrap{height:calc(100vh - 145px);min-height:520px;border-radius:20px;overflow:hidden;background:#6f35b5;border:1px solid #8e5bd0;box-shadow:0 12px 35px #0004;padding:8px}
+.gdz-frame{display:block;width:100%;height:100%;border:0;border-radius:14px;background:#7b3fc5}
+@media(max-width:760px){.gdz-frame-wrap{height:calc(100vh - 170px);min-height:420px;padding:5px;border-radius:16px}.gdz-frame{border-radius:12px}}
+
+/* Лапки и стикеры */
+.lapki-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px;max-width:900px;margin-top:20px}.lapki-card{background:linear-gradient(145deg,#20164a,#111a30);border:1px solid #42316f;border-radius:18px;padding:18px}.lapki-card .price{font-size:22px;font-weight:900;color:#c7a3ff;margin:12px 0}.lapki-card button{width:100%}.lapki-hero{display:flex;align-items:center;gap:18px;max-width:900px;padding:20px;border-radius:20px;background:linear-gradient(120deg,#43218c,#211743);border:1px solid #6945bc}.lapki-hero img{width:88px;height:88px;object-fit:contain}.lapki-balance{margin-left:auto;border:1px solid #6945bc;background:#1c1537;border-radius:20px;padding:10px 15px;font-weight:900;white-space:nowrap}.sticker-toggle{width:42px!important;font-size:20px}.sticker-panel{border-top:1px solid var(--line);padding:12px 16px;background:#0e1527;max-height:245px;overflow:auto}.sticker-tabs{display:flex;gap:8px;margin-bottom:10px}.sticker-tabs button{width:auto!important;padding:8px 12px;border:1px solid var(--line);background:#182139;color:#fff;border-radius:10px}.sticker-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.sticker-item{width:100%!important;min-height:58px;border:1px solid #303b5b!important;background:#17213a!important;border-radius:12px!important;font-size:27px;position:relative}.sticker-item small{display:block;font-size:10px;color:#c7a3ff}.sticker-item.locked:after{content:'🔒';position:absolute;right:3px;top:1px;font-size:11px}.sticker-note{font-size:12px;color:var(--muted);margin:7px 0}@media(max-width:650px){.sticker-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.lapki-hero{gap:10px;padding:13px}.lapki-hero img{width:62px;height:62px}.lapki-balance{font-size:13px;padding:8px}}
+
+.lapki-pay-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:900px}.lapki-pay-card{display:flex;flex-direction:column;gap:8px;min-height:118px;padding:15px;text-decoration:none;color:var(--text);background:#111a30;border:1px solid #3c326e;border-radius:14px}.lapki-pay-card:hover{border-color:var(--accent2);background:#191b3a}.lapki-pay-card b{font-size:17px}.lapki-pay-card span{font-size:12px;color:var(--muted);line-height:1.4}.lapki-pay-card small{color:#b7a6ff;margin-top:auto}.lapki-pay-note{max-width:900px;margin-top:14px;padding:13px 15px;border:1px solid #51427f;background:#17152b;border-radius:13px;color:#c6c8df;font-size:12px;line-height:1.55}.lapki-pay-note b{color:#fff}.lapki-payment-box{text-align:left;max-width:520px}.lapki-pay-modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:16px 0}.lapki-pay-modal-grid a{display:block;text-align:center;text-decoration:none;color:#fff;background:#27204c;border:1px solid #6450a8;border-radius:12px;padding:13px;font-weight:800}.lapki-pay-modal-grid a:hover{background:#392a72}@media(max-width:760px){.lapki-pay-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lapki-pay-card{min-height:105px}.lapki-payment-box{padding:16px}}
+
+
+.video-item{position:relative;display:flex;gap:14px;align-items:center;margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:18px;background:#131c30;cursor:pointer;min-width:0}
+.video-thumb{width:150px;min-width:150px;height:94px;position:relative;overflow:hidden;border-radius:12px;background:#070b14;display:grid;place-items:center}
+.video-thumb img{width:100%;height:100%;object-fit:cover}.video-thumb .play{position:absolute;border:0;border-radius:50%;width:42px;height:42px;background:#ffffffdd;color:#17152b;font-size:18px}
+.video-info{flex:1;min-width:0}.video-info h3{margin:0 0 6px;font-size:16px;overflow-wrap:anywhere}.video-info p{margin:0;color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+.video-social{display:flex;gap:8px;align-items:center;margin-top:10px}.video-like{border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:#202b45;color:#fff;cursor:pointer}.video-like.liked{background:#51233e;border-color:#f472b6}.video-promo{font-size:11px;border-radius:999px;padding:3px 8px;background:#553b13;color:#ffdc83;margin-left:5px}.video-admin-tag{font-size:11px;border-radius:999px;padding:3px 8px;background:#272a57;color:#c8c9ff;margin-left:5px}
+.video-publish-choice{position:fixed;inset:0;z-index:10020;background:#000a;display:grid;place-items:center;padding:18px}.video-publish-choice .choice-box{width:min(480px,100%);background:#11192b;border:1px solid var(--line);border-radius:22px;padding:22px}.video-publish-choice .choice-box h2{margin-top:0}.video-publish-choice .choice-buttons{display:grid;gap:10px;margin-top:18px}.video-publish-choice .choice-buttons button{padding:13px;border-radius:13px;text-align:left}.video-publish-choice .choice-buttons .secondary{background:#202b45;color:#fff;border:1px solid var(--line)}
+@media(max-width:560px){.video-item{align-items:flex-start;gap:10px;padding:9px}.video-thumb{width:105px;min-width:105px;height:80px}.video-info h3{font-size:14px}}
+
+.video-social{display:flex;gap:8px;align-items:center;margin-top:9px}.video-like{border:1px solid #554477;background:#211a37;color:#f3efff;border-radius:999px;padding:7px 12px;font-weight:800;cursor:pointer}.video-like.liked{border-color:#9b7bff;background:#38265f}.video-cover-video{width:100%;height:100%;object-fit:cover;display:block}
+
+.chat-sticker-media{display:block;width:min(190px,55vw);max-height:190px;object-fit:contain;background:transparent;border:0;border-radius:0;margin:2px auto}
+.chat-sticker-emoji{font-size:64px;line-height:1.15;text-align:center;padding:3px;background:transparent}
+#stickerPanel .sticker-item{background:transparent!important;border:0!important;box-shadow:none!important}
+#stickerPanel .sticker-item:hover{background:#ffffff0c!important}
+.video-comment .chat-sticker-media{width:120px;max-height:120px;margin:8px 0}
+
+.quest-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:20px}.quest-card{background:#141c30;border:1px solid #393052;border-radius:18px;padding:18px}.quest-card h3{margin:0 0 8px}.quest-reward{color:#d5c8ff;font-weight:800;margin:12px 0}.quest-progress{height:10px;border-radius:20px;background:#27233b;overflow:hidden}.quest-progress span{display:block;height:100%;width:0;background:#c7a9ff;transition:width .25s}.quest-card button{margin-top:12px;width:100%;padding:11px;border:0;border-radius:11px;background:#8d6bdf;color:white;font-weight:800}.quest-card button:disabled{opacity:.5}.video-mode-switch{display:flex;gap:10px;margin:14px 0}.video-mode-switch button{padding:10px 18px;border-radius:12px;border:1px solid #51416f;background:#171d31;color:#fff}.video-mode-switch button.active{background:#c6a5ff;color:#25183d}.video-item[data-kind="short"] .video-thumb{aspect-ratio:9/16;max-width:300px}.quest-report{margin-top:12px}
+
+.quest-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;max-width:1050px}.quest-card{background:#131c30;border:1px solid var(--line);border-radius:18px;padding:18px}.quest-card h3{margin:0 0 8px}.quest-reward{font-weight:800;margin:12px 0;color:#d9ccff}.quest-progress{height:10px;background:#28233f;border-radius:99px;overflow:hidden;margin:14px 0 6px}.quest-progress span{display:block;height:100%;background:#c7a7ff;border-radius:99px;transition:width .25s}.quest-card>button,.report-send{border:0;border-radius:11px;padding:10px 14px;background:#8b68d8;color:white;font-weight:700}.quest-report{margin-top:12px}.quest-report input{max-width:100%;margin-bottom:8px}
+#videoPage.shorts-mode .video-feed{display:flex;flex-direction:column;align-items:center;gap:18px;max-width:470px;margin:16px auto}#videoPage.shorts-mode .video-item{width:100%;height:min(78vh,780px);min-height:500px;position:relative;border:0;border-radius:20px;background:#050505;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}#videoPage.shorts-mode .video-thumb{position:absolute;inset:0;aspect-ratio:auto;height:100%;background:#080808}#videoPage.shorts-mode .video-thumb video,#videoPage.shorts-mode .video-thumb img{width:100%;height:100%;object-fit:cover}#videoPage.shorts-mode .video-info{position:relative;z-index:2;background:linear-gradient(transparent,#000b);padding:60px 16px 18px;color:white}#videoPage.shorts-mode .video-info p{color:#eee}#videoPage.shorts-mode .play{z-index:3}#videoPage.shorts-mode .send-video-chat{position:relative;z-index:3;align-self:flex-start;margin:0 12px 12px!important}
+
+.share-video-btn{border:1px solid #c9b4f5;background:#f4edff;color:#57308b;border-radius:12px;padding:7px 10px;cursor:pointer;font-weight:600}.video-social{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Musa Shorts immersive vertical feed */
+#videoPage.shorts-mode{padding:0!important;overflow:hidden;background:#000!important;}
+#videoPage.shorts-mode h1,#videoPage.shorts-mode .video-actions,#videoPage.shorts-mode #videoPublishStatus{position:relative;z-index:5;margin:10px 14px;color:#fff}
+#videoPage.shorts-mode .video-mode-tabs{position:relative;z-index:6;margin:8px auto;justify-content:center}
+#videoPage.shorts-mode .video-feed{height:calc(100dvh - 145px);max-height:none;width:min(100%,520px);max-width:100%;margin:0 auto;overflow-y:auto;overscroll-behavior-y:contain;scroll-snap-type:y mandatory;gap:0;display:flex;flex-direction:column;align-items:stretch;background:#000;scrollbar-width:none}
+#videoPage.shorts-mode .video-feed::-webkit-scrollbar{display:none}
+#videoPage.shorts-mode .video-item{position:relative;flex:0 0 100%;height:100%;min-height:100%;width:100%;border:0;border-radius:0;box-shadow:none;background:#000;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always;display:block}
+#videoPage.shorts-mode .video-thumb{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;background:#000}
+#videoPage.shorts-mode .video-thumb>img,#videoPage.shorts-mode .video-thumb>video{width:100%;height:100%;object-fit:contain;background:#000}
+#videoPage.shorts-mode .video-thumb .play{display:none}
+#videoPage.shorts-mode .video-info{position:absolute;z-index:3;left:0;right:76px;bottom:12px;padding:70px 14px 20px;color:#fff;background:linear-gradient(transparent,#000b);pointer-events:none}
+#videoPage.shorts-mode .video-info h3,#videoPage.shorts-mode .video-info p{color:#fff;text-shadow:0 1px 3px #000}
+#videoPage.shorts-mode .video-social{display:flex;gap:8px;flex-wrap:wrap;pointer-events:auto}
+#videoPage.shorts-mode .video-social button{color:#fff;background:#171717aa;border:1px solid #ffffff55;border-radius:22px;padding:8px 10px}
+#videoPage.shorts-mode .shorts-rail{position:absolute;right:10px;bottom:82px;z-index:4;display:flex;flex-direction:column;gap:18px;align-items:center}
+#videoPage.shorts-mode .shorts-rail button{width:48px;min-height:48px;border:0;background:#16161699;color:#fff;border-radius:50%;font-size:23px;display:grid;place-items:center}
+#videoPage.shorts-mode .shorts-rail small{font-size:11px;color:#fff;text-align:center;max-width:62px;overflow-wrap:anywhere}
+#videoPage.shorts-mode .video-item video.shorts-main{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+@media(max-width:760px){#videoPage.shorts-mode .video-feed{height:calc(100dvh - 140px)}#videoPage.shorts-mode .video-item{border-radius:0}}
+
+</style>
+<meta name="musa-chat-version" content="3.20.0"><title>Musa.Chat 3.20.0</title>
+
+<style id="musa-3-17-polish">
+/* В чатах убраны лишние рамки вокруг сообщений-стикеров. */
+.bubble:has(.chat-sticker-media), .bubble:has(.chat-sticker-emoji){border:0!important;box-shadow:none!important;background:transparent!important;padding:4px!important}
+.bubble:has(.chat-sticker-media) .bubble-actions,.bubble:has(.chat-sticker-emoji) .bubble-actions{opacity:.25}
+.lapki-gift-bubble{width:min(290px,78vw)!important;max-width:78vw!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;align-self:center!important}
+.lapki-gift-card{position:relative;overflow:hidden;min-width:220px;padding:15px 18px 12px;border:1px solid #bba3ff;border-radius:20px;background:linear-gradient(145deg,rgba(145,95,255,.20),rgba(105,73,180,.09));text-align:center;color:inherit;box-shadow:0 8px 28px rgba(111,73,200,.12)}
+.lapki-gift-sender{position:relative;z-index:1;font-weight:700;font-size:14px;margin-bottom:6px}
+.lapki-gift-watermark{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-18deg);font-size:100px;opacity:.10;pointer-events:none;filter:saturate(.8)}
+.lapki-gift-amount{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:9px;font-size:30px;font-weight:800;color:#8f5cff;margin:4px 0}
+.lapki-gift-purple-paw{font-size:27px;filter:hue-rotate(20deg) saturate(1.4)}
+.lapki-gift-wish{position:relative;z-index:1;margin-top:7px;font-size:14px;overflow-wrap:anywhere}
+.lapki-gift-time{position:relative;z-index:1;display:block;margin-top:8px;opacity:.65}
+.video-comment .sticker-item{border:0!important;background:transparent!important;box-shadow:none!important}
+#commentStickerGrid .chat-sticker-media{max-width:100%;max-height:100%;object-fit:contain}
+</style>
+
+</head>
+<body>
+<div id="login" class="login"><div class="login-card">
+<img class="login-photo" src="./assets/embedded/3ae68dcda9db0cbbc79a.jpg" alt="Musa.Chat">
+<h1>Musa.Chat</h1><p>Чаты, группы, каналы и musa AI.</p>
+<div class="auth-switch"><button id="authLoginTab" class="active">Вход</button><button id="authRegisterTab">Регистрация</button></div>
+<div id="loginFields"><input id="loginIdInput" maxlength="8" inputmode="numeric" placeholder="Ваш ID (например 12345)" pattern="[0-9]{5}"><input id="loginPasswordInput" maxlength="6" inputmode="numeric" autocomplete="current-password" placeholder="Пароль · 6 цифр"><button type="button" class="primary" id="loginBtn">Войти в Musa.Chat</button><p class="auth-hint">ID нужен для поиска людей. Пароль нужен для входа в аккаунт.</p></div>
+<div id="registerFields" class="hidden"><input id="nameInput" maxlength="32" placeholder="Ваше имя"><input id="registerPasswordInput" maxlength="6" inputmode="numeric" autocomplete="new-password" placeholder="Придумайте пароль · 6 цифр"><button type="button" class="primary" id="registerBtn">Зарегистрироваться</button><p class="auth-hint">ID и пароль — разные данные. После регистрации Musa.Chat выдаст ваш ID. Сохраните ID и 6-значный пароль.</p></div>
+<p class="muted">Можно работать без интернета: регистрация, чаты и данные сохраняются на этом устройстве. WebSocket сохраняется и подключается к локальному server.js без интернета, а при появлении сети — к серверу автоматически.</p><button id="installAppBtn" type="button" class="primary hidden" style="margin-top:10px">📲 Установить Musa.Chat</button></div></div>
+<div id="app" class="app hidden">
+<aside class="sidebar"><div class="brand"><img src="./assets/embedded/3ae68dcda9db0cbbc79a.jpg"><span>Musa.<em> Chat</em></span></div><nav class="nav"><button class="active" data-tab="chat">💬 <span>Чаты</span></button><button data-tab="video">📼 <span>Видео</span></button><button data-tab="calls">📞 <span>Звонки</span></button><button data-tab="communities">👥 <span>Группы и каналы</span></button><button data-tab="support">🛟 <span>Поддержка</span></button><button data-tab="gdz">📚 <span>Муся ГДЗ</span></button><button data-tab="lapki">🐾 <span>Лапки</span></button><button data-tab="quests">🎯 <span>Квесты</span></button><button data-tab="profile">👤 <span>Профиль</span></button></nav><div class="side-user"><img class="avatar" src="avatar.jpg"><div><b id="meName"></b><br><small>● в сети</small></div></div></aside>
+<div class="content"><section class="people" id="people"><h2>Чаты</h2><div class="muted" id="onlineCount">Подключение...</div><button class="ai-contact" id="musaAIContact"><img class="giga-avatar" src="./assets/embedded/75764c1ce7c9ec6940aa.jpg" alt="musa AI"><span><b>musa AI</b><small>задать вопрос и создать изображение · <span id="aiStatus">проверка…</span></small></span></button><input class="search" id="search" placeholder="Поиск людей, групп и каналов: имя или ID"><div id="peopleList"></div></section>
+<section class="chat" id="chatPanel"><header class="chat-head"><div class="person-head"><img class="avatar" id="peerAvatar" src="avatar.jpg"><div><strong id="peerName">Выберите человека</strong><span class="muted" id="peerStatus">Чтобы начать чат</span></div></div><div class="actions"><button class="icon hidden" id="communityVideoBtn" title="Опубликовать видео в Муся канал">📹</button><input id="communityVideoInput" type="file" accept="video/*" class="hidden"><button class="icon" id="audioBtn" title="Аудиозвонок">☎</button><button class="icon" id="videoBtn" title="Видеозвонок">▣</button></div></header><div class="messages" id="messages"><div class="empty">Выберите человека слева,<br>чтобы начать общение.</div></div><div id="stickerPanel" class="sticker-panel hidden"><div class="sticker-tabs"><button type="button" data-sticker-kind="free" class="active">Бесплатные</button><button type="button" data-sticker-kind="paid">За лапки 🐾</button></div><div class="sticker-note">Стикеры-образцы в стиле наборов Telegram и MAX. Платные стикеры оплачиваются внутренней валютой.</div><div id="stickerGrid" class="sticker-grid"></div></div><div class="composer"><button id="stickerToggle" class="sticker-toggle" title="Стикеры" type="button">☺</button><button id="giftLapkiBtn" class="icon" title="Подарить лапки" type="button" style="width:auto;padding:0 10px;white-space:nowrap">🎁🐾</button><input id="messageInput" placeholder="Напишите сообщение..." disabled><input id="chatFileInput" type="file" class="hidden"><span class="voice-status" id="voiceStatus"></span><button id="fileBtn" class="icon" title="Отправить файл">📎</button><button id="voiceBtn" class="icon voice-btn" title="Записать голосовое">🎙️</button><button id="aiImageBtn" class="icon" title="Создать изображение через musa AI">🖼️</button><button id="sendBtn" class="send" disabled>➤</button></div></section>
+<section class="page hidden" id="questsPage"><h1>Квесты 🎯</h1><p class="muted">Выполняй задания, заполняй шкалу и забирай награды. Прогресс хранится на этом устройстве.</p><div id="questList" class="quest-list"></div><p class="muted">Аксессуары открываются как награды профиля; синхронизация между устройствами зависит от сервера.</p></section>
+<section class="page hidden" id="callsPage"><h1>Звонки</h1><p class="muted">Звонки, выполненные в этой сессии.</p><div id="callHistory"></div></section>
+<section class="page hidden" id="supportPage">
+  <h1>Поддержка 🛟</h1><p class="muted">После обращения откроется чат с ботом поддержки. Бот может помочь с ошибками, входом, видео, группами и другими проблемами.</p>
+  <div class="support-layout">
+    <div class="profile-card support-compose"><textarea id="supportText" class="search" rows="4" placeholder="Опишите проблему или ошибку..."></textarea><button class="primary" id="supportBtn">Отправить обращение</button><p id="supportStatus" class="muted"></p></div>
+    <div class="support-chat" id="supportChat">
+      <div class="support-chat-head"><span>🤖</span><div><b>Musa.Chat Support Bot</b><small>Онлайн-помощник</small></div></div>
+      <div class="support-messages" id="supportMessages"><div class="support-bubble bot">Здравствуйте! Опишите проблему, и я постараюсь помочь. Если это ошибка, пришлите текст ошибки.</div></div>
+      <div class="support-composer"><input id="supportChatInput" placeholder="Напишите боту..."><button class="primary" id="supportChatSend">➤</button></div>
+    </div>
+  </div>
+</section>
+<section class="page hidden" id="communitiesPage">
+  <div class="community-head"><div><h1>Группы и каналы</h1></div><button class="community-plus" id="communityPlusBtn" title="Создать">＋</button></div>
+  <p class="muted">Создавайте группу для общения или канал для публикаций. Вход в сообщество выполняется по ID.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin:18px 0">
+    <input id="communitySearchInput" class="search" style="max-width:320px;margin:0" maxlength="80" placeholder="Поиск группы или канала по названию / ID">
+    <input id="communityJoinIdInput" class="search" style="max-width:240px;margin:0" maxlength="8" inputmode="numeric" placeholder="ID группы/канала">
+    <button class="primary" id="communityJoinIdBtn">Войти по ID</button>
+    <button class="primary" id="createGroupBtn">👥 Создать группу</button>
+    <button class="primary" id="createChannelBtn">📢 Создать канал</button>
+  </div>
+  <div id="communitySearchResults" class="hidden" style="margin:0 0 18px"></div>
+  <h2 style="margin:18px 0 10px">📢 Каналы</h2>
+  <div id="channelsList"></div>
+  <h2 style="margin:22px 0 10px">👥 Группы</h2>
+  <div id="groupsList"></div>
+  <div id="communitiesList" class="hidden"></div>
+</section>
+<section class="page hidden" id="videoPage">
+  <h1>Видео 📼</h1>
+  <p class="muted">Общая лента видео: опубликованные ролики доступны всем пользователям.</p><div class="video-mode-switch"><button class="active" data-vmode="long">🎬 Полнометражи</button><button data-vmode="short">📱 Шортсы</button></div><div class="video-actions"><button class="primary" id="publishVideoBtn">⬆ Опубликовать видео</button><input id="videoUploadInput" type="file" accept="video/*,audio/*,image/*,.mp4,.mov,.webm,.mkv,.avi,.3gp,.mpeg,.mpg,.m4v,.flv,.wmv,.ts,.mts,.m2ts,.ogv,.3g2,.asf,.vob,.mxf,.hevc,.h265,.h264,.av1,.mpg4,.mpe,.mpv,.m2v,.divx,.f4v,.rm,.rmvb,.yuv,.gif,.heic,.bin,*/*" class="hidden"></div><p id="videoPublishStatus" class="muted"></p>
+  <div class="video-feed">
+    <article class="video-item" data-video="demo"><div class="video-thumb"><img src="avatar.jpg"><button class="play">▶</button></div><div class="video-info"><h3>Musa.Chat — добро пожаловать</h3><p>Musa.Chat • 1:00</p></div></article>
+    <article class="video-item" data-video="demo"><div class="video-thumb"><img src="avatar.jpg"><button class="play">▶</button></div><div class="video-info"><h3>Наше сообщество</h3><p>Musa.Chat • новое видео</p></div></article>
+    <article class="video-item" data-video="demo"><div class="video-thumb"><img src="avatar.jpg"><button class="play">▶</button></div><div class="video-info"><h3>Видео от пользователей</h3><p>Musa.Chat • смотреть</p></div></article>
+    <article class="video-item" data-video="demo"><div class="video-thumb"><img src="avatar.jpg"><button class="play">▶</button></div><div class="video-info"><h3>Новости Musa.Chat</h3><p>Musa.Chat • обновления</p></div></article>
+  </div>
+</section>
+<section class="page hidden" id="lapkiPage"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><div><h1>Лапки 🐾</h1><p class="muted">Внутренняя валюта Musa.Chat для стикеров и подарков. Версия 3.16.0.</p></div><div class="lapki-balance">🐾 <span id="lapkiBalance">0</span></div></div><div class="lapki-hero"><img src="./assets/embedded/e9b40f18f2f8465d6cbd.png" alt="Значок лапок"><div><h2 style="margin:0 0 5px">Лапки</h2><div>Покупай лапки и открывай платные стикеры в Musa.Chat.</div></div></div><h2 style="margin-top:24px">Пополнить баланс</h2><div class="lapki-grid"><article class="lapki-card"><b>100 лапок</b><div class="price">150 ₽</div><button class="primary" data-lapki-pack="100" data-lapki-price="150">Купить</button></article><article class="lapki-card"><b>200 лапок</b><div class="price">300 ₽</div><button class="primary" data-lapki-pack="200" data-lapki-price="300">Купить</button></article><article class="lapki-card"><b>500 лапок</b><div class="price">750 ₽</div><button class="primary" data-lapki-pack="500" data-lapki-price="750">Купить</button></article><article class="lapki-card"><b>992 лапки</b><div class="price">1488 ₽</div><button class="primary" data-lapki-pack="992" data-lapki-price="1488">Купить</button></article></div>
+<h2 style="margin-top:24px">Способы оплаты</h2><p class="muted" style="max-width:900px">Выбери провайдера для подключения приёма платежей в магазине Musa.Chat.</p>
+<div class="lapki-pay-grid">
+ <a class="lapki-pay-card" href="https://cardlink.link/" target="_blank" rel="noopener noreferrer"><b>Cardlink</b><span>Платёжные счета и ссылки; нужен аккаунт продавца</span><small>Открыть Cardlink ↗</small></a>
+ <a class="lapki-pay-card" href="https://sbp.nspk.ru/business/" target="_blank" rel="noopener noreferrer"><b>СБП</b><span>Оплата по СБП через подключённый банк или провайдера</span><small>Как подключить ↗</small></a>
+ <a class="lapki-pay-card" href="https://robokassa.com/" target="_blank" rel="noopener noreferrer"><b>Robokassa</b><span>Приём онлайн-платежей; нужна регистрация магазина</span><small>Открыть Robokassa ↗</small></a>
+ <a class="lapki-pay-card" href="https://yookassa.ru/" target="_blank" rel="noopener noreferrer"><b>ЮKassa</b><span>Платёжные ссылки и API; нужны настройки магазина</span><small>Открыть ЮKassa ↗</small></a>
+</div>
+<div class="lapki-pay-note"><b>Важно: приём платежей ещё не активирован.</b><br>Эти кнопки открывают официальные сайты для подключения магазина. Для реальной покупки нужен сервер Musa.Chat с настройками магазина, созданием заказа и проверкой подтверждения платежа от провайдера. Сейчас эти ссылки открывают сайты подключения и не являются оплатой конкретного заказа; лапки автоматически не начисляются. Реквизиты для получения выплат указываются в защищённом личном кабинете платёжного провайдера — не в HTML-файле приложения. Не вводи секретные API-ключи в приложение и не отправляй номер карты в чат.</div>
+</section>
+<section class="page hidden" id="gdzPage">
+  <div class="gdz-head">
+    <div><h1>Муся ГДЗ 📚</h1><p class="muted">ГДЗ открывается прямо внутри Musa.Chat — переходить на отдельную вкладку браузера не нужно.</p></div>
+    <button class="primary" id="gdzReload">↻ Обновить</button>
+  </div>
+  <div class="gdz-frame-wrap">
+    <iframe id="gdzFrame" class="gdz-frame" src="https://gdz.ru/" title="Муся ГДЗ" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</section>
+<section class="page hidden" id="profilePage"><div class="profile-card"><img id="profileAvatar" src="avatar.jpg"><h2 id="profileName"><span id="verifiedBadge" class="verified-check" aria-label="Подтверждён">✓</span></h2><input id="profileNameInput" maxlength="32" class="search" placeholder="Ваше имя"><button class="primary" id="saveName">Сохранить имя</button><input id="avatarInput" type="file" accept="image/*" class="search"><button class="primary" id="saveAvatar">Установить аватар</button><div class="permission-box" style="margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:16px;background:#10182a;text-align:left"><b>🎙️📷 Доступ к камере и микрофону</b><p class="muted" style="margin:6px 0 12px">Разрешите доступ один раз — после этого будут доступны QR-сканер, фото и голосовые сообщения.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="primary" id="allowCameraBtn" type="button">📷 Разрешить камеру</button><button class="primary" id="allowMicBtn" type="button">🎙️ Разрешить микрофон</button><button class="primary" id="allowMediaBtn" type="button">🔓 Разрешить оба</button><button class="primary" id="takePhotoBtn" type="button">📸 Сделать фото</button></div><p id="permissionStatus" class="muted" style="margin:10px 0 0">Доступ ещё не запрошен.</p></div><p id="profileId"></p><span class="muted">Ваш аватар</span>
+<div class="qr-friends" style="margin-top:22px;padding-top:20px;border-top:1px solid var(--line);text-align:center">
+  <h3 style="margin:0 0 6px">👥 Друзья по QR-коду</h3>
+  <p class="muted" style="margin:0 0 12px">Покажи этот QR-код другу — он сможет добавить тебя.</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <button id="scanQrBtn" class="primary qr-scan-button" type="button">📷 Сканировать QR камерой</button>
+      <button id="qrGalleryBtn" class="primary qr-scan-button" type="button">🖼️ QR из галереи</button>
+      <span class="muted">Добавить друга</span>
+    </div>
+    <img id="myQr" class="my-qr" alt="QR-код профиля" width="300" height="300">
+    <div id="qrVisibleId" class="qr-id"></div>
+  </div>
+  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px">
+    <button id="copyFriendId" class="primary">Копировать ID</button>
+  </div>
+  <input id="qrFileInput" type="file" accept="image/*" class="hidden">
+  <div id="qrCameraModal" class="call-modal hidden">
+    <div class="call-box" style="max-width:520px">
+      <h3 style="margin-top:0">📷 Сканирование QR-кода</h3>
+      <video id="qrCameraVideo" autoplay playsinline muted style="width:100%;max-height:55vh;background:#05070d;border-radius:16px;object-fit:cover"></video>
+      <p id="qrCameraStatus" class="muted">Наведите камеру на QR-код друга.</p>
+      <div class="call-controls"><button id="closeQrCamera">✕</button></div>
+    </div>
+  </div>
+  <p id="qrStatus" class="muted" style="margin-top:10px"></p>
+</div>
+<div style="margin-top:18px;padding-top:18px;border-top:1px solid var(--line);text-align:left"><b>Обновление приложения</b><p class="muted">Версия <span id="appVersion">3.9.2</span>. При доступном обновлении приложение предложит его установить.</p><button class="primary" id="checkUpdateBtn">Проверить обновление</button><p id="updateStatus" class="muted"></p></div></div></section></div></div>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="active" data-tab="chat"><b>💬</b>Чаты</button>
+  <button data-tab="video"><b>📼</b>Видео</button><button data-tab="quests"><b>🎯</b>Квесты</button>
+  <button data-tab="calls"><b>📞</b>Звонки</button><button data-tab="communities"><b>👥</b>Группы</button>
+  <button data-tab="support"><b>🛟</b>Поддержка</button><button data-tab="gdz"><b>📚</b>Муся ГДЗ</button><button data-tab="lapki"><b>🐾</b>Лапки</button>
+  <button data-tab="profile"><b>👤</b>Профиль</button>
+</div>
+<div id="communityModal" class="call-modal hidden">
+  <div class="call-box">
+    <h2 id="communityModalTitle">Создать</h2>
+    <img id="communityAvatarPreview" class="community-avatar-preview" src="avatar.jpg" alt="Аватар">
+    <input id="communityAvatarInput" type="file" accept="image/*" class="search">
+    <input id="communityNameInput" maxlength="50" placeholder="Название">
+    <p class="muted">После создания сообществу автоматически присвоится уникальный ID. Его можно передать другим пользователям для входа.</p>
+    <button class="primary" id="communityCreateConfirm">Создать</button>
+    <button id="communityCreateCancel">Отмена</button>
+  </div>
+</div>
+<div id="callModal" class="call-modal hidden"><div class="call-box"><h2 id="callTitle">Звонок</h2><p class="muted" id="callStatus">Подключение...</p><div class="video-grid"><video id="remoteVideo" autoplay playsinline></video><video id="localVideo" autoplay muted playsinline></video></div><div class="call-controls"><button id="muteBtn">🎙️</button><button id="cameraBtn">📷</button><button id="hangBtn" class="hang">☎</button></div></div></div>
+<div id="toast" class="toast hidden"></div><div id="videoPlayerModal" class="video-player-modal hidden"><div class="video-player-box"><div class="video-player-head"><b id="videoPlayerTitle">Musa.Chat — Квесты и шортсы</b><button class="icon" id="closeVideoPlayer">✕</button></div><video id="demoVideo" controls playsinline></video><p class="muted" id="videoPlayerMeta">Видео Musa.Chat</p><div class="video-comments"><h3>Комментарии</h3><div id="videoCommentsList" class="video-comments-list"></div><div class="video-comment-compose"><input id="videoCommentInput" placeholder="Оставить комментарий..."><button class="primary" id="videoCommentSend">Отправить</button></div></div></div></div>
+<script src="https://unpkg.com/mqtt@5.10.4/dist/mqtt.min.js"></script>
+<script>
+const $=id=>document.getElementById(id); const APP_VERSION='3.20.0';
+let wsState='offline';
+function setConnectionState(state){
+  wsState=state;
+  const el=$('onlineCount');
+  if(!el)return;
+  const net = navigator.onLine !== false;
+  if(state==='online') el.textContent=(users.filter(u=>u.id!==me?.id&&u.online).length)+' онлайн · MQTT подключён';
+  else if(state==='connecting') el.textContent=(net?'Интернет есть · подключение WebSocket…':'Нет интернета · локальный режим');
+  else if(state==='backup') el.textContent='Резервный WebSocket подключён · основной сервер ещё не подключён';
+  else el.textContent=net?'Интернет есть · сервер Musa.Chat пока не подключён':'Нет интернета · локальные данные доступны';
+}
+const MUSA_MQTT_URL='wss://broker.emqx.io:8084/mqtt';
+// Основной транспорт Musa.Chat остаётся MQTT поверх WebSocket.
+// Эти WebSocket-адреса добавлены только как резервные соединения и не заменяют текущий.
+const MUSA_WS_FALLBACKS=[
+  'wss://socketsbay.com/wss/v2/1/demo/',
+  'wss://spitfire.shuttleapp.rs'
+];
+const MUSA_MQTT_BASE='musa/chat';
+const MUSA_MQTT_USERS=MUSA_MQTT_BASE+'/users';
+const mqttKnownUsers=new Map();
+function mqttUserTopic(){return MUSA_MQTT_USERS+'/+';}
+function mqttPublicUser(u){return {id:String(u?.id||''),name:String(u?.name||''),username:String(u?.username||''),avatar:(String(u?.avatar||'').startsWith('data:')?'avatar.jpg':String(u?.avatar||'avatar.jpg')),verified:!!u?.verified,online:true,updatedAt:Date.now()};}
+function publishMqttUser(){
+  if(!window.mqtt || !ws?.client || ws.readyState!==1 || !me?.id)return;
+  const u=mqttPublicUser(me);
+  try{ws.client.publish(MUSA_MQTT_USERS+'/'+encodeURIComponent(me.id),JSON.stringify(u),{qos:1,retain:true});}catch(e){}
+}
+function mergeMqttUser(u){
+  if(!u?.id || u.id===me?.id)return;
+  const user={...u,online:true}; mqttKnownUsers.set(user.id,user);
+  const i=users.findIndex(x=>x.id===user.id);
+  if(i>=0) users[i]={...users[i],...user}; else users.push(user);
+}
+function mqttSearchUsers(q){
+  const query=String(q||'').trim().toLowerCase();
+  const normalized=query.replace(/[^0-9]/g,'');
+  const exact=normalized.length===5?'ID-'+normalized:(query.toUpperCase().startsWith('ID-')?query.toUpperCase():null);
+  const matches=[...mqttKnownUsers.values()].filter(u=>{
+    const id=String(u.id||'').toLowerCase(), name=String(u.name||'').toLowerCase(), handle=String(u.username||'').toLowerCase();
+    return !query || id.includes(query)||name.includes(query)||handle.includes(query)||!!exact&&id===exact.toLowerCase();
+  });
+  matches.forEach(mergeMqttUser);
+  renderUsers(true);
+  if(exact){const found=matches.find(u=>u.id===exact); if(found)selectUser(found.id);}
+}
+function mqttTopicFor(userId){ return MUSA_MQTT_BASE+'/user/'+encodeURIComponent(String(userId||'guest')); }
+function mqttTopicBroadcast(){ return MUSA_MQTT_BASE+'/broadcast'; }
+function mqttTopicFromMessage(m){
+  if(m && m.to) return mqttTopicFor(m.to);
+  if(m && m.targetUserId) return mqttTopicFor(m.targetUserId);
+  if(me && me.id) return mqttTopicFor(me.id);
+  return mqttTopicBroadcast();
+}
+function createMqttSocket(){
+  if(!window.mqtt || typeof window.mqtt.connect!=='function') throw new Error('MQTT.js не загружен');
+  const clientId='musa_'+Math.random().toString(16).slice(2)+Date.now().toString(16);
+  const client=mqtt.connect(MUSA_MQTT_URL,{clientId,clean:true,reconnectPeriod:3000,connectTimeout:10000,keepalive:30});
+  const socket={readyState:0,client,send(data){
+    const text=typeof data==='string'?data:JSON.stringify(data);
+    let msg=null; try{msg=JSON.parse(text)}catch(_){}
+    client.publish(mqttTopicFromMessage(msg),text,{qos:0,retain:false});
+  },close(){try{client.end(true)}catch(_){}},onopen:null,onmessage:null,onerror:null,onclose:null};
+  client.on('connect',()=>{socket.readyState=1; client.subscribe([mqttTopicFor(me?.id||'guest'),mqttTopicBroadcast(),mqttUserTopic()],{qos:1}); if(socket.onopen)socket.onopen();});
+  client.on('message',(topic,payload)=>{
+    const text=payload.toString();
+    if(String(topic).startsWith(MUSA_MQTT_USERS+'/')){try{mergeMqttUser(JSON.parse(text));renderUsers(true);}catch(e){} return;}
+    if(socket.onmessage)socket.onmessage({data:text});
+  });
+  client.on('error',err=>{if(socket.onerror)socket.onerror(err);});
+  client.on('close',()=>{socket.readyState=3;if(socket.onclose)socket.onclose();});
+  return socket;
+}
+function createRawWebSocket(url){
+  const socket=new WebSocket(url);
+  socket.__musaRaw=true;
+  return socket;
+}
+function createRawWebSocket(url){
+  const socket=new WebSocket(url);
+  socket.__musaRaw=true;
+  return socket;
+}
+function openWebSocketWithFallback(onOpen,onMessage,onError,onClose){
+  let index=0, finished=false, activeTimer=null;
+  const urls=['__MUSA_MQTT__',...MUSA_WS_FALLBACKS];
+  const next=()=>{
+    if(finished)return;
+    if(index>=urls.length){finished=true;setConnectionState('offline');if(onClose)onClose();return;}
+    const target=urls[index++];
+    setConnectionState('connecting');
+    try{
+      const socket=target==='__MUSA_MQTT__'?createMqttSocket():createRawWebSocket(target);
+      ws=socket;
+      let opened=false;
+      const clear=()=>{if(activeTimer){clearTimeout(activeTimer);activeTimer=null;}};
+      socket.onopen=()=>{
+        opened=true;clear();
+        if(target==='__MUSA_MQTT__')setConnectionState('online');else setConnectionState('backup');
+        onOpen?.(socket,target==='__MUSA_MQTT__'?MUSA_MQTT_URL:target);
+      };
+      socket.onmessage=onMessage;
+      socket.onerror=e=>{if(!opened){clear();try{socket.close()}catch(_){};next();}else if(onError)onError(e);};
+      socket.onclose=()=>{clear();if(finished)return;if(!opened){next();}else{setConnectionState('offline');if(onClose)onClose();}};
+      activeTimer=setTimeout(()=>{if(!opened){try{socket.close()}catch(_){};next();}},10000);
+    }catch(e){if(onError)onError(e);next();}
+  };
+  next();
+}
+function wsUrl(){ return MUSA_MQTT_URL; }
+function wsFallbackUrls(){ return MUSA_WS_FALLBACKS.slice(); }
+const BADGE_DATA_URI='./assets/embedded/75b239b2b3b040d21d7b.png'; let ws,me=null,selected=null,users=[],pc=null,localStream=null,callId=null,callTarget=null,history=[]; let publishedVideos=[];try{const saved=JSON.parse(localStorage.getItem('musa_published_videos_meta_v1')||'[]');if(Array.isArray(saved))publishedVideos=saved}catch(e){}
+const MusaVideoDB={db:null,open(){return new Promise((resolve,reject)=>{const r=indexedDB.open('MusaChatMediaDB',1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains('videos'))r.result.createObjectStore('videos',{keyPath:'id'})};r.onsuccess=()=>{this.db=r.result;resolve(r.result)};r.onerror=()=>reject(r.error)})},async put(v){const db=await this.open();return new Promise((resolve,reject)=>{const tx=db.transaction('videos','readwrite');tx.objectStore('videos').put(v);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})},async get(id){const db=await this.open();return new Promise((resolve,reject)=>{const r=db.transaction('videos').objectStore('videos').get(id);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}}; let publicSearchCommunities=[]; let searchTimer=null; let communityMessages=JSON.parse(localStorage.getItem('musa_community_messages')||'{}'); let joinedCommunities=JSON.parse(localStorage.getItem('musa_joined_communities')||'[]'); let ICE={iceServers:[{urls:'stun:stun.l.google.com:19302'},{urls:'stun:stun1.l.google.com:19302'}]}; let pendingIce=[];
+async function loadCallConfig(){try{if(location.protocol==='file:')return;const r=await fetch('/api/config',{cache:'no-store'});if(r.ok){const d=await r.json();if(Array.isArray(d.iceServers)&&d.iceServers.length)ICE={iceServers:d.iceServers};}}catch(e){}}
+loadCallConfig();
+function toast(t){$('toast').textContent=t;$('toast').classList.remove('hidden');setTimeout(()=>$('toast').classList.add('hidden'),2800)}
+function avatarHTML(u){const src=esc(u?.avatar||'avatar.jpg');return '<img class="avatar" src="'+src+'">'}
+function makeUserId(){
+  const used=new Set((users||[]).map(u=>String(u.id||'').replace(/^ID-/,'')).filter(Boolean));
+  let id='';
+  do{id=String(Math.floor(10000+Math.random()*90000));}while(used.has(id));
+  return 'ID-'+id;
+}
+function normalizeUserId(v){
+  v=String(v||'').trim().toUpperCase().replace(/^ID-/,'');
+  return /^\d{5}$/.test(v)?'ID-'+v:null;
+}
+function digits6(v){return /^\d{6}$/.test(String(v||''));}
+function switchAuth(mode){
+  const login=mode==='login';
+  $('loginFields')?.classList.toggle('hidden',!login);$('registerFields')?.classList.toggle('hidden',login);
+  $('authLoginTab')?.classList.toggle('active',login);$('authRegisterTab')?.classList.toggle('active',!login);
+}
+function localPassHash(v){
+  let h=2166136261; for(const ch of String(v||'')){h^=ch.charCodeAt(0); h=Math.imul(h,16777619);} return (h>>>0).toString(16);
+}
+
+function localAccounts(){try{return JSON.parse(localStorage.getItem('musa_local_accounts')||'{}')}catch(e){return {}}}
+function saveLocalAccounts(a){try{localStorage.setItem('musa_local_accounts',JSON.stringify(a))}catch(e){}}
+function localUserList(){const a=localAccounts();return Object.values(a).map(x=>({id:x.id,name:x.name,username:x.username||('@local_'+x.id.slice(3)),avatar:x.avatar||'avatar.jpg',verified:false,online:true,local:true}))}
+function enterLocalAccount(account){
+  me={id:account.id,name:account.name,username:account.username||('@local_'+account.id.slice(3)),avatar:account.avatar||'avatar.jpg',verified:false,communities:account.communities||[],friends:[],local:true};
+  users=localUserList().filter(u=>u.id!==me.id); localStorage.setItem('musa_user_id',me.id); setConnectionState('offline');
+  showApp(); ensureLocalDefaultCommunity(); renderUsers(); renderCommunities(); setTimeout(()=>{publishMqttUser();restoreLastChat()},50);
+  toast(navigator.onLine ? 'Интернет есть. Подключаем MQTT-брокер…' : 'Нет интернета. Локальные данные доступны, WebSocket продолжит попытки подключения.');
+}
+function authSocketUrl(){
+  const proto=location.protocol==='https:'?'wss:':'ws:';
+  return proto+'//'+location.host+'/ws';
+}
+function authRequest(type, payload){
+  if(location.protocol==='file:'){
+    toast('Откройте Musa.Chat через адрес Deploya, чтобы вход и регистрация работали с сервером.');
+    return false;
+  }
+  const btn=$(type==='auth_login'?'loginBtn':'registerBtn');
+  if(btn){btn.disabled=true;btn.dataset.oldText=btn.textContent;btn.textContent='Подождите…';}
+  let settled=false, timer;
+  const finish=()=>{if(settled)return;settled=true;clearTimeout(timer);if(btn){btn.disabled=false;btn.textContent=btn.dataset.oldText|| (type==='auth_login'?'Войти в Musa.Chat':'Зарегистрироваться');}};
+  try{
+    const socket=new WebSocket(authSocketUrl());
+    ws=socket;
+    timer=setTimeout(()=>{finish();try{socket.close()}catch(_){}toast('Сервер входа не отвечает. Проверьте Deploya и его логи.');},12000);
+    socket.onopen=()=>{setConnectionState('connecting');socket.send(JSON.stringify({type,...payload,appVersion:APP_VERSION}));};
+    socket.onmessage=e=>{
+      let m;try{m=JSON.parse(e.data)}catch(_){return;}
+      if(m.type==='auth_error'||m.type==='error'){
+        finish();toast(m.message||'Не удалось выполнить запрос.');try{socket.close()}catch(_){}return;
+      }
+      if(m.type==='session'){
+        finish();handle(m);setConnectionState('online');
+        if(type==='auth_register')toast('Регистрация завершена. Ваш ID: '+(m.me?.id||''));
+        return;
+      }
+      if(m.type==='auth_registered'){
+        localStorage.setItem('musa_user_id',m.me.id);
+        $('loginIdInput').value=String(m.me.id).replace(/^ID-/,'');
+        $('loginPasswordInput').value=payload.password||'';
+        // Server may send auth_registered before session; keep the socket alive for session.
+        if(type==='auth_register')toast('Аккаунт создан: '+m.me.id);
+      }
+    };
+    socket.onerror=()=>{finish();toast('Не удалось подключиться к серверу Musa.Chat. Проверьте настройки Deploya.');};
+    socket.onclose=()=>{if(!settled){finish();toast('Соединение с сервером закрыто до завершения входа.');}};
+    return true;
+  }catch(err){finish();toast('Ошибка подключения: '+(err?.message||'неизвестная ошибка'));return false;}
+}
+function musaLoginClick(e){
+  e?.preventDefault?.();e?.stopPropagation?.();
+  const userId=normalizeUserId($('loginIdInput')?.value||'');
+  const password=String($('loginPasswordInput')?.value||'').trim();
+  if(!userId){toast('Введите ID из 5 цифр.');$('loginIdInput')?.focus();return false;}
+  if(!digits6(password)){toast('Пароль должен состоять ровно из 6 цифр.');$('loginPasswordInput')?.focus();return false;}
+  window.__musaLastPassword=password;
+  return authRequest('auth_login',{userId,password});
+}
+window.musaLoginClick=musaLoginClick;
+window.addEventListener('online',()=>{
+  if(me){ setConnectionState('connecting');
+    const id=String(me.id||localStorage.getItem('musa_user_id')||'');
+    const a=localAccounts(); const acc=a[id];
+    if(acc?.passwordHash) scheduleReconnect(id, window.__musaLastPassword||'');
+  } else setConnectionState(wsState);
+});
+window.addEventListener('offline',()=>{setConnectionState('offline')});
+
+function connect(userId,password){
+  userId=normalizeUserId(userId); password=String(password||'').trim(); window.__musaLastPassword=password;
+  if(!userId){toast('Введите ID из 5 цифр.');$('loginIdInput')?.focus();return false}
+  if(!digits6(password)){toast('Пароль должен состоять ровно из 6 цифр.');$('loginPasswordInput')?.focus();return false}
+  const accounts=localAccounts(); const local=accounts[userId];
+  if(local&&local.passwordHash===localPassHash(password)){
+    enterLocalAccount(local);
+    connectFileOrLocalWebSocket(userId,password,true);
+    return true;
+  }
+  localStorage.setItem('musa_user_id',userId); users=[];
+  setConnectionState('connecting');
+  connectFileOrLocalWebSocket(userId,password,false);
+  return true;
+}
+
+function connectFileOrLocalWebSocket(userId,password,alreadyLoggedIn){
+  let opened=false;
+  openWebSocketWithFallback(
+    (socket,url)=>{opened=true;if(url===MUSA_MQTT_URL){setConnectionState('online');publishMqttUser();socket.send(JSON.stringify({type:'auth_login',userId,password,appVersion:APP_VERSION}));}else{setConnectionState('backup');}},
+    e=>{try{handle(JSON.parse(e.data))}catch(err){console.error('Musa.Chat WS message:',err)}},
+    ()=>{if(opened)setConnectionState('offline')},
+    ()=>{if(opened){setConnectionState('offline');if(me)scheduleReconnect(userId,password)}else{
+      setConnectionState('offline');
+      if(!alreadyLoggedIn){
+        const local=localAccounts()[userId];
+        if(local&&local.passwordHash===localPassHash(password)) enterLocalAccount(local);
+        else toast('MQTT-брокер недоступен. HTML всё равно работает локально. Проверьте интернет-соединение.');
+      }
+    }}
+  );
+}
+
+function tryLocalWebSocket(userId,password,alreadyLoggedIn){connectFileOrLocalWebSocket(userId,password,alreadyLoggedIn)}
+
+let reconnectTimer=null;
+function scheduleReconnect(userId,password){
+  if(reconnectTimer || !me) return;
+  reconnectTimer=setTimeout(()=>{reconnectTimer=null;
+    if(!me)return;
+    setConnectionState('connecting');
+    connectFileOrLocalWebSocket(userId,password,true);
+  },2500);
+}
+
+function registerLocalAccount(name,password){
+  const accounts=localAccounts(); let id; do{id='ID-'+Math.floor(10000+Math.random()*90000)}while(accounts[id]);
+  const account={id,name,passwordHash:localPassHash(password),username:'@local_'+id.slice(3),avatar:'avatar.jpg',communities:[]}; accounts[id]=account; saveLocalAccounts(accounts); enterLocalAccount(account); connectFileOrLocalWebSocket(id,password,true); toast('Регистрация завершена. Ваш ID: '+id);
+}
+function registerAccount(e){
+  e?.preventDefault?.();e?.stopPropagation?.();
+  const name=String($('nameInput')?.value||'').trim().slice(0,32);
+  const password=String($('registerPasswordInput')?.value||'').trim();
+  if(!name){toast('Введите имя.');$('nameInput')?.focus();return false;}
+  if(!digits6(password)){toast('Придумайте пароль из 6 цифр.');$('registerPasswordInput')?.focus();return false;}
+  window.__musaLastPassword=password;return authRequest('auth_register',{name,password});
+}
+function tryLocalRegistration(name,password){
+  openWebSocketWithFallback(
+    (socket,url)=>{if(url===MUSA_MQTT_URL)socket.send(JSON.stringify({type:'auth_register',name,password,appVersion:APP_VERSION}))},
+    e=>{try{handle(JSON.parse(e.data))}catch(err){console.error(err)}},
+    ()=>{},
+    ()=>{}
+  );
+}
+
+function handle(m){
+if(m.type==='auth_registered'){localStorage.setItem('musa_user_id',m.me.id);$('loginIdInput').value=String(m.me.id).replace(/^ID-/,'');$('loginPasswordInput').value=window.__musaLastPassword||$('registerPasswordInput')?.value||'';toast('Регистрация завершена. Ваш ID: '+m.me.id);return}
+if(m.type==='auth_error'){toast(m.message||'Не удалось войти');return}
+if(m.type==='community_message'){addCommunityMessage(m.message||m);return}
+if(m.type==='community_video_published'){addCommunityMessage({communityId:m.communityId,video:m.video,author:m.video?.author||'ID-98333',authorId:m.video?.authorId||'ID-98333',time:m.video?.createdAt||Date.now(),id:m.video?.id});return}
+if(m.type==='search_users_result'){const found=m.users||[];for(const u of found){const i=users.findIndex(x=>x.id===u.id);if(i>=0)users[i]=u;else users.push(u)}renderUsers();return}
+if(m.type==='friend_added'){const u=m.friend;if(u){const i=users.findIndex(x=>x.id===u.id);if(i>=0)users[i]=u;else users.push(u);const friends=JSON.parse(localStorage.getItem('musa_friends')||'[]');if(!friends.includes(u.id)){friends.push(u.id);localStorage.setItem('musa_friends',JSON.stringify(friends));}selectUser(u.id);toast('Чат открыт: '+(u.name||u.id));}return}
+if(m.type==='user_updated'){const u=m.user;if(u){const i=users.findIndex(x=>x.id===u.id);if(i>=0)users[i]=u;else users.push(u);if(u.id===me?.id){me.name=u.name;$('meName').textContent=u.name;$('profileNameInput').value=u.name;$('profileName').innerHTML=esc(u.name)+(me.verified?' <img class="musa-verified-badge-small profile-badge" src="'+BADGE_DATA_URI+'" alt="Подтверждён">':'');}renderUsers();}return}
+if(m.type==='favorite_saved'){saveLocalDirectMessage(m.message);if(selected?.selfChat)addMessage(m.message);return}
+if(m.type==='avatar_updated'){const u=m.user;if(u){const i=users.findIndex(x=>x.id===u.id);if(i>=0)users[i]=u;else users.push(u);if(u.id===me?.id){me.avatar=u.avatar;applyMyAvatar();}if(selected?.id===u.id)$('peerAvatar').src=u.avatar||'avatar.jpg';renderUsers();}}
+if(m.type==='community_history'){const id=m.communityId;communityMessages[id]=m.messages||[];localStorage.setItem('musa_community_messages',JSON.stringify(communityMessages));if(selected?.communityId===id)renderCommunityMessages(id);return}
+if(m.type==='community_joined'){if(m.community){me.communities=me.communities||[];if(!me.communities.some(c=>c.id===m.community.id))me.communities.push(m.community);joinedCommunities.push(m.community.id);localStorage.setItem('musa_joined_communities',JSON.stringify([...new Set(joinedCommunities)]));renderCommunities();selectCommunity(m.community);toast('Вы вошли в сообщество по ID');}return}
+if(m.type==='support_reply'){ addSupportReply(m.message||'Здравствуйте! Мы получили ваше обращение. Опишите проблему подробнее, если это необходимо.'); return; }
+if(m.type==='video_published'){ addPublishedVideo(m.video); return; }
+if(m.type==='videos'){ publishedVideos=m.videos||[]; renderPublishedVideos(); return; }
+if(m.type==='community_created'){me.communities=me.communities||[];if(!me.communities.some(c=>c.id===m.community.id||c.username===m.community.username))me.communities.push(m.community);renderCommunities();selectCommunity(m.community);toast('Сообщество создано — общий чат открыт');return}if(m.type==='error'){toast(m.message||'Ошибка');return}if(m.type==='session'){me=m.me; if(me?.id==='ID-98333'){me.verified=true;me.avatar=me.avatar||localStorage.getItem(avatarKeyFor('ID-98333'))||'avatar.jpg';} for(const u of (m.users||[]))mergeMqttUser(u);try{const local=JSON.parse(localStorage.getItem('musa_local_communities')||'[]');me.communities=[...(me.communities||[])];for(const c of local){if(!me.communities.some(x=>x.id===c.id))me.communities.push(c)}}catch(e){}showApp();ensureLocalDefaultCommunity();renderUsers();renderCommunities();loadCallConfig();setTimeout(()=>{restoreLastChat()},150);return}if(m.type==='presence'){for(const u of (m.users||[]))mergeMqttUser(u);renderUsers();if(selected){const p=users.find(u=>u.id===selected.id);$('peerStatus').textContent=p?'● в сети':'не в сети'}return}if(m.type==='history'){const serverMsgs=m.messages||[];if(selected&&!selected.community&&!selected.ai){const local=loadLocalDirectHistory(me.id,selected.id);const merged=[...local,...serverMsgs].filter((x,i,a)=>a.findIndex(y=>y.id===x.id)===i).sort((a,b)=>(a.time||0)-(b.time||0));merged.forEach(saveLocalDirectMessage);renderMessages(merged)}else renderMessages(serverMsgs);return}if(m.type==='message'||m.type==='file_message'){saveLocalDirectMessage(m.message);if(selected&&(m.message.from===selected.id||m.message.to===selected.id))addMessage(m.message);return}if(m.type==='voice_message'){if(selected&&(m.message.from===selected.id||m.message.to===selected.id))addVoiceMessage(m.message);return}if(m.type==='call_invite'){incomingCall(m);return}if(m.type==='call_accept'){if(callId===m.callId)startOffer();return}if(m.type==='call_reject'){if(callId===m.callId){toast('Звонок отклонён');endCall(false)}return}if(m.type==='webrtc_offer'){answerOffer(m);return}if(m.type==='webrtc_answer'){pc?.setRemoteDescription(new RTCSessionDescription(m.answer));return}if(m.type==='ice_candidate'){if(m.callId!==callId||!m.candidate)return;if(pc?.remoteDescription)pc.addIceCandidate(m.candidate).catch(()=>{});else pendingIce.push(m.candidate);return}if(m.type==='call_end'){if(callId===m.callId)endCall(false)}}
+function showApp(){
+  if(me?.id==='ID-98333'){me.verified=true}
+  $('login').classList.add('hidden');$('app').classList.remove('hidden');
+  $('meName').innerHTML=esc(me.name)+(me.verified?' <img class="musa-verified-badge-small" src="'+BADGE_DATA_URI+'" alt="Подтверждён">':''); applyMyAvatar();
+  $('profileNameInput').value=me.name||'';
+  $('profileName').innerHTML=esc(me.name)+(me.verified?' <img class="musa-verified-badge-small profile-badge" src="'+BADGE_DATA_URI+'" alt="Подтверждён">':'');
+  $('profileId').textContent='Ваш ID: '+me.id+' · ищите этот ID в чатах'; updateMyQr();
+  $('appVersion').textContent=APP_VERSION
+}
+function restoreLastChat(){try{const last=JSON.parse(localStorage.getItem('musa_last_chat')||'null');if(last?.type==='favorites')selectUser('__favorites__');else if(last?.type==='user'&&last.id)selectUser(last.id);else if(last?.type==='community'){const c=(me?.communities||[]).find(x=>x.id===last.id);if(c)selectCommunity(c);}}catch(e){}}
+async function publicSearch(q){
+  clearTimeout(searchTimer);
+  const query=String(q||'').trim();
+  if(!query){publicSearchCommunities=[];renderCommunitySearchResults();return;}
+  searchTimer=setTimeout(async()=>{
+    // Сначала ищем через MQTT-реестр пользователей — это работает и из file:// HTML.
+    mqttSearchUsers(query);
+    // Если рядом запущен Musa.Chat server.js, дополнительно используем его API.
+    try{
+      const r=await fetch('/api/search?q='+encodeURIComponent(query),{cache:'no-store'});
+      if(r.ok){
+        const data=await r.json();
+        for(const u of (data.users||[]))mergeMqttUser(u);
+        publicSearchCommunities=data.communities||[];
+        renderUsers(true); renderCommunitySearchResults();
+        const exact=normalizeUserId(query);
+        if(exact){const found=users.find(u=>u.id===exact);if(found)selectUser(exact);}
+      }
+    }catch(e){ renderCommunitySearchResults(); }
+  },180);
+}
+
+function renderUsers(skipRemote=false){
+  const q=$('search').value.toLowerCase().trim();
+  const normalized=q.replace(/[^0-9]/g,'');
+  const list=users.filter(u=>{
+    if(u.id===me.id)return false;
+    const name=String(u.name||'').toLowerCase(); const handle=String(u.username||'').toLowerCase(); const uid=String(u.id||'').toLowerCase();
+    return !q || name.includes(q)||handle.includes(q)||uid.includes(q)||(normalized.length===5&&uid==='id-'+normalized);
+  });
+  setConnectionState(wsState==='online'?'online':wsState);
+  let peopleHtml=`<button class="person ${selected?.selfChat?'active':''}" id="favoritesContactInline"><span class="avatar" style="font-size:20px">⭐</span><div class="meta"><strong>Избранное</strong><small>Чат с собой · важное</small></div></button>`;
+  peopleHtml+=list.map(u=>`<button class="person ${selected?.id===u.id?'active':''}" data-id="${esc(u.id)}">${avatarHTML(u)}<div class="meta"><strong>${esc(u.name)}${u.verified?' <img class="musa-verified-badge-small" src="'+BADGE_DATA_URI+'" alt="Подтверждён">':''}</strong><small>${u.id||'ID-?????'} · ${u.username||'@user'} · <span class="dot" style="background:${u.online===false?'#6f7890':'var(--good)'}"></span>${u.online===false?'не в сети':'В сети'}</small></div></button>`).join('');
+  if(normalized==='10001' || String(q).toLowerCase().includes('муся канал')){
+    const c=ensureLocalDefaultCommunity();
+    peopleHtml=`<button class="person" id="searchMainChannel"><img class="avatar" src="${esc(c.avatar||'avatar.jpg')}"><div class="meta"><strong>Муся канал <img class="musa-verified-badge-small" src="${BADGE_DATA_URI}" alt="Подтверждён"></strong><small>📢 Канал · ID-10001</small></div></button>`+peopleHtml;
+  }
+  $('peopleList').innerHTML=peopleHtml||'<div class="muted" style="padding:14px">Никого не найдено.</div>';
+  document.querySelectorAll('.person[data-id]').forEach(b=>b.onclick=()=>selectUser(b.dataset.id));
+  $('favoritesContactInline')?.addEventListener('click',()=>selectUser('__favorites__')); $('favoritesContact')?.addEventListener('click',()=>selectUser('__favorites__'));
+  $('searchMainChannel')?.addEventListener('click',()=>selectCommunity(ensureLocalDefaultCommunity()));
+  if(!skipRemote && q) publicSearch(q);
+}
+function renderCommunitySearchResults(){
+  const box=$('communitySearchResults'); if(!box)return;
+  const q=String($('communitySearchInput')?.value||'').trim();
+  if(!q){box.classList.add('hidden');box.innerHTML='';return}
+  const results=publicSearchCommunities||[];
+  const local=(me?.communities||[]).filter(c=>String(c.name||'').toLowerCase().includes(q.toLowerCase())||String(c.publicId||c.id||'').toLowerCase().includes(q.toLowerCase()));
+  const all=[...results,...local].filter((c,i,a)=>a.findIndex(x=>(x.publicId&&x.publicId===c.publicId)||x.id===c.id)===i);
+  box.classList.remove('hidden');
+  box.innerHTML=all.length?'<div class="muted" style="margin-bottom:8px">Результаты поиска</div>'+all.map(c=>`<button class="person community-card" data-public-community-id="${esc(c.id)}" style="width:100%;text-align:left;margin-bottom:8px"><img class="avatar" src="${esc(c.avatar||'avatar.jpg')}"><div class="meta"><strong>${esc(c.name)}${String(c.name||'').trim().toLowerCase()==='муся канал'?' <img class="musa-verified-badge-small" src="'+BADGE_DATA_URI+'">':''}</strong><small>${c.type==='channel'?'📢 Канал':'👥 Группа'} · ${esc(c.publicId||c.id)}</small></div></button>`).join(''):'<div class="muted">Ничего не найдено.</div>';
+  box.querySelectorAll('[data-public-community-id]').forEach(b=>b.onclick=()=>{const c=all.find(x=>x.id===b.dataset.publicCommunityId);if(!c)return;me.communities=me.communities||[];if(!me.communities.some(x=>x.id===c.id))me.communities.push(c);renderCommunities();selectCommunity(c);});
+}
+
+function directChatKey(a,b){return [String(a),String(b)].sort().join('|')}
+function loadLocalDirectHistory(a,b){try{const all=JSON.parse(localStorage.getItem('musa_direct_messages')||'{}');return all[directChatKey(a,b)]||[]}catch(e){return []}}
+function saveLocalDirectMessage(m){try{const all=JSON.parse(localStorage.getItem('musa_direct_messages')||'{}');const k=directChatKey(m.from,m.to);all[k]=all[k]||[];if(!all[k].some(x=>x.id===m.id))all[k].push(m);localStorage.setItem('musa_direct_messages',JSON.stringify(all))}catch(e){}}
+function selectUser(id){
+  if(id==='__favorites__' || id===me?.id){
+    selected={id:me.id,name:'Избранное',username:'@favorites',selfChat:true,avatar:me.avatar||'avatar.jpg'};
+    $('peerAvatar').src=selected.avatar||'avatar.jpg'; $('peerName').textContent='Избранное'; $('peerStatus').textContent='⭐ Чат с собой · ваши важные сообщения';
+    $('messageInput').disabled=false; $('sendBtn').disabled=false; $('app').classList.add('mobile-chat');
+    localStorage.setItem('musa_last_chat',JSON.stringify({type:'favorites'}));
+    const localHistory=loadLocalDirectHistory(me.id,me.id); renderMessages(localHistory);
+    if(ws?.readyState===1)ws.send(JSON.stringify({type:'get_history',with:me.id}));
+    renderUsers(); return;
+  }
+  selected=users.find(u=>u.id===id); if(!selected)return;
+  $('peerAvatar').src=selected.avatar||'avatar.jpg'; $('peerName').textContent=selected.name;
+  $('peerStatus').textContent=selected.ai?'🤖 ИИ-помощник':(selected.online===false?'не в сети':'● в сети');
+  $('messageInput').disabled=false; $('sendBtn').disabled=false; $('app').classList.add('mobile-chat');
+  if(selected.ai){ selectGigaChat(); return; }
+  localStorage.setItem('musa_last_chat',JSON.stringify({type:'user',id:selected.id}));
+  const localHistory=loadLocalDirectHistory(me.id,id); if(localHistory.length)renderMessages(localHistory); else if(ws?.readyState!==1)renderMessages([]);
+  if(ws?.readyState===1)ws.send(JSON.stringify({type:'get_history',with:id})); renderUsers();
+}
+function selectCommunity(c){
+  selected={id:'community:'+c.id,name:c.name,username:c.username,community:true,communityId:c.id,communityType:c.type,avatar:c.avatar||'avatar.jpg'};
+  document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab==='chat'));
+  $('people').classList.remove('hidden');$('chatPanel').classList.remove('hidden');
+  $('callsPage').classList.add('hidden');$('supportPage').classList.add('hidden');$('profilePage').classList.add('hidden');$('communitiesPage').classList.add('hidden');$('videoPage').classList.add('hidden');$('gdzPage').classList.add('hidden');$('lapkiPage')?.classList.add('hidden');$('questsPage')?.classList.add('hidden');
+  $('peerAvatar').src=selected.avatar;
+  $('peerName').textContent=selected.name;
+  const isMainChannel=String(c.name||'').trim().toLowerCase()==='муся канал';
+  const canWrite=!isMainChannel || me?.id==='ID-98333';
+  $('peerStatus').textContent=(c.type==='channel'?'📢 Канал':'👥 Группа')+' · ID '+(c.publicId||c.id)+(isMainChannel ? (canWrite?' · вы админ':' · писать может только админ') : ' · все участники могут писать');
+  const cv=$('communityVideoBtn'); if(cv){cv.classList.toggle('hidden',!(isMainChannel && me?.id==='ID-98333')); cv.title='Опубликовать видео в «Муся канал»';}
+  $('messageInput').disabled=!canWrite;
+  $('sendBtn').disabled=!canWrite;
+  $('messages').innerHTML='';
+  renderCommunityMessages(c.id);
+  if(ws?.readyState===1)ws.send(JSON.stringify({type:'community_history',communityId:c.id}));
+  localStorage.setItem('musa_last_chat',JSON.stringify({type:'community',id:c.id}));
+  $('app').classList.add('mobile-chat');
+}
+function renderMessages(ms){$('messages').innerHTML='';if(!ms.length)$('messages').innerHTML='<div class="empty">Начните разговор первым 👋</div>';else ms.forEach(m=>m.type==='voice'?addVoiceMessage(m):addMessage(m));loadLocalVoicesForSelected()}
+function addMessage(m){
+  if($('messages').querySelector('.empty'))$('messages').innerHTML='';
+  if(m.id && document.querySelector('[data-message-id=\"'+CSS.escape(String(m.id))+'\"]'))return;
+  const d=document.createElement('div');d.className='bubble '+(m.from===me.id?'mine':'');d.dataset.messageId=m.id||'';
+  const time=new Date(m.time).toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});
+  if(m.gift){
+    d.classList.add('lapki-gift-bubble');
+    const card=document.createElement('div');card.className='lapki-gift-card';
+    const sender=document.createElement('div');sender.className='lapki-gift-sender';sender.textContent=m.gift.senderName||m.senderName||m.fromName||'Подарок от пользователя';
+    const paw=document.createElement('div');paw.className='lapki-gift-watermark';paw.textContent='🐾';
+    const amount=document.createElement('div');amount.className='lapki-gift-amount';amount.textContent=String(Number(m.gift.amount)||0);
+    const icon=document.createElement('span');icon.className='lapki-gift-purple-paw';icon.textContent='🐾';amount.appendChild(icon);
+    card.append(sender,paw,amount);
+    if(m.gift.wish){const wish=document.createElement('div');wish.className='lapki-gift-wish';wish.textContent=m.gift.wish;card.appendChild(wish)}
+    const sm=document.createElement('small');sm.className='lapki-gift-time';sm.textContent=time;card.appendChild(sm);d.appendChild(card);
+  }else if(m.sticker){
+    if(m.sticker.data){if(String(m.sticker.mime||m.sticker.data).startsWith('video/')||String(m.sticker.data).startsWith('data:video/')){const vd=document.createElement('video');vd.src=m.sticker.data;vd.autoplay=true;vd.loop=true;vd.muted=true;vd.defaultMuted=true;vd.playsInline=true;vd.controls=false;vd.preload='auto';vd.setAttribute('webkit-playsinline','');vd.addEventListener('loadedmetadata',()=>{try{vd.currentTime=0;const p=vd.play();if(p&&p.catch)p.catch(()=>{vd.poster='';})}catch(e){}});vd.addEventListener('click',()=>{try{vd.currentTime=0;vd.play().catch(()=>{})}catch(e){}});vd.className='chat-sticker-media';d.appendChild(vd)}else{const im=document.createElement('img');im.src=m.sticker.data;im.alt=m.sticker.name||'Стикер';im.className='chat-sticker-media';d.appendChild(im)}}else{const sp=document.createElement('div');sp.className='chat-sticker-emoji';sp.textContent=m.sticker.emoji||m.sticker.name||'☺';d.appendChild(sp)}d.appendChild(document.createElement('br'));const sm=document.createElement('small');sm.textContent=time;d.appendChild(sm);
+  }else if(m.file){
+    const f=m.file;
+    const isImage=String(f.mime||'').startsWith('image/');
+    const safeUrl=String(f.data||'');
+    d.innerHTML=(isImage?'<img class="chat-file-image" src="'+esc(safeUrl)+'" alt="'+esc(f.name||'Файл')+'"><br>':'')+
+      '<a class="chat-file" href="'+esc(safeUrl)+'" download="'+esc(f.name||'file')+'">📎 '+esc(f.name||'Файл')+' <span>('+formatFileSize(f.size||0)+')</span></a><small>'+time+'</small>';
+  }else{
+    d.innerHTML='<span>'+esc(m.text||'')+'</span><small>'+time+'</small>';
+  }
+  const actions=document.createElement('div'); actions.className='bubble-actions';
+  if(m.from===me?.id && !m.gift && !m.sticker && !m.file && !m.voice){const edit=document.createElement('button');edit.className='favorite-btn';edit.title='Изменить сообщение';edit.textContent='✏️';edit.onclick=()=>{const next=prompt('Изменить сообщение:',m.text||'');if(next===null)return;const value=next.trim();if(!value)return toast('Сообщение не может быть пустым');m.text=value;m.edited=true;const history=JSON.parse(localStorage.getItem('musa_direct_messages')||'{}');for(const k of Object.keys(history)){const ix=(history[k]||[]).findIndex(x=>x.id===m.id);if(ix>=0){history[k][ix].text=value;history[k][ix].edited=true}}localStorage.setItem('musa_direct_messages',JSON.stringify(history));const span=d.querySelector('span');if(span)span.textContent=value;let tag=d.querySelector('.edited-tag');if(!tag){tag=document.createElement('small');tag.className='edited-tag';tag.textContent='изменено';d.insertBefore(tag,actions)}if(ws?.readyState===1)ws.send(JSON.stringify({type:'edit_message',id:m.id,text:value}));};actions.appendChild(edit);const del=document.createElement('button');del.className='favorite-btn';del.title='Удалить сообщение';del.textContent='🗑️';del.onclick=()=>{if(!confirm('Удалить это сообщение?'))return;const history=JSON.parse(localStorage.getItem('musa_direct_messages')||'{}');for(const k of Object.keys(history))history[k]=(history[k]||[]).filter(x=>x.id!==m.id);localStorage.setItem('musa_direct_messages',JSON.stringify(history));if(ws?.readyState===1)ws.send(JSON.stringify({type:'delete_message',id:m.id}));d.remove();};actions.appendChild(del)}
+  if(!m.gift&&!m.favorite){const fav=document.createElement('button');fav.className='favorite-btn';fav.title='Сохранить в Избранное';fav.textContent='⭐';fav.onclick=()=>favoriteMessage(m);actions.appendChild(fav)}
+  d.appendChild(actions);
+  $('messages').appendChild(d);$('messages').scrollTop=$('messages').scrollHeight
+}
+function favoriteMessage(m){
+  if(!m||!me)return;
+  if(ws?.readyState!==1){toast('Сервер недоступен — Избранное сейчас не может сохраниться.');return}
+  ws.send(JSON.stringify({type:'favorite_message',message:{id:m.id,text:m.text||'',from:m.from||me.id,to:m.to||selected?.id,time:m.time||Date.now(),file:m.file||null,voice:m.voice||null}}));
+  toast('⭐ Сохранено в Избранное');
+}
+function formatFileSize(bytes){const n=Number(bytes)||0;if(n<1024)return n+' Б';if(n<1024*1024)return (n/1024).toFixed(1)+' КБ';if(n<1024*1024*1024)return (n/1024/1024).toFixed(1)+' МБ';return (n/1024/1024/1024).toFixed(1)+' ГБ'}
+function addCommunityMessage(m){
+  if(!m)return;
+  const key=m.communityId;
+  communityMessages[key]=communityMessages[key]||[];
+  if(m.id && communityMessages[key].some(x=>x.id===m.id))return;
+  communityMessages[key].push(m);
+  localStorage.setItem('musa_community_messages',JSON.stringify(communityMessages));
+  if(selected?.communityId===key){
+    if($('messages').querySelector('.empty'))$('messages').innerHTML='';
+    renderCommunityMessageBubble(m);
+    $('messages').scrollTop=$('messages').scrollHeight;
+  }
+}
+function renderCommunityMessages(id){
+  const list=communityMessages[id]||[];
+  $('messages').innerHTML='';
+  if(!list.length){ $('messages').innerHTML='<div class="empty">В сообществе пока нет сообщений.<br>Напишите первым 👋</div>'; loadLocalVoicesForSelected(); return; }
+  // При обычном входящем сообщении addCommunityMessage добавляет его в хранилище.
+  // При рендере истории хранилище уже содержит сообщения, поэтому рисуем их напрямую,
+  // иначе защита от дублей удаляла бы всю загруженную историю с экрана.
+  list.forEach(m=>renderCommunityMessageBubble(m));
+  loadLocalVoicesForSelected();
+}
+function renderCommunityMessageBubble(m){
+  if(!m)return;
+  const d=document.createElement('div'); d.className='bubble '+(m.authorId===me.id?'mine':'');
+  const time=new Date(m.time||Date.now()).toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});
+  const author='<span class="community-message-author">'+esc(m.author||'Пользователь')+'</span>';
+  if(m.sticker){d.innerHTML=author+' ';if(m.sticker.data){if(String(m.sticker.mime||m.sticker.data).startsWith('video/')||String(m.sticker.data).startsWith('data:video/')){const vd=document.createElement('video');vd.src=m.sticker.data;vd.autoplay=true;vd.loop=true;vd.muted=true;vd.defaultMuted=true;vd.playsInline=true;vd.controls=false;vd.preload='auto';vd.setAttribute('webkit-playsinline','');vd.addEventListener('loadedmetadata',()=>{try{vd.currentTime=0;const p=vd.play();if(p&&p.catch)p.catch(()=>{vd.poster='';})}catch(e){}});vd.addEventListener('click',()=>{try{vd.currentTime=0;vd.play().catch(()=>{})}catch(e){}});vd.className='chat-sticker-media';d.appendChild(vd)}else{const im=document.createElement('img');im.src=m.sticker.data;im.alt=m.sticker.name||'Стикер';im.className='chat-sticker-media';d.appendChild(im)}}else{const sp=document.createElement('span');sp.className='chat-sticker-emoji';sp.textContent=m.sticker.emoji||m.sticker.name||'☺';d.appendChild(sp)}const info=document.createElement('small');info.textContent=time;d.appendChild(info);
+  }else if(m.video){
+    const title=document.createElement('b'); title.textContent='📹 '+(m.video.title||'Видео'); d.innerHTML=author; d.appendChild(title);
+    const video=document.createElement('video'); video.controls=true; video.playsInline=true; video.preload='metadata'; video.src=m.video.url||''; video.style.maxWidth='min(520px,100%)'; video.style.borderRadius='12px'; video.style.display='block'; video.style.marginTop='8px'; d.appendChild(video);
+    const info=document.createElement('small'); info.textContent=time; d.appendChild(info);
+  }else if(m.voice){
+    d.innerHTML=author+' '; const audio=document.createElement('audio'); audio.className='audio-message'; audio.controls=true; audio.preload='metadata'; audio.src=m.voice.data; d.appendChild(audio);
+    const duration=m.voice.duration?(' · '+Math.round(m.voice.duration)+' сек.') : ''; const info=document.createElement('small'); info.textContent=time+duration; d.appendChild(info);
+  }else if(m.file){
+    const f=m.file,isImage=String(f.mime||'').startsWith('image/'),safeUrl=String(f.data||'');
+    d.innerHTML=author+(isImage?'<img class="chat-file-image" src="'+esc(safeUrl)+'" alt="'+esc(f.name||'Файл')+'"><br>':'')+'<a class="chat-file" href="'+esc(safeUrl)+'" download="'+esc(f.name||'file')+'">📎 '+esc(f.name||'Файл')+' <span>('+formatFileSize(f.size||0)+')</span></a><small>'+time+'</small>';
+  }else{
+    d.innerHTML=author+'<span>'+esc(m.text||'')+'</span><small>'+time+'</small>';
+  }
+  $('messages').appendChild(d);
+}
+
+function sendMessage(){
+  const text=$('messageInput').value.trim();if(!text||!selected)return;
+  if(selected.community){
+    if(String(selected.name||'').trim().toLowerCase()==='муся канал' && me?.id!=='ID-98333'){
+      toast('В «Муся канал» писать может только владелец.');
+      return;
+    }
+    const m={id:crypto.randomUUID(),communityId:selected.communityId,author:me?.name||'Пользователь',authorId:me?.id,text,time:Date.now()};
+    addCommunityMessage(m);
+    if(ws?.readyState===1)ws.send(JSON.stringify({type:'community_message',communityId:selected.communityId,message:m}));
+    $('messageInput').value=''; return;
+  }
+  if(selected.ai){window.sendMessage();return}
+  const m={id:crypto.randomUUID(),from:me.id,to:selected.id,text,time:Date.now()};
+  saveLocalDirectMessage(m);
+  addMessage(m);
+  if(ws?.readyState===1)ws.send(JSON.stringify({type:'message',to:selected.id,text}));
+  $('messageInput').value='';
+}
+async function sendChatFile(file){
+  if(!file||!selected)return;
+  const MAX=15*1024*1024;
+  if(file.size>MAX){toast('Файл слишком большой. Максимум 15 МБ.');return}
+  const reader=new FileReader();
+  reader.onload=()=>{
+    const payload={name:file.name,mime:file.type||'application/octet-stream',size:file.size,data:String(reader.result)};
+    if(selected.community){
+      if(String(selected.name||'').trim().toLowerCase()==='муся канал' && me?.id!=='ID-98333'){
+        toast('В «Муся канал» отправлять файлы может только владелец.');
+        return;
+      }
+      const m={id:crypto.randomUUID(),communityId:selected.communityId,author:me?.name||'Пользователь',authorId:me?.id,file:payload,time:Date.now()};
+      addCommunityMessage(m);
+      if(ws?.readyState===1)ws.send(JSON.stringify({type:'community_message',communityId:selected.communityId,message:m}));
+    }else if(!selected.ai){
+      const m={id:crypto.randomUUID(),from:me.id,to:selected.id,file:payload,time:Date.now()};
+      saveLocalDirectMessage(m);
+      addMessage(m);
+      if(ws?.readyState===1)ws.send(JSON.stringify({type:'file_message',to:selected.id,message:m}));
+    }else{
+      toast('Отправка файлов в musa AI пока не поддерживается.');
+    }
+  };
+  reader.readAsDataURL(file);
+}
+async function openCall(kind){
+  if(!selected||selected.ai||selected.community){toast('Сначала откройте личный чат с человеком');return}
+  if(ws?.readyState!==1){toast('Нет соединения с сервером');return}
+  callTarget=selected; callId=crypto.randomUUID();
+  const video=kind==='video';
+  $('callTitle').textContent=(video?'Видеозвонок':'Аудиозвонок')+' · '+selected.name;
+  $('callStatus').textContent=video?'Включаем камеру и микрофон…':'Включаем микрофон…';
+  $('remoteVideo').classList.toggle('hidden',!video); $('localVideo').classList.toggle('hidden',!video); $('callModal').classList.remove('hidden');
+  try{
+    localStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true},video:video?{facingMode:'user',width:{ideal:1280},height:{ideal:720}}:false});
+    if(video){$('localVideo').srcObject=localStream;await $('localVideo').play().catch(()=>{});}
+    $('callStatus').textContent='Ожидаем ответа…';
+    ws.send(JSON.stringify({type:'call_invite',to:selected.id,callId,kind}));
+  }catch(e){toast(video?'Разрешите камеру и микрофон для видеозвонка.':'Разрешите микрофон для звонка.');endCall(false)}
+}
+async function incomingCall(m){
+  if(callId){ws.send(JSON.stringify({type:'call_reject',to:m.from,callId:m.callId}));return}
+  callTarget=users.find(u=>u.id===m.from)||{id:m.from,name:m.fromName||m.from}; callId=m.callId;
+  const ok=confirm((m.fromName||m.from)+' звонит вам. Принять '+(m.kind==='video'?'видеозвонок':'аудиозвонок')+'?');
+  if(!ok){ws.send(JSON.stringify({type:'call_reject',to:m.from,callId:callId}));callId=null;callTarget=null;return}
+  const video=m.kind==='video'; $('callTitle').textContent=(video?'Видеозвонок':'Аудиозвонок')+' · '+(m.fromName||m.from); $('callStatus').textContent=video?'Включаем камеру и микрофон…':'Включаем микрофон…'; $('remoteVideo').classList.toggle('hidden',!video); $('localVideo').classList.toggle('hidden',!video); $('callModal').classList.remove('hidden');
+  try{
+    localStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true},video:video?{facingMode:'user',width:{ideal:1280},height:{ideal:720}}:false});
+    if(video){$('localVideo').srcObject=localStream;await $('localVideo').play().catch(()=>{});}
+    ws.send(JSON.stringify({type:'call_accept',to:m.from,callId,kind:m.kind}));
+  }catch(e){toast(video?'Разрешите камеру и микрофон для видеозвонка.':'Разрешите микрофон для звонка.');endCall(true)}
+}
+async function startPC(){pendingIce=[];pc=new RTCPeerConnection(ICE);localStream?.getTracks().forEach(t=>pc.addTrack(t,localStream));pc.onicecandidate=e=>{if(e.candidate)ws.send(JSON.stringify({type:'ice_candidate',to:callTarget.id,callId,candidate:e.candidate}))};pc.ontrack=e=>{if(e.streams[0]){$('remoteVideo').srcObject=e.streams[0];$('remoteVideo').play().catch(()=>{});}};pc.onconnectionstatechange=()=>{if(pc.connectionState==='connected')$('callStatus').textContent='Соединение установлено';if(['failed','disconnected'].includes(pc.connectionState))$('callStatus').textContent='Соединение прервано — попробуйте ещё раз.'};return pc}
+async function startOffer(){await startPC();const offer=await pc.createOffer();await pc.setLocalDescription(offer);ws.send(JSON.stringify({type:'webrtc_offer',to:callTarget.id,callId,offer}))}
+async function answerOffer(m){if(callId!==m.callId)return;await startPC();await pc.setRemoteDescription(new RTCSessionDescription(m.offer));for(const c of pendingIce.splice(0))await pc.addIceCandidate(c).catch(()=>{});const answer=await pc.createAnswer();await pc.setLocalDescription(answer);ws.send(JSON.stringify({type:'webrtc_answer',to:m.from,callId,answer}));$('callStatus').textContent='Соединение устанавливается…'}
+
+function endCall(notify=true){pendingIce=[];if(notify&&callTarget)ws.send(JSON.stringify({type:'call_end',to:callTarget.id,callId}));pc?.close();pc=null;localStream?.getTracks().forEach(t=>t.stop());localStream=null;$('localVideo').srcObject=null;$('remoteVideo').srcObject=null;$('callModal').classList.add('hidden');callId=null;callTarget=null}
+function esc(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+$('loginIdInput')?.addEventListener('input',e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,5)});
+$('loginPasswordInput')?.addEventListener('input',e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,6)});
+$('registerPasswordInput')?.addEventListener('input',e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,6)});
+
+function bindAuthUI(){
+  const loginBtn=$('loginBtn'), registerBtn=$('registerBtn'), loginTab=$('authLoginTab'), registerTab=$('authRegisterTab');
+  if(loginBtn && !loginBtn.dataset.bound){loginBtn.dataset.bound='1';loginBtn.addEventListener('click',musaLoginClick);}
+  if(registerBtn && !registerBtn.dataset.bound){registerBtn.dataset.bound='1';registerBtn.addEventListener('click',e=>{e.preventDefault();registerAccount();});}
+  if(loginTab && !loginTab.dataset.bound){loginTab.dataset.bound='1';loginTab.addEventListener('click',()=>switchAuth('login'));}
+  if(registerTab && !registerTab.dataset.bound){registerTab.dataset.bound='1';registerTab.addEventListener('click',()=>switchAuth('register'));}
+  $('loginPasswordInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')musaLoginClick(e)});
+  $('registerPasswordInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')registerAccount()});
+}
+bindAuthUI();
+document.addEventListener('DOMContentLoaded',bindAuthUI);
+
+let musaInstallPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();musaInstallPrompt=e;const b=$('installAppBtn');if(b)b.classList.remove('hidden');});
+$('installAppBtn')?.addEventListener('click',async()=>{if(musaInstallPrompt){try{await musaInstallPrompt.prompt();await musaInstallPrompt.userChoice}catch(e){}musaInstallPrompt=null;$('installAppBtn')?.classList.add('hidden');return;}toast('В браузере откройте меню и выберите «Установить приложение» или «На главный экран».');});
+window.addEventListener('appinstalled',()=>{$('installAppBtn')?.classList.add('hidden');toast('Musa.Chat установлен на устройство');});
+if('serviceWorker' in navigator && location.protocol!=='file:'){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+$('search').oninput=renderUsers;$('sendBtn').onclick=sendMessage;$('messageInput').onkeydown=e=>{if(e.key==='Enter')sendMessage()};
+$('fileBtn')?.addEventListener('click',()=>{if(!selected){toast('Сначала откройте чат');return}if(selected.ai){toast('musa AI пока принимает только текст');return}$('chatFileInput')?.click()});
+$('chatFileInput')?.addEventListener('change',e=>{const f=e.target.files?.[0];if(f)sendChatFile(f);e.target.value=''});$('audioBtn').onclick=()=>openCall('audio');$('videoBtn').onclick=()=>openCall('video');$('hangBtn').onclick=()=>endCall(true);$('muteBtn').onclick=()=>{const t=localStream?.getAudioTracks()[0];if(t)t.enabled=!t.enabled};$('cameraBtn').onclick=()=>{const t=localStream?.getVideoTracks()[0];if(t){t.enabled=!t.enabled;$('callStatus').textContent=t.enabled?'Камера включена':'Камера выключена'}};document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');const t=b.dataset.tab;$('people').classList.toggle('hidden',t!=='chat');$('chatPanel').classList.toggle('hidden',t!=='chat');$('callsPage').classList.toggle('hidden',t!=='calls');$('supportPage').classList.toggle('hidden',t!=='support');$('profilePage').classList.toggle('hidden',t!=='profile');$('communitiesPage').classList.toggle('hidden',t!=='communities');$('videoPage').classList.toggle('hidden',t!=='video');$('gdzPage').classList.toggle('hidden',t!=='gdz');$('lapkiPage')?.classList.toggle('hidden',t!=='lapki');$('questsPage')?.classList.toggle('hidden',t!=='quests');if(t==='calls'){$('callHistory').innerHTML='<div class="call-row"><div class="avatar">☎</div><div class="grow"><b>История звонков</b><div class="muted">Новые звонки появятся здесь.</div></div></div>'}});
+
+document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{
+  const tab=btn.dataset.tab;
+  document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab===tab));
+  $('chatPanel').classList.toggle('hidden',tab!=='chat');
+  $('people').classList.toggle('hidden',tab!=='chat');
+  $('callsPage').classList.toggle('hidden',tab!=='calls');
+  $('supportPage').classList.toggle('hidden',tab!=='support');
+  $('videoPage').classList.toggle('hidden',tab!=='video');
+  $('communitiesPage').classList.toggle('hidden',tab!=='communities');
+  $('profilePage').classList.toggle('hidden',tab!=='profile');$('gdzPage').classList.toggle('hidden',tab!=='gdz');$('lapkiPage')?.classList.toggle('hidden',tab!=='lapki');
+  if(tab!=='chat') $('app').classList.remove('mobile-chat');
+}));
+let previewStream=null;
+$('videoStart')?.addEventListener('click',async()=>{
+  try{
+    previewStream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});
+    $('videoPreview').srcObject=previewStream;
+    $('videoStatus').textContent='Камера включена.';
+  }catch(e){$('videoStatus').textContent='Не удалось получить доступ к камере.';}
+});
+$('videoStop')?.addEventListener('click',()=>{
+  previewStream?.getTracks().forEach(t=>t.stop());
+  previewStream=null;
+  $('videoPreview').srcObject=null;
+  $('videoStatus').textContent='Камера выключена.';
+});
+
+let mediaRecorder=null,recordChunks=[],recordingTimer=null,recordingSeconds=0;
+const LOCAL_VOICE_KEY='musa_local_voice_messages_v1';
+function getLocalVoices(){try{return JSON.parse(localStorage.getItem(LOCAL_VOICE_KEY)||'{}')}catch(e){return {}}}
+function saveLocalVoice(key,m){
+  try{
+    const all=getLocalVoices(); all[key]=all[key]||[]; all[key].push(m);
+    while(all[key].length>30) all[key].shift();
+    localStorage.setItem(LOCAL_VOICE_KEY,JSON.stringify(all));
+    return true;
+  }catch(e){toast('Голосовое создано, но память браузера заполнена.');return false}
+}
+function localVoiceKey(){
+  if(!selected)return '';
+  return selected.community ? 'community:'+selected.communityId : 'chat:'+selected.id;
+}
+function getVoiceMime(){
+  const types=['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg;codecs=opus'];
+  return types.find(t=>window.MediaRecorder?.isTypeSupported?.(t))||'';
+}
+async function toggleVoice(){
+  if(mediaRecorder && mediaRecorder.state==='recording'){mediaRecorder.stop();return}
+  if(!selected){toast('Сначала откройте чат');return}
+  try{
+    if(!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder){toast('Браузер не поддерживает запись голосовых');return}
+    if(window.isSecureContext===false){toast('Для доступа к микрофону откройте Musa.Chat через HTTPS или localhost');return}
+    $('voiceStatus').textContent='Запрашиваем доступ к микрофону…';
+    const stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
+    $('voiceStatus').textContent='Микрофон разрешён';
+    recordChunks=[]; const mime=getVoiceMime(); mediaRecorder=mime?new MediaRecorder(stream,{mimeType:mime}):new MediaRecorder(stream);
+    recordingSeconds=0; $('voiceStatus').textContent='00:00'; $('voiceBtn').classList.add('recording');
+    recordingTimer=setInterval(()=>{recordingSeconds++;const m=String(Math.floor(recordingSeconds/60)).padStart(2,'0'),s=String(recordingSeconds%60).padStart(2,'0');$('voiceStatus').textContent=m+':'+s},1000);
+    mediaRecorder.ondataavailable=e=>{if(e.data.size)recordChunks.push(e.data)};
+    mediaRecorder.onstop=()=>{
+      clearInterval(recordingTimer); $('voiceStatus').textContent=''; $('voiceBtn').classList.remove('recording'); stream.getTracks().forEach(t=>t.stop());
+      const blob=new Blob(recordChunks,{type:mediaRecorder.mimeType||mime||'audio/webm'});
+      if(!blob.size){mediaRecorder=null;toast('Не удалось записать голосовое');return}
+      const reader=new FileReader();
+      reader.onload=()=>{
+        const voice={data:String(reader.result),mime:blob.type||'audio/webm',size:blob.size,duration:recordingSeconds};
+        const m={id:crypto.randomUUID(),from:me?.id||'local',to:selected.id,voice,time:Date.now(),localOnly:true};
+        const key=localVoiceKey();
+        if(saveLocalVoice(key,m)){ addVoiceMessage(m); }
+        // Если сервер доступен, дополнительно отправляем голосовое другим участникам.
+        if(ws?.readyState===1){
+          if(selected.community) ws.send(JSON.stringify({type:'community_voice_message',communityId:selected.communityId,message:{...m,localOnly:false}}));
+          else if(!selected.ai) ws.send(JSON.stringify({type:'voice_message',to:selected.id,audio:voice.data,mime:voice.mime,size:voice.size,duration:voice.duration,time:m.time}));
+        }
+        mediaRecorder=null;
+      };
+      reader.readAsDataURL(blob);
+    };
+    mediaRecorder.start();
+  }catch(e){
+    $('voiceStatus').textContent='';
+    if(e?.name==='NotAllowedError') toast('Разреши доступ к микрофону в настройках браузера');
+    else if(e?.name==='NotFoundError') toast('Микрофон не найден');
+    else toast('Не удалось включить микрофон: '+(e?.message||'ошибка'));
+  }
+}
+function loadLocalVoicesForSelected(){
+  const key=localVoiceKey(); if(!key)return;
+  const all=getLocalVoices(); const list=all[key]||[];
+  list.forEach(addVoiceMessage);
+}
+function addVoiceMessage(m){
+  if($('messages').querySelector('.empty'))$('messages').innerHTML='';
+  if(m.id && document.querySelector('[data-voice-id="'+CSS.escape(String(m.id))+'"]'))return;
+  const d=document.createElement('div'); d.className='bubble '+(m.from===me?.id?'mine':''); d.dataset.voiceId=m.id||'';
+  const time=new Date(m.time||Date.now()).toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});
+  const audio=document.createElement('audio'); audio.className='audio-message'; audio.controls=true; audio.preload='metadata'; audio.src=m.voice?.data||m.audio||'';
+  d.appendChild(document.createTextNode('🎙️ ')); d.appendChild(audio); const small=document.createElement('small'); small.textContent=time+(m.voice?.duration?' · '+Math.round(m.voice.duration)+' сек.':''); d.appendChild(small);
+  $('messages').appendChild(d); $('messages').scrollTop=$('messages').scrollHeight;
+}
+$('voiceBtn')?.addEventListener('click',toggleVoice);
+
+const demoVideoUrl='data:video/webm;base64,GkXfo0AgQoaBAULygQFC8AAAAAAB9jZGF0YQ==';
+const uploadedIntroVideoUrl='./assets/embedded/b029949e508acab2be68.mp4';
+// Ролик, который пользователь приложил к обновлению, встроен в HTML и доступен во вкладке «Видео».
+publishedVideos.push({id:'uploaded-intro-video-20261011',title:'Видео от администратора',author:'Администратор',authorId:'ID-98333',username:'@admin',url:uploadedIntroVideoUrl,createdAt:1760140000000,likes:0,pinnedAdmin:true});
+const VIDEO_LIKES_KEY='musa_video_likes_v1';
+function videoLikesData(){try{return JSON.parse(localStorage.getItem(VIDEO_LIKES_KEY)||'{}')}catch(e){return {}}}
+function videoLikesSave(data){try{localStorage.setItem(VIDEO_LIKES_KEY,JSON.stringify(data))}catch(e){}}
+function videoUserKey(){return String(me?.id||localStorage.getItem('musa_user_id')||'guest')}
+function videoLikeState(id){const all=videoLikesData();const row=all[id]||{count:0,users:[]};return {count:Math.max(0,Number(row.count)||0),liked:(row.users||[]).includes(videoUserKey())}}
+function toggleVideoLike(id){if(!id)return;const all=videoLikesData();const row=all[id]||{count:0,users:[]};row.users=Array.isArray(row.users)?row.users:[];const user=videoUserKey();if(row.users.includes(user)){row.users=row.users.filter(x=>x!==user)}else{row.users.push(user)}row.count=row.users.length;all[id]=row;videoLikesSave(all);if(ws?.readyState===1){try{ws.send(JSON.stringify({type:'video_like',videoId:id,userId:user,liked:row.users.includes(user),count:row.count}))}catch(e){}}renderPublishedVideos()}
+function isAdminVideo(v){return String(v?.authorId||'').replace(/^ID-/i,'')==='98333'}
+function likeHeart(count){count=Math.max(0,Number(count)||0);if(count>=1501)return '💜';if(count>=1000)return '❤️';if(count>=500)return '🧡';if(count>=100)return '💛';if(count>=50)return '🩵';if(count>=10)return '💙';return '🩶'}
+function renderPublishedVideos(){
+  const feed=document.querySelector('.video-feed'); if(!feed)return;
+  const cards=[{id:'demo-welcome',title:'Musa.Chat — добро пожаловать',author:'Musa.Chat',authorId:'ID-98333',username:'@admin',url:demoVideoUrl,createdAt:0,isDemo:true},...publishedVideos];
+  cards.sort((a,b)=>{const aa=isAdminVideo(a)?0:1,bb=isAdminVideo(b)?0:1;if(aa!==bb)return aa-b;const ap=a.promoted?0:1,bp=b.promoted?0:1;if(ap!==bp)return ap-bp;return (Number(b.createdAt)||0)-(Number(a.createdAt)||0)});
+  feed.innerHTML=cards.map(v=>{const state=videoLikeState(v.id);const admin=isAdminVideo(v);const avatar=esc(v.thumb||'avatar.jpg');const title=esc(v.title||'Видео');const author=esc(v.author||'Пользователь');const username=esc(v.username||'');const account=esc(v.authorId||'');return `<article class="video-item ${admin?'admin-video':''}" data-kind="${esc(v.kind||(v.isShort?'short':'long'))}" data-video-id="${esc(v.id)}"><div class="video-thumb">${v.coverVideo?`<video class="video-cover-video" src="${v.coverVideo}" muted autoplay loop playsinline></video>`:`<img src="${esc(v.thumb||'avatar.jpg')}">`}<button class="play" type="button">▶</button></div><div class="video-info"><h3>${title}${admin?'<span class="video-admin-tag">Админ</span>':''}${v.promoted&&!admin?'<span class="video-promo">🚀 Продвинуто</span>':''}</h3><p>${author}${username?' · '+username:''}${account?' · '+account:''}</p><div class="video-social"><button type="button" class="video-like ${state.liked?'liked':''}" data-like-video="${esc(v.id)}">${likeHeart(state.count)} ${state.count} лайков${state.liked?' · Вы лайкнули':''}</button><button type="button" class="share-video-btn" data-share-video="${esc(v.id)}">↗ Отправить</button></div></div></article>`}).join('');
+  feed.querySelectorAll('.video-cover-video').forEach(cv=>{cv.addEventListener('timeupdate',()=>{if(cv.currentTime>=2){cv.currentTime=0;cv.play().catch(()=>{})}});cv.addEventListener('loadedmetadata',()=>{if(cv.duration>2)cv.currentTime=0})});
+  feed.querySelectorAll('.video-item').forEach(card=>{card.addEventListener('click',async()=>{const id=card.dataset.videoId;const v=publishedVideos.find(x=>String(x.id)===String(id));const demo=id==='demo-welcome';let fullV=v;if(v&&!v.url){try{fullV=await MusaVideoDB.get(v.id)||v}catch(e){}}const src=fullV?.url||(demo?demoVideoUrl:demoVideoUrl);const title=v?.title||(demo?'Musa.Chat — добро пожаловать':'Видео');const author=v?.author||(demo?'Musa.Chat':'Пользователь');const creatorId=v?.authorId||(demo?'ID-98333':'');const username=v?.username||(demo?'@admin':'');if(typeof window.__musaOpenVideo==='function')window.__musaOpenVideo(id,src,title,author,creatorId,username);else{$('videoPlayerTitle').textContent=title;$('videoPlayerMeta').textContent='Автор: '+author+(username?' · '+username:'')+(creatorId?' · ID: '+creatorId:'');$('videoPlayerModal').classList.remove('hidden');$('demoVideo').src=src;$('demoVideo').play().catch(()=>{})}})});
+  feed.querySelectorAll('[data-like-video]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();toggleVideoLike(btn.dataset.likeVideo)}));
+  feed.querySelectorAll('[data-share-video]').forEach(btn=>btn.addEventListener('click',async e=>{e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();const id=btn.dataset.shareVideo;let v=publishedVideos.find(x=>String(x.id)===String(id));if(v&&!v.url){try{v=await MusaVideoDB.get(v.id)||v}catch(_){}}if(!v){toast('Это демонстрационное видео нельзя переслать.');return}const bridge=window.MusaAppBridge;const people=Array.isArray(bridge?.users)?bridge.users:(Array.isArray(users)?users:[]);const options=['1 — Избранное','2 — Муся AI',...people.filter(p=>p.id&&p.id!==me?.id).map((p,i)=>`${i+3} — ${p.name||p.id} (${p.id})`)];const choice=prompt('Куда отправить видео?\n'+options.join('\n')+'\n\nВведите номер:','1');if(choice===null)return;const n=Number(choice);const videoMsg={id:(crypto.randomUUID?crypto.randomUUID():'video-'+Date.now()),from:me?.id,to:'',text:'🎬 '+(v.title||'Видео'),file:{name:(v.title||'Видео')+'.mp4',mime:'video/mp4',data:v.url,size:Math.round((v.url||'').length*.75)},video:{id:v.id,title:v.title,url:v.url},time:Date.now()};if(n===1){videoMsg.favorite=true;try{localStorage.setItem('musa_favorite_videos_v1',JSON.stringify([videoMsg,...JSON.parse(localStorage.getItem('musa_favorite_videos_v1')||'[]')]))}catch(_){}toast('Видео сохранено в локальное Избранное.');return}if(n===2){if(bridge?.openAIChat){bridge.openAIChat();toast('Откройте чат Муся AI и прикрепите видео из Избранного.')}else toast('Чат Муся AI не найден в текущей версии.');return}const person=people[n-3];if(!person){toast('Выберите существующего пользователя из списка.');return}videoMsg.to=person.id;try{bridge?.saveLocalDirectMessage?.(videoMsg);if(bridge?.selected?.id===person.id)bridge.addMessage?.(videoMsg);if(ws?.readyState===1)ws.send(JSON.stringify({type:'message',to:person.id,text:videoMsg.text,file:videoMsg.file,video:videoMsg.video,id:videoMsg.id,time:videoMsg.time}));toast('Видео подготовлено к отправке '+(person.name||person.id)+'.')}catch(err){toast('Не удалось отправить видео. Сервер может не поддерживать большие видеофайлы.')}}));
+}
+renderPublishedVideos();
+$('closeVideoPlayer')?.addEventListener('click',()=>{$('demoVideo').pause();$('demoVideo').src='';$('videoPlayerModal').classList.add('hidden')});
+function addPublishedVideo(v){if(!v)return;publishedVideos=[v,...publishedVideos.filter(x=>x.id!==v.id)];renderPublishedVideos()}
+function readFileData(file){return new Promise((resolve,reject)=>{if(!file||typeof file.size!=='number'){reject(new Error('Файл не выбран'));return}if(file.size>1024*1024*1024){reject(new Error('Файл больше 1 ГБ'));return}const r=new FileReader();r.onload=()=>typeof r.result==='string'&&r.result.startsWith('data:')?resolve(r.result):reject(new Error('Браузер не прочитал содержимое файла'));r.onerror=()=>reject(r.error||new Error('Ошибка чтения файла'));r.onabort=()=>reject(new Error('Чтение файла отменено'));try{r.readAsDataURL(file)}catch(e){reject(e)}})}
+function chooseFile(accept){return new Promise(resolve=>{const input=document.createElement('input');input.type='file';input.accept=accept;input.style.display='none';document.body.appendChild(input);input.onchange=()=>{const f=input.files?.[0]||null;input.remove();resolve(f)};input.click()})}
+async function makeVideoFrame(file,seconds){const url=URL.createObjectURL(file);try{return await new Promise((resolve,reject)=>{const v=document.createElement('video');v.preload='metadata';v.muted=true;v.playsInline=true;v.onloadedmetadata=()=>{v.currentTime=Math.max(0,Math.min(Number(seconds)||0,Math.max(0,v.duration-.05)))};v.onseeked=()=>{try{const c=document.createElement('canvas');c.width=Math.max(1,v.videoWidth);c.height=Math.max(1,v.videoHeight);c.getContext('2d').drawImage(v,0,0,c.width,c.height);resolve(c.toDataURL('image/jpeg',.82))}catch(e){reject(e)}};v.onerror=()=>reject(new Error('Не удалось открыть видео'));v.src=url})}finally{URL.revokeObjectURL(url)}}
+async function publishVideo(file){
+  if(!file)return;
+  if(!file.size){toast('Файл пустой или не выбран.');return}
+  if(file.size>2*1024*1024*1024){toast('Файл больше 2 ГБ. Выбери файл поменьше.');return}
+  const isShort=document.querySelector('[data-vmode="short"]')?.classList.contains('active');
+  const title=(prompt('Название '+(isShort?'шортса':'видео')+':',file.name.replace(/\.[^.]+$/,''))||'').trim();
+  if(!title)return;
+  const status=$('videoPublishStatus'); if(status)status.textContent='Проверяю файл…';
+  let objectUrl='';
+  try{
+    objectUrl=URL.createObjectURL(file);
+    // Test whether the browser can open the selected media before adding it to the feed.
+    await new Promise((resolve,reject)=>{const v=document.createElement('video');let done=false;const timer=setTimeout(()=>finish(false,new Error('Браузер не распознаёт этот видеоформат. Попробуй MP4 H.264.')),9000);function finish(ok,err){if(done)return;done=true;clearTimeout(timer);v.removeAttribute('src');v.load();ok?resolve():reject(err)}v.preload='metadata';v.muted=true;v.onloadedmetadata=()=>finish(true);v.onerror=()=>finish(false,new Error('Браузер не поддерживает кодек этого файла. Выбери другой файл или конвертируй его в MP4 H.264.'));v.src=objectUrl;v.load()});
+    const id=(crypto.randomUUID?crypto.randomUUID():'video-'+Date.now()+'-'+Math.random().toString(16).slice(2));
+    const video={id,title,author:me?.name||'Пользователь',authorId:me?.id||'ID-неизвестен',username:me?.username||'',url:objectUrl,blob:file,fileName:file.name,mime:file.type||'application/octet-stream',createdAt:Date.now(),likes:0,thumb:'avatar.jpg',kind:isShort?'short':'long',isShort};
+    addPublishedVideo(video);
+    try{await MusaVideoDB.put(video);localStorage.setItem('musa_published_videos_meta_v1',JSON.stringify(publishedVideos.map(v=>({...v,url:'',blob:undefined,thumb:v.thumb||'avatar.jpg'}))))}catch(e){console.warn('Could not persist media to IndexedDB',e);if(status)status.textContent='Опубликовано в текущей сессии. Браузер не смог сохранить файл для следующего запуска.'}
+    if(status)status.textContent='Видео опубликовано в '+(isShort?'Шортсах':'Полнометражах')+'.';
+    if(ws?.readyState===1){try{ws.send(JSON.stringify({type:'publish_video',video:{...video,url:'',fileName:file.name,mime:file.type||'application/octet-stream',size:file.size,kind:video.kind}}));if(status)status.textContent+=' Серверу отправлены метаданные; для передачи самого файла сервер должен поддерживать загрузку медиа.'}catch(e){}}
+    // Track short quest only after card is actually added to the feed.
+    if(isShort){try{const key='musa_quests_v1',q=JSON.parse(localStorage.getItem(key)||'{}');q.shortPublished=1;localStorage.setItem(key,JSON.stringify(q));if(typeof window.refreshQuests==='function')window.refreshQuests()}catch(_){}}
+    toast(isShort?'Шортс опубликован!':'Видео опубликовано!');
+  }catch(e){if(objectUrl)URL.revokeObjectURL(objectUrl);console.error('publishVideo failed',e);if(status)status.textContent='Не удалось открыть файл: '+(e?.message||'неподдерживаемый формат');toast(e?.message||'Не удалось открыть файл.');}
+}
+$('publishVideoBtn')?.addEventListener('click',()=>$('videoUploadInput').click());
+$('videoUploadInput')?.addEventListener('change',e=>{publishVideo(e.target.files?.[0]);e.target.value=''});
+
+function avatarKeyFor(id){return 'musa_avatar_'+String(id||'guest').replace(/[^A-Za-z0-9_-]/g,'_');}
+function applyMyAvatar(){
+  const a=me?.avatar || localStorage.getItem(avatarKeyFor(me?.id));
+  if(!a)return;
+  document.querySelectorAll('.side-user .avatar,#profileAvatar').forEach(x=>x.src=a);
+}
+function loadAvatar(){applyMyAvatar();}
+function mediaAccessHint(){
+  if(window.isSecureContext || location.hostname==='localhost' || location.hostname==='127.0.0.1') return '';
+  return ' Для камеры и микрофона браузер требует HTTPS или localhost. Откройте Musa.Chat по HTTPS.';
+}
+async function requestCameraPermission(){
+  if(!window.isSecureContext && !['localhost','127.0.0.1'].includes(location.hostname)){ $('permissionStatus').textContent='Камера: нужен HTTPS или localhost.'; toast('Браузер не даёт доступ к камере по обычному HTTP.'); return false }
+  if(!navigator.mediaDevices?.getUserMedia){$('permissionStatus').textContent='Камера недоступна в этом браузере.';return false}
+  try{const stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});stream.getTracks().forEach(t=>t.stop());$('permissionStatus').textContent='✓ Камера разрешена. Можно сканировать QR и делать фото.';return true}
+  catch(e){$('permissionStatus').textContent=e?.name==='NotAllowedError'?'Камера запрещена. Нажмите на значок 🔒/камеры возле адреса сайта и разрешите камеру.' : 'Не удалось получить доступ к камере.';return false}
+}
+async function requestMicPermission(){
+  if(!window.isSecureContext && !['localhost','127.0.0.1'].includes(location.hostname)){ $('permissionStatus').textContent='Микрофон: нужен HTTPS или localhost.'; toast('Браузер не даёт доступ к микрофону по обычному HTTP.'); return false }
+  if(!navigator.mediaDevices?.getUserMedia){$('permissionStatus').textContent='Микрофон недоступен в этом браузере.';return false}
+  try{const stream=await navigator.mediaDevices.getUserMedia({audio:true});stream.getTracks().forEach(t=>t.stop());$('permissionStatus').textContent='✓ Микрофон разрешён. Можно записывать голосовые.';return true}
+  catch(e){$('permissionStatus').textContent=e?.name==='NotAllowedError'?'Микрофон запрещён. Нажмите на значок 🔒/микрофона возле адреса сайта и разрешите микрофон.' : 'Не удалось получить доступ к микрофону.';return false}
+}
+async function requestMediaPermissions(){
+  if(!window.isSecureContext && !['localhost','127.0.0.1'].includes(location.hostname)){ $('permissionStatus').textContent='Камера и микрофон: нужен HTTPS или localhost.'; toast('Для разрешений нужен HTTPS.'); return false }
+  if(!navigator.mediaDevices?.getUserMedia){$('permissionStatus').textContent='Камера и микрофон недоступны в этом браузере.';return false}
+  try{const stream=await navigator.mediaDevices.getUserMedia({video:true,audio:true});stream.getTracks().forEach(t=>t.stop());$('permissionStatus').textContent='✓ Камера и микрофон разрешены. QR, фото и голосовые готовы.';return true}
+  catch(e){$('permissionStatus').textContent=e?.name==='NotAllowedError'?'Разрешение отклонено. Нажмите значок 🔒 возле адреса сайта и включите камеру и микрофон, затем нажмите кнопку ещё раз.':'Не удалось получить доступ к камере и микрофону.';return false}
+}
+async function takePhoto(){
+  if(!window.isSecureContext && !['localhost','127.0.0.1'].includes(location.hostname)) return toast('Для фото нужен HTTPS или localhost');
+  if(!navigator.mediaDevices?.getUserMedia){return toast('Камера недоступна')}
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'user'},width:{ideal:1280},height:{ideal:720}},audio:false});
+    const modal=document.createElement('div');modal.className='call-modal';modal.innerHTML='<div class="call-box" style="max-width:520px"><h3>📸 Сделать фото</h3><video id="photoVideo" autoplay playsinline muted style="width:100%;border-radius:16px;background:#000"></video><div class="call-controls"><button id="photoShot" class="primary">📸 Сфотографировать</button><button id="photoClose">✕</button></div></div>';document.body.appendChild(modal);
+    const v=modal.querySelector('#photoVideo');v.srcObject=stream;await v.play();
+    const close=()=>{stream.getTracks().forEach(t=>t.stop());modal.remove()};
+    modal.querySelector('#photoClose').onclick=close;
+    modal.querySelector('#photoShot').onclick=()=>{const c=document.createElement('canvas');c.width=v.videoWidth||720;c.height=v.videoHeight||720;c.getContext('2d').drawImage(v,0,0,c.width,c.height);const data=c.toDataURL('image/jpeg',0.86);localStorage.setItem(avatarKeyFor(me.id),data);me.avatar=data;applyMyAvatar();if(ws?.readyState===1)ws.send(JSON.stringify({type:'avatar_update',avatar:data}));toast('Фото установлено как аватар');close()};
+  }catch(e){toast(e?.name==='NotAllowedError'?'Разрешите камеру в браузере':'Не удалось открыть камеру')}
+}
+$('allowCameraBtn')?.addEventListener('click',requestCameraPermission);
+$('allowMicBtn')?.addEventListener('click',requestMicPermission);
+$('allowMediaBtn')?.addEventListener('click',requestMediaPermissions);
+$('takePhotoBtn')?.addEventListener('click',takePhoto);
+
+function updateMyQr(){
+  const id=me?.id;if(!id||!$('myQr'))return;
+  const payload=encodeURIComponent('Musa.Chat|friend|'+id+'|'+String(me.name||'').slice(0,32));
+  $('myQr').src='https://api.qrserver.com/v1/create-qr-code/?size=420x420&margin=12&data='+payload;
+  $('qrVisibleId').textContent='ID: '+id;
+  $('qrStatus').textContent='Ваш QR-код готов. Покажите его другу для сканирования.';
+}
+async function addFriendById(id){
+  id=normalizeUserId(id); if(!id)return toast('В QR-коде нет корректного ID');
+  if(id===me?.id)return toast('Это ваш собственный QR-код');
+  let u=users.find(x=>x.id===id);
+  if(!u && ws?.readyState===1){
+    try{ws.send(JSON.stringify({type:'add_friend',friendId:id}));return;}catch(e){}
+  }
+  if(!u && location.protocol!=='file:'){
+    try{
+      const r=await fetch('/api/search?q='+encodeURIComponent(id),{cache:'no-store'});
+      const data=await r.json(); u=(data.users||[])[0];
+      if(u){users.push(u);}
+    }catch(e){}
+  }
+  if(!u){toast('Аккаунт не найден. Проверьте ID и соединение с Musa.Chat.');return;}
+  const friends=JSON.parse(localStorage.getItem('musa_friends')||'[]');
+  if(!friends.includes(id)){friends.push(id);localStorage.setItem('musa_friends',JSON.stringify(friends));}
+  selectUser(id);
+  toast('Чат открыт: '+(u.name||id));
+}
+async function copyFriendId(){
+  const id=String(me?.id||'').trim();
+  if(!id)return toast('ID пока не загружен');
+  let copied=false;
+  try{
+    if(window.isSecureContext && navigator.clipboard?.writeText){
+      await navigator.clipboard.writeText(id);
+      copied=true;
+    }
+  }catch(e){}
+  if(!copied){
+    try{
+      const ta=document.createElement('textarea');
+      ta.value=id; ta.readOnly=true; ta.setAttribute('aria-hidden','true');
+      ta.style.position='fixed'; ta.style.left='-9999px'; ta.style.top='0'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0,id.length);
+      copied=document.execCommand('copy'); ta.remove();
+    }catch(e){}
+  }
+  if(copied){
+    $('copyFriendId').textContent='✓ ID скопирован';
+    setTimeout(()=>{if($('copyFriendId'))$('copyFriendId').textContent='Копировать ID'},1800);
+    toast('ID скопирован: '+id);
+  }else{
+    window.prompt('Скопируйте ваш ID:',id);
+  }
+}
+$('copyFriendId')?.addEventListener('click',copyFriendId);
+let qrCameraStream=null,qrCameraTimer=null,qrCameraBusy=false,qrDetector=null,qrJsqr=null;
+async function loadJsQr(){
+  if(window.jsQR)return window.jsQR;
+  if(qrJsqr)return qrJsqr;
+  qrJsqr=new Promise((resolve,reject)=>{
+    const sc=document.createElement('script'); sc.src='https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js'; sc.async=true;
+    sc.onload=()=>window.jsQR?resolve(window.jsQR):reject(new Error('jsqr-load'));
+    sc.onerror=()=>reject(new Error('jsqr-load'));
+    document.head.appendChild(sc);
+  });
+  return qrJsqr;
+}
+async function readQrFromVideo(v,canvas,ctx){
+  if('BarcodeDetector' in window){
+    try{
+      if(!qrDetector)qrDetector=new BarcodeDetector({formats:['qr_code']});
+      const codes=await qrDetector.detect(v);
+      if(codes.length)return String(codes[0].rawValue||'');
+    }catch(e){}
+  }
+  try{
+    const w=v.videoWidth||640,h=v.videoHeight||480; canvas.width=w;canvas.height=h;ctx.drawImage(v,0,0,w,h);
+    const code=window.jsQR?.(ctx.getImageData(0,0,w,h).data,w,h,{inversionAttempts:'dontInvert'});
+    return code?.data||'';
+  }catch(e){return ''}
+}
+
+async function stopQrCamera(){
+  if(qrCameraTimer){clearTimeout(qrCameraTimer);qrCameraTimer=null}
+  if(qrCameraStream){qrCameraStream.getTracks().forEach(t=>t.stop());qrCameraStream=null}
+  $('qrCameraModal')?.classList.add('hidden');
+  const v=$('qrCameraVideo'); if(v){v.pause();v.srcObject=null}
+}
+async function scanQrCamera(){
+  // Кнопка сама вызывает системный запрос браузера на доступ к камере.
+  const permitted=await requestCameraPermission();
+  if(!permitted){
+    $('qrCameraStatus').textContent='Разрешите камеру в настройках браузера и нажмите «Сканировать QR камерой» ещё раз.';
+    return;
+  }
+  if(!window.isSecureContext && !['localhost','127.0.0.1'].includes(location.hostname)){
+    $('permissionStatus').textContent='Для камеры нужен HTTPS или localhost. QR из галереи при этом доступен.';
+    toast('Для сканирования камерой нужен HTTPS.');
+    return;
+  }
+  if(!navigator.mediaDevices?.getUserMedia){
+    toast('Камера недоступна в этом браузере.');
+    return;
+  }
+  try{
+    const v=$('qrCameraVideo');
+    qrCameraStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}},audio:false});
+    v.srcObject=qrCameraStream; $('qrCameraStatus').textContent='Наведите камеру на QR-код Musa.Chat…'; $('qrCameraModal')?.classList.remove('hidden');
+    await v.play();
+    if(!('BarcodeDetector' in window)){
+      try{await loadJsQr();}catch(e){$('qrCameraStatus').textContent='Не удалось загрузить сканер QR. Можно выбрать QR-код как изображение.';}
+    }
+    const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});
+    const scan=async()=>{
+      if(!qrCameraStream||qrCameraBusy)return;
+      qrCameraBusy=true;
+      try{
+        const value=await readQrFromVideo(v,canvas,ctx);
+        if(value){
+          const m=String(value).match(/Musa\.Chat\|friend\|(ID-\d{5})/i);
+          if(m){$('qrCameraStatus').textContent='QR-код найден!';await addFriendById(m[1]);await stopQrCamera();return;}
+          $('qrCameraStatus').textContent='QR найден, но это не QR-код Musa.Chat.';
+        }
+      }catch(e){}
+      qrCameraBusy=false;
+      if(qrCameraStream)qrCameraTimer=setTimeout(scan,220);
+    };
+    scan();
+  }catch(e){
+    await stopQrCamera();
+    $('permissionStatus').textContent='Разрешите камеру, чтобы сканировать QR-код.'; toast('Разрешите камеру для сканирования QR.');
+    $('qrFileInput')?.click();
+  }
+}
+$('scanQrBtn')?.addEventListener('click',scanQrCamera);
+$('qrGalleryBtn')?.addEventListener('click',()=>$('qrFileInput')?.click());
+$('closeQrCamera')?.addEventListener('click',stopQrCamera);
+$('qrCameraModal')?.addEventListener('click',e=>{if(e.target.id==='qrCameraModal')stopQrCamera()});
+$('qrFileInput')?.addEventListener('change',async e=>{
+  const file=e.target.files?.[0]; if(!file)return; const status=$('qrStatus');
+  try{
+    let value='';
+    if('BarcodeDetector' in window){
+      try{const detector=new BarcodeDetector({formats:['qr_code']});const codes=await detector.detect(await createImageBitmap(file));if(codes.length)value=String(codes[0].rawValue||'');}catch(err){}
+    }
+    if(!value){
+      await loadJsQr();
+      const bmp=await createImageBitmap(file); const canvas=document.createElement('canvas');canvas.width=bmp.width;canvas.height=bmp.height;const ctx=canvas.getContext('2d',{willReadFrequently:true});ctx.drawImage(bmp,0,0);
+      const code=window.jsQR?.(ctx.getImageData(0,0,canvas.width,canvas.height).data,canvas.width,canvas.height,{inversionAttempts:'attemptBoth'}); value=code?.data||'';
+    }
+    const m=value.match(/Musa\.Chat\|friend\|(ID-\d{5})/i);
+    if(!m)throw new Error('bad-qr');
+    await addFriendById(m[1]); status.textContent='QR-код прочитан: '+m[1];
+  }catch(err){status.textContent='Не удалось прочитать QR-код. Убедитесь, что это QR-код профиля Musa.Chat.';toast('Не удалось прочитать QR-код');}
+  e.target.value='';
+});
+$('saveName')?.addEventListener('click',()=>{
+  const name=String($('profileNameInput')?.value||'').trim().slice(0,32);
+  if(!name)return toast('Введите имя');
+  me.name=name;
+  $('profileName').innerHTML=esc(name)+(me.verified?' <img class="musa-verified-badge-small profile-badge" src="'+BADGE_DATA_URI+'" alt="Подтверждён">':'');
+  $('meName').textContent=name; updateMyQr();
+  if(ws?.readyState===1) ws.send(JSON.stringify({type:'name_update',name}));
+  renderUsers();
+  toast('Имя сохранено');
+});
+$('saveAvatar')?.addEventListener('click',()=>{
+  const f=$('avatarInput')?.files?.[0]; if(!f)return toast('Выбери фото');
+  const r=new FileReader(); r.onload=()=>{
+    const data=String(r.result); localStorage.setItem(avatarKeyFor(me?.id),data); me.avatar=data; applyMyAvatar();
+    if(ws?.readyState===1) ws.send(JSON.stringify({type:'avatar_update',avatar:data}));
+    toast('Аватар сохранён для '+(me?.id||'этого аккаунта'));
+  }; r.readAsDataURL(f);
+});
+function addSupportReply(text){
+  $('supportStatus').innerHTML='<b>Поддержка:</b> '+esc(text);
+}
+$('supportBtn')?.addEventListener('click',()=>{
+  const t=$('supportText').value.trim(); if(!t)return toast('Напиши сообщение');
+  $('supportStatus').textContent='Отправка обращения…';
+  if(ws?.readyState===1){
+    ws.send(JSON.stringify({type:'support_ticket',text:t,userId:me.id,name:me.name}));
+    setTimeout(()=>{if($('supportStatus').textContent==='Отправка обращения…') addSupportReply('Спасибо! Жалоба принята. Мы получили ваше обращение.');},700);
+  }else{
+    addSupportReply('Спасибо! Жалоба принята. Сервер поддержки сейчас недоступен, поэтому это локальное подтверждение.');
+  }
+  $('supportText').value='';
+});
+async function checkForUpdate(){
+  $('updateStatus').textContent='Проверяем новую версию…';
+  try{
+    const r=await fetch('/version.json?ts='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw new Error('no version endpoint');
+    const data=await r.json();
+    if(data.version && data.version!==APP_VERSION){
+      $('updateStatus').innerHTML='<b>Доступно обновление '+esc(data.version)+'</b>';
+      if(confirm('Доступна новая версия Musa.Chat ('+data.version+'). Обновить сейчас?')) location.reload(true);
+    }else $('updateStatus').textContent='Установлена последняя доступная версия.';
+  }catch(e){
+    $('updateStatus').textContent='Проверка обновления доступна только на серверной версии приложения.';
+  }
+}
+$('checkUpdateBtn')?.addEventListener('click',checkForUpdate);
+loadAvatar();
+
+function ensureLocalDefaultCommunity(){
+  me=me||{}; me.communities=me.communities||[];
+  const matches=me.communities.filter(x=>String(x.name||'').trim().toLowerCase()==='муся канал');
+  let c=matches.find(x=>!x.localOnly && !x.id?.startsWith('local-'))||matches[0];
+  if(!c){
+    c={id:'musa-main-channel',publicId:'ID-10001',type:'channel',name:'Муся канал',avatar:'./assets/embedded/3ae68dcda9db0cbbc79a.jpg',ownerId:'ID-98333',members:[],createdAt:0,localOnly:true,system:true};
+    me.communities.unshift(c);
+  }
+  c.system=true;c.type='channel';c.name='Муся канал';c.publicId='ID-10001';c.ownerId='ID-98333';c.admins=['ID-98333'];
+  me.communities=me.communities.filter((x,i,a)=>a.findIndex(y=>y.id===x.id)===i && (x===c || String(x.name||'').trim().toLowerCase()!=='муся канал'));
+  me.communities.unshift(c);
+  try{localStorage.setItem('musa_local_communities',JSON.stringify(me.communities.filter(x=>x.localOnly)));}catch(e){}
+  return c;
+}
+function renderCommunities(){
+  ensureLocalDefaultCommunity();
+  const all=[...(me?.communities||[])];
+  const unique=all.filter((c,i,a)=>a.findIndex(x=>x.id===c.id || (x.publicId&&x.publicId===c.publicId))===i);
+  const channels=unique.filter(c=>c.type==='channel');
+  const groups=unique.filter(c=>c.type!=='channel');
+  const badge='<img class="musa-verified-badge" src="'+BADGE_DATA_URI+'" alt="Подтверждён">'
+  const card=(c)=>`<button class="person community-card" data-community-id="${esc(c.id)}" style="margin-bottom:10px;width:100%;text-align:left">
+    ${c.avatar?`<img class="avatar" src="${esc(c.avatar)}">`:''}
+    <div class="meta"><strong>${esc(c.name)} ${String(c.name||'').trim().toLowerCase()==='муся канал'?badge:''}</strong>
+    <small>${c.type==='channel'?'📢 Канал':'👥 Группа'} · ${esc(c.publicId||c.id)}</small></div>
+  </button>`;
+  $('channelsList').innerHTML=channels.map(card).join('')||'<div class="muted">Каналов пока нет.</div>';
+  $('groupsList').innerHTML=groups.map(card).join('')||'<div class="muted">Групп пока нет.</div>';
+  $('communitiesList').innerHTML=unique.map(card).join('');
+  document.querySelectorAll('.community-card').forEach(b=>b.onclick=()=>{const c=unique.find(x=>x.id===b.dataset.communityId);if(c)selectCommunity(c)});
+}
+function openCommunityModal(type){
+  $('communityModalTitle').textContent=type==='channel'?'Создать канал':'Создать группу';
+  $('communityNameInput').value='';
+  $('communityModal').dataset.type=type;
+  $('communityModal').classList.remove('hidden');
+}
+function createCommunity(){
+  const name=$('communityNameInput').value.trim();
+  if(!name){toast('Введите название');return}
+  const type=$('communityModal').dataset.type==='channel'?'channel':'group';
+  const avatar=$('communityAvatarPreview')?.src||'avatar.jpg';
+  const localId='local-'+crypto.randomUUID();
+  const publicId='ID-'+String(Math.floor(10000+Math.random()*90000));
+  // Создаём сообщество сразу. Если сервер доступен — он сохранит его и выдаст настоящий ID.
+  if(ws?.readyState===1){
+    ws.send(JSON.stringify({type:'create_community',communityType:type,name,avatar}));
+  }else{
+    const c={id:localId,publicId,type,name,avatar,ownerId:me?.id||'local',members:me?.id?[me.id]:[],createdAt:Date.now(),localOnly:true};
+    me=me||{}; me.communities=me.communities||[]; me.communities.push(c);
+    communityMessages[c.id]=communityMessages[c.id]||[];
+    localStorage.setItem('musa_community_messages',JSON.stringify(communityMessages));
+    localStorage.setItem('musa_local_communities',JSON.stringify(me.communities));
+    renderCommunities(); selectCommunity(c);
+    toast('Готово — '+(type==='channel'?'канал':'группа')+' создан(а)');
+  }
+  $('communityModal').classList.add('hidden');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  $('communityPlusBtn')?.addEventListener('click',()=>openCommunityModal('group')); $('createGroupBtn')?.addEventListener('click',()=>openCommunityModal('group'));
+  $('createChannelBtn')?.addEventListener('click',()=>openCommunityModal('channel'));
+  $('communityCreateConfirm')?.addEventListener('click',createCommunity);
+  $('communityCreateCancel')?.addEventListener('click',()=>$('communityModal').classList.add('hidden'));
+  $('search')?.addEventListener('input',renderUsers); $('communitySearchInput')?.addEventListener('input',()=>{const q=$('communitySearchInput').value.trim();if(q)publicSearch(q);else{publicSearchCommunities=[];renderCommunitySearchResults()}});
+});
+
+/* Клик-звук для всех кнопок */
+const BUTTON_CLICK_SOUND = './assets/embedded/fcc6f6ce1be853b9f911.mp3';
+let buttonClickAudio = null;
+function playButtonClickSound(){
+  try{
+    if(buttonClickAudio) buttonClickAudio.pause();
+    buttonClickAudio=new Audio(BUTTON_CLICK_SOUND);
+    buttonClickAudio.volume=0.65;
+    buttonClickAudio.currentTime=0;
+    const p=buttonClickAudio.play(); if(p?.catch)p.catch(()=>{});
+  }catch(_){}
+}
+document.addEventListener('click',(event)=>{
+  const button=event.target.closest('button');
+  if(button&&!button.disabled)playButtonClickSound();
+},true);
+
+
+/* Musa.Chat 3.0 feature layer: support AI, GigaChat, communities avatars, video titles/comments. */
+(function(){
+  const originalHandle = window.handle;
+  window.handle = function(m){
+    try{ originalHandle(m); }catch(e){ console.error(e); }
+    if(!m)return;
+    if(m.type==='support_reply' || m.type==='support_ai_reply'){ appendSupportBubble(m.message||m.text||'Ответ поддержки получен.',false); return; }
+    if(m.type==='video_comment'){ addVideoComment(m.videoId,m.comment); return; }
+    if(m.type==='video_comments'){ videoComments[m.videoId]=m.comments||[]; if(activeVideoId===m.videoId)renderVideoComments(); return; }
+    if(m.type==='publish_video' && m.video){ addPublishedVideo(m.video); return; }
+    if(m.type==='video_like' && m.videoId){ const all=videoLikesData();all[m.videoId]={count:Math.max(0,Number(m.count)||0),users:Array.isArray(all[m.videoId]?.users)?all[m.videoId].users:[]};videoLikesSave(all);renderPublishedVideos();return; }
+    if(m.type==='musa_ai_reply'){ addAiBubble(m.message||m.text||'Не удалось получить ответ.'); return; }
+    if(m.type==='musa_ai_image'){ if(m.url) addAiImage(m.url,m.prompt||'Созданное изображение'); return; }
+    if(m.type==='community_updated' || m.type==='community_created'){ if(m.community){ me.communities=me.communities||[]; const i=me.communities.findIndex(c=>c.username===m.community.username); if(i>=0) me.communities[i]=Object.assign({},me.communities[i],m.community); else me.communities.push(m.community); } setTimeout(renderCommunities,0); return; }
+  };
+
+  let activeVideoId=null;
+  let videoComments=JSON.parse(localStorage.getItem('musa_video_comments')||'{}');
+  let aiHistory=[];
+  function aiHistoryKey(){return 'musa_ai_history_'+String(me?.id||'guest').replace(/[^A-Za-z0-9_-]/g,'_')}
+  function saveAiHistory(){try{localStorage.setItem(aiHistoryKey(),JSON.stringify(aiHistory.slice(-20)))}catch(e){}}
+  function loadAiHistory(){try{const x=JSON.parse(localStorage.getItem(aiHistoryKey())||'[]');aiHistory=Array.isArray(x)?x.slice(-20):[]}catch(e){aiHistory=[]}}
+  let supportOpened=false;
+  window.__musaOpenVideo=function(id,src,title,author,creatorId,username){
+    activeVideoId=id||'demo-welcome';
+    $('videoPlayerTitle').textContent=title||'Musa.Chat — Квесты и шортсы';
+    $('videoPlayerMeta').textContent='Автор: '+(author||'Musa.Chat')+(username?' · '+username:'')+(creatorId?' · ID: '+creatorId:'');
+    let likeBar=$('videoPlayerLikeBar'); if(!likeBar){likeBar=document.createElement('div');likeBar.id='videoPlayerLikeBar';likeBar.className='video-social';$('videoPlayerMeta').insertAdjacentElement('afterend',likeBar)}
+    const state=videoLikeState(activeVideoId);likeBar.innerHTML='<button type="button" class="video-like '+(state.liked?'liked':'')+'" id="videoPlayerLikeBtn">'+(state.liked?'♥':'♡')+' Нравится · '+state.count+'</button>';
+    $('videoPlayerLikeBtn').onclick=()=>{toggleVideoLike(activeVideoId);const st=videoLikeState(activeVideoId);likeBar.innerHTML='<button type="button" class="video-like '+(st.liked?'liked':'')+'" id="videoPlayerLikeBtn">'+(st.liked?'♥':'♡')+' Нравится · '+st.count+'</button>';$('videoPlayerLikeBtn').onclick=()=>{toggleVideoLike(activeVideoId);window.__musaOpenVideo(activeVideoId,src,title,author,creatorId,username)}};
+    $('videoPlayerModal').classList.remove('hidden');
+    $('demoVideo').src=src||demoVideoUrl; $('demoVideo').play().catch(()=>{});
+    renderVideoComments();
+    if(ws?.readyState===1 && !String(activeVideoId).startsWith('demo-')) ws.send(JSON.stringify({type:'video_comments',videoId:activeVideoId}));
+  };
+
+  function appendSupportBubble(text,mine){
+    const box=$('supportMessages'); if(!box)return;
+    const d=document.createElement('div'); d.className='support-bubble '+(mine?'mine':'bot'); d.textContent=text; box.appendChild(d); box.scrollTop=box.scrollHeight;
+  }
+  function openSupportChat(){
+    supportOpened=true; $('supportChat')?.scrollIntoView({behavior:'smooth',block:'nearest'}); $('supportChatInput')?.focus();
+  }
+  function localSupportAnswer(text){
+    const t=text.toLowerCase();
+    if(t.includes('ошиб')||t.includes('error')) return 'Похоже, это сообщение об ошибке. Пришлите полный текст ошибки и напишите, что вы делали перед ней — так я смогу точнее подсказать решение.';
+    if(t.includes('видео')) return 'Если видео не публикуется, проверьте формат файла и соединение с сервером. Если проблема остаётся, пришлите название ошибки.';
+    if(t.includes('групп')||t.includes('канал')) return 'Для группы или канала откройте раздел «Группы и каналы», нажмите «+», задайте название, @id и аватар.';
+    if(t.includes('вход')||t.includes('id')) return 'При входе нужен пятизначный ID в формате ID-12345. По нему можно находить пользователей, если сервер поиска доступен.';
+    return 'Обращение принято. Опишите проблему подробнее, и я помогу разобраться. Для технической ошибки лучше прислать точный текст ошибки.';
+  }
+  function sendSupportMessage(text){
+    text=String(text||'').trim(); if(!text)return; openSupportChat(); appendSupportBubble(text,true);
+    if(ws?.readyState===1){ ws.send(JSON.stringify({type:'support_message',text,userId:me?.id,name:me?.name,history:[]})); } else { setTimeout(()=>appendSupportBubble(localSupportAnswer(text),false),500); }
+  }
+  $('supportBtn')?.addEventListener('click',()=>{const t=$('supportText').value.trim();if(!t)return toast('Опишите проблему');$('supportText').value='';sendSupportMessage(t);$('supportStatus').textContent='Чат поддержки открыт.'});
+  $('supportChatSend')?.addEventListener('click',()=>{const i=$('supportChatInput');const t=i.value.trim();if(!t)return;i.value='';sendSupportMessage(t)});
+  $('supportChatInput')?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('supportChatSend').click()}});
+
+  // musa AI is connected through a server proxy so the API secret never appears in this HTML.
+  function selectGigaChat(){
+    selected={id:'musa-ai',name:'musa AI',username:'@musa_ai',ai:true,verified:true};
+    $('peerAvatar').src='./assets/embedded/75764c1ce7c9ec6940aa.jpg'; $('peerName').textContent='musa AI'; $('peerStatus').textContent='🤖 ИИ-помощник'; $('communityChatInviteBtn')?.classList.add('hidden'); $('messageInput').disabled=false; $('sendBtn').disabled=false; $('app').classList.add('mobile-chat');
+    fetch('/api/musa-ai/status',{cache:'no-store'}).then(r=>r.json()).then(st=>{const el=$('aiStatus');if(el)el.textContent=st.ok?'● сервер готов':'● нужен OPENAI_API_KEY'}).catch(()=>{const el=$('aiStatus');if(el)el.textContent='● сервер недоступен'});
+    loadAiHistory(); $('messages').innerHTML=aiHistory.length?'':'<div class="empty">musa AI готов ответить на вопрос.<br>Текстовые ответы работают через серверный OpenAI API.</div>'; if(aiHistory.length){$('messages').innerHTML='';aiHistory.forEach(x=>{const d=document.createElement('div');d.className='bubble '+(x.role==='user'?'mine':'');d.innerHTML='<span>'+esc(x.content)+'</span><small>'+(x.role==='user'?'Вы':'musa AI')+'</small>';$('messages').appendChild(d)});$('messages').scrollTop=$('messages').scrollHeight}
+    renderUsers();
+  }
+  $('musaAIContact')?.addEventListener('click',selectGigaChat);
+
+  const originalSendMessage=window.sendMessage;
+  window.sendMessage=async function(){
+    if(selected?.ai){
+      const input=$('messageInput'); const text=input.value.trim(); if(!text)return;
+      input.value=''; if($('messages').querySelector('.empty'))$('messages').innerHTML='';
+      addAiBubble(text,true);
+      aiHistory.push({role:'user',content:text}); saveAiHistory();
+      if(ws?.readyState===1){ ws.send(JSON.stringify({type:'musa_ai_message',text,userId:me?.id,history:aiHistory.slice(-20)})); return; }
+      try{
+        const r=await fetch('/api/musa-ai/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text,history:aiHistory.slice(-20),userId:me?.id})});
+        const data=await r.json(); if(!r.ok)throw new Error(data.error||'AI-сервис недоступен'); addAiBubble(data.message||'Не удалось получить ответ.',false);
+      }catch(e){addAiBubble(localMusaAIAnswer(text),false)}
+      return;
+    }
+    if(typeof originalSendMessage==='function') return originalSendMessage();
+  };
+  $('sendBtn')?.addEventListener('click',()=>{ if(selected?.ai) window.sendMessage(); });
+  function localMusaAIAnswer(text){
+    const t=String(text||'').toLowerCase();
+    if(t.includes('привет')) return 'Привет! Я musa AI в Musa.Chat. Серверный ИИ сейчас недоступен, поэтому этот ответ локальный.';
+    return 'musa AI сейчас недоступен. Проверьте соединение с сервером и OPENAI_API_KEY. Сервер теперь показывает точную причину ошибки.';
+  }
+  function addAiBubble(text,mine){const d=document.createElement('div');d.className='bubble '+(mine?'mine':'');d.innerHTML='<span>'+esc(text)+'</span><small>'+(mine?'Вы':'musa AI')+'</small>';$('messages').appendChild(d);$('messages').scrollTop=$('messages').scrollHeight;if(!mine){aiHistory.push({role:'assistant',content:text}); saveAiHistory()}}
+  function addAiImage(url,prompt){const d=document.createElement('div');d.className='bubble';d.innerHTML='<b>🖼️ '+esc(prompt)+'</b><br><img src="'+esc(url)+'" style="max-width:100%;border-radius:12px;margin-top:8px"><small>musa AI</small>';$('messages').appendChild(d);$('messages').scrollTop=$('messages').scrollHeight}
+  $('aiImageBtn')?.addEventListener('click',async()=>{
+    if(!selected?.ai){toast('Сначала открой musa AI');return}
+    const prompt=window.prompt('Что нарисовать?');if(!prompt?.trim())return;
+    toast('musa AI создаёт изображение…');
+    try{
+      const r=await fetch('/api/musa-ai/image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:prompt.trim(),userId:me?.id})});
+      const d=await r.json();
+      if(!r.ok||!d.url)throw new Error(d.error||'Не удалось создать изображение');
+      addAiImage(d.url,prompt);
+    }catch(e){toast('Генерация изображения недоступна: '+e.message)}
+  });
+
+  // Community avatars. Server should persist avatar and broadcast community_created/community_updated.
+  let communityAvatarData=null;
+  $('communityAvatarInput')?.addEventListener('change',e=>{const f=e.target.files?.[0];if(!f)return;const r=new FileReader();r.onload=()=>{communityAvatarData=r.result;$('communityAvatarPreview').src=communityAvatarData};r.readAsDataURL(f)});
+  window.createCommunity=function(){
+    const name=$('communityNameInput').value.trim();
+    if(!name){toast('Введите название');return}
+    const type=$('communityModal').dataset.type==='channel'?'channel':'group';
+    const avatar=communityAvatarData||'avatar.jpg';
+    if(ws?.readyState===1){
+      ws.send(JSON.stringify({type:'create_community',communityType:type,name,avatar,ownerId:me?.id}));
+      toast('Создаём '+(type==='channel'?'канал':'группу')+'…');
+    }else{
+      const c={id:'local-'+crypto.randomUUID(),publicId:'ID-'+String(Math.floor(10000+Math.random()*90000)),type,name,avatar,ownerId:me?.id||'local',members:me?.id?[me.id]:[],createdAt:Date.now(),localOnly:true};
+      me=me||{}; me.communities=me.communities||[]; me.communities.push(c);
+      communityMessages[c.id]=communityMessages[c.id]||[];
+      localStorage.setItem('musa_community_messages',JSON.stringify(communityMessages));
+      localStorage.setItem('musa_local_communities',JSON.stringify(me.communities));
+      renderCommunities(); selectCommunity(c); toast('Готово — '+(type==='channel'?'канал':'группа')+' создан(а)');
+    }
+    $('communityModal').classList.add('hidden'); communityAvatarData=null; if($('communityAvatarPreview'))$('communityAvatarPreview').src='avatar.jpg'; if($('communityAvatarInput'))$('communityAvatarInput').value='';
+  };
+  $('communityJoinIdBtn')?.addEventListener('click',async()=>{
+    const raw=String($('communityJoinIdInput')?.value||'').trim().toUpperCase(); const id=raw.startsWith('ID-')?raw:'ID-'+raw;
+    if(!/^ID-\d{5}$/.test(id)){toast('Введите ID вида ID-12345');return}
+    if(id==='ID-10001'){const c=ensureLocalDefaultCommunity();me.communities=me.communities||[];if(!me.communities.some(x=>x.id===c.id))me.communities.push(c);renderCommunities();selectCommunity(c);if(ws?.readyState===1)ws.send(JSON.stringify({type:'join_community_id',communityId:id}));return}
+    const local=(me?.communities||[]).find(c=>c.publicId===id);
+    if(local){selectCommunity(local);return}
+    if(ws?.readyState===1){ws.send(JSON.stringify({type:'join_community_id',communityId:id}));return}
+    try{
+      const r=await fetch('/api/search?q='+encodeURIComponent(id),{cache:'no-store'});const d=await r.json();const c=(d.communities||[]).find(x=>x.publicId===id);
+      if(!c){toast('Группа или канал с таким ID не найден.');return}
+      me.communities=me.communities||[];if(!me.communities.some(x=>x.id===c.id))me.communities.push(c);renderCommunities();selectCommunity(c);toast('Сообщество найдено.');
+    }catch(e){toast('Не удалось найти сообщество. Проверьте ID.');}
+  });
+  $('communityJoinIdInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')$('communityJoinIdBtn')?.click()});
+    async function publishMainChannelVideo(file){
+    if(!file)return;
+    if(me?.id!=='ID-98333'){toast('Только ID-98333 может публиковать видео в «Муся канал».');return}
+    if(file.size>15*1024*1024){toast('Видео слишком большое. Максимум 15 МБ.');return}
+    const reader=new FileReader();
+    reader.onload=()=>{
+      const title=prompt('Название видео:',file.name.replace(/\.[^.]+$/,''))?.trim()||file.name;
+      const c=(me?.communities||[]).find(x=>x.system||String(x.name||'').trim().toLowerCase()==='муся канал');
+      if(!c){toast('«Муся канал» не найден');return}
+      const video={id:crypto.randomUUID(),title,url:String(reader.result),author:me.name,authorId:me.id,createdAt:Date.now()};
+      addCommunityMessage({id:video.id,communityId:c.id,video,author:me.name,authorId:me.id,time:video.createdAt});
+      if(ws?.readyState===1)ws.send(JSON.stringify({type:'publish_community_video',communityId:c.id,video}));
+      toast('Видео опубликовано в «Муся канал»');
+    };
+    reader.onerror=()=>toast('Не удалось прочитать видео');
+    reader.readAsDataURL(file);
+  }
+  $('communityVideoBtn')?.addEventListener('click',()=>{if(me?.id!=='ID-98333'){toast('Только владелец канала может публиковать видео');return}$('communityVideoInput')?.click()});
+  $('communityVideoInput')?.addEventListener('change',e=>{publishMainChannelVideo(e.target.files?.[0]);e.target.value=''});
+
+  // Video comments. Server broadcasts video_comment to everyone; localStorage is only a local fallback.
+  function renderVideoComments(){const list=videoComments[activeVideoId]||[];const el=$('videoCommentsList');if(!el)return;el.innerHTML=list.map(c=>`<div class="video-comment"><b>${esc(c.author||'Пользователь')}</b>${c.sticker?.data?(String(c.sticker.mime||'').startsWith('video/')||String(c.sticker.data).startsWith('data:video/')?`<video class="chat-sticker-media" src="${esc(c.sticker.data)}" autoplay loop muted playsinline webkit-playsinline preload="metadata"></video>`:`<img class="chat-sticker-media" src="${esc(c.sticker.data)}" alt="Стикер">`):c.sticker?.emoji?`<div class="chat-sticker-emoji">${esc(c.sticker.emoji)}</div>`:''}<p>${esc(c.text||'')}</p></div>`).join('')||'<div class="muted">Комментариев пока нет.</div>'}
+  function addVideoComment(videoId,comment){if(!videoId||!comment)return; videoComments[videoId]=videoComments[videoId]||[]; if(videoComments[videoId].some(x=>x.id&&comment.id&&x.id===comment.id))return; videoComments[videoId].push(comment);localStorage.setItem('musa_video_comments',JSON.stringify(videoComments));if(activeVideoId===videoId)renderVideoComments()}
+  function enhancedRenderVideos(){ renderPublishedVideos(); }
+  window.renderPublishedVideos=enhancedRenderVideos;
+  $('videoCommentSend')?.addEventListener('click',()=>{
+    const input=$('videoCommentInput'); const text=input.value.trim();
+    if(!text){toast('Напишите комментарий');return}
+    if(!activeVideoId){toast('Сначала откройте видео');return}
+    const comment={id:crypto.randomUUID(),author:me?.name||'Пользователь',authorId:me?.id,text,time:Date.now()};
+    addVideoComment(activeVideoId,comment);
+    if(ws?.readyState===1 && !String(activeVideoId).startsWith('demo-')) ws.send(JSON.stringify({type:'video_comment',videoId:activeVideoId,comment}));
+    input.value='';
+  });
+  $('videoCommentInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')$('videoCommentSend').click()});
+  // Рабочий выбор стикера для комментария: видео показываем как видео, картинки как картинки.
+  if($('videoCommentInput')&&!$('videoCommentStickerBtn')){
+    const b=document.createElement('button');
+    b.id='videoCommentStickerBtn'; b.type='button'; b.className='primary';
+    b.textContent='☺'; b.title='Добавить стикер';
+    $('videoCommentInput').insertAdjacentElement('afterend',b);
+    b.addEventListener('click',()=>{
+      if(!activeVideoId){toast('Сначала откройте видео');return}
+      const pack=Array.isArray(window.MusaStickerPack)?window.MusaStickerPack:[];
+      const emojiList=['🐾','😺','😻','😹','🙀','😽','❤️','👍','😂','🥹','🎉','💜'];
+      const list=[...pack.map(x=>({name:x.name||'Стикер',data:x.data||'',mime:x.mime||'video/mp4'})),...emojiList.map(emoji=>({emoji,name:emoji}))];
+      const modal=document.createElement('div');
+      modal.className='call-modal'; modal.style.display='flex';
+      modal.innerHTML='<div class="call-box"><h3>Стикер к комментарию</h3><div class="sticker-grid" id="commentStickerGrid"></div><button class="primary" id="commentStickerClose">Закрыть</button></div>';
+      document.body.appendChild(modal);
+      const g=modal.querySelector('#commentStickerGrid');
+      list.forEach(item=>{
+        const x=document.createElement('button'); x.type='button'; x.className='sticker-item';
+        if(item.data){
+          if(String(item.mime||item.data).startsWith('video/')||String(item.data).startsWith('data:video/')){
+            const v=document.createElement('video'); v.src=item.data; v.muted=true; v.defaultMuted=true; v.autoplay=true; v.loop=true; v.playsInline=true; v.controls=false; v.preload='metadata'; v.className='chat-sticker-media'; v.style.cssText='width:100%;height:76px;object-fit:contain';
+            x.appendChild(v);
+          }else{
+            const im=document.createElement('img'); im.src=item.data; im.alt=item.name||'Стикер'; im.style.cssText='width:100%;height:76px;object-fit:contain'; x.appendChild(im);
+          }
+        }else{x.textContent=item.emoji}
+        x.addEventListener('click',()=>{
+          const c={id:crypto.randomUUID(),author:window.MusaAppBridge?.me?.name||'Пользователь',authorId:window.MusaAppBridge?.me?.id,sticker:item,text:'',time:Date.now()};
+          addVideoComment(activeVideoId,c);
+          if(ws?.readyState===1&&!String(activeVideoId).startsWith('demo-')){try{ws.send(JSON.stringify({type:'video_comment',videoId:activeVideoId,comment:c}))}catch(e){}}
+          modal.remove();
+        });
+        g.appendChild(x);
+      });
+      modal.querySelector('#commentStickerClose').addEventListener('click',()=>modal.remove());
+    });
+  }
+
+  // Re-run community/video renderers after this layer has replaced them.
+  setTimeout(()=>{ensureLocalDefaultCommunity();enhancedRenderCommunities();enhancedRenderVideos()},150);
+})();
+
+
+window.MusaAppBridge={get me(){return me},get selected(){return selected},get ws(){return ws},addCommunityMessage,saveLocalDirectMessage,addMessage};
+</script>
+
+<script>
+(()=>{
+ const KEY='musa_lapki_balance_v1'; if(localStorage.getItem(KEY)===null){localStorage.setItem(KEY,'50');localStorage.setItem('musa_lapki_initial_grant_v1','1')} let balance=Math.max(0,Number(localStorage.getItem(KEY)||0));
+ const balanceEl=()=>document.getElementById('lapkiBalance'); function paintBalance(){if(balanceEl())balanceEl().textContent=balance.toLocaleString('ru-RU');}
+ paintBalance();
+ let lapkiPendingPack=null;
+ document.querySelectorAll('[data-lapki-pack]').forEach(b=>b.addEventListener('click',()=>{
+   lapkiPendingPack={pack:Number(b.dataset.lapkiPack),price:Number(b.dataset.lapkiPrice)};
+   let modal=document.getElementById('lapkiPaymentModal');
+   if(!modal){modal=document.createElement('div');modal.id='lapkiPaymentModal';modal.className='call-modal';modal.innerHTML='<div class="call-box lapki-payment-box"><button id="lapkiPaymentClose" class="icon" style="float:right">✕</button><h2>Покупка лапок 🐾</h2><p id="lapkiPaymentSummary" class="muted"></p><p>Выберите сервис, через который будет настроена оплата этого пакета:</p><div class="lapki-pay-modal-grid"><a href="https://cardlink.link/" target="_blank" rel="noopener noreferrer">Cardlink ↗</a><a href="https://sbp.nspk.ru/business/" target="_blank" rel="noopener noreferrer">СБП ↗</a><a href="https://robokassa.com/" target="_blank" rel="noopener noreferrer">Robokassa ↗</a><a href="https://yookassa.ru/" target="_blank" rel="noopener noreferrer">ЮKassa ↗</a></div><p class="lapki-pay-note">Платёжная интеграция ещё не активирована: ссылки ниже ведут на сайты провайдеров, а не на оплату заказа. Лапки начисляются только после серверной проверки успешного платежа. Реквизиты для выплат настраиваются в кабинете провайдера; не отправляйте номер карты или секретные ключи в чат.</p></div>';document.body.appendChild(modal);modal.querySelector('#lapkiPaymentClose').addEventListener('click',()=>modal.classList.add('hidden'));modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.add('hidden')});}
+   modal.querySelector('#lapkiPaymentSummary').textContent='Пакет: '+lapkiPendingPack.pack+' лапок · '+lapkiPendingPack.price+' ₽';modal.classList.remove('hidden');
+ }));
+ const MUSYA_STICKERS=[{"name":"Длительность видео (1)","data":"./assets/embedded/da72fda5a934417d744d.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Длительность видео (2)","data":"./assets/embedded/fe0c8cbd1b876cdbd674.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание GIF-видео","data":"./assets/embedded/50bb41865c0a1a8b4fe5.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание GIF-видео (3)","data":"./assets/embedded/5be0f3f42b5b581376bc.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Ограничения контента","data":"./assets/embedded/607dcf66cac1dc2d5b44.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Ограничения контента (2)","data":"./assets/embedded/db2a02f17324e0caf418.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание видео GIF","data":"./assets/embedded/1b9e60119377ee353e71.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание GIF","data":"./assets/embedded/633ebed999c79cb40b48.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Ограничения контента (3)","data":"./assets/embedded/f0ff8c6863c09e5b2dd0.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Ограничения контента (4)","data":"./assets/embedded/88d70736171b29440e46.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание видео GIF (1)","data":"./assets/embedded/fbf85f0dab1e5b625210.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание видео GIF (2)","data":"./assets/embedded/11119ce0188da7786a90.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание видео GIF (3)","data":"./assets/embedded/b045b7335f92b0d3ff10.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание GIF (2)","data":"./assets/embedded/7f2cc0e2c0f143781389.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание GIF (3)","data":"./assets/embedded/38a0a5777198f2f98efc.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание GIF с анимацией(2)","data":"./assets/embedded/7d664116200309105a25.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"},{"name":"Создание GIF с анимацией (1)(2)","data":"./assets/embedded/5b543b45bcbddb01717b.mp4","mime":"video/mp4","mediaType":"video","durationMode":"full"}];
+ window.MusaStickerPack=MUSYA_STICKERS;
+ const freeEmoji=['🐸','😻','😂','🦆','🐶','❤️','😽','👌','🥹','🐱','💖','👋','🎉','✨','👍','🙃','🤗','😎'];
+ let kind='free'; const panel=document.getElementById('stickerPanel'), grid=document.getElementById('stickerGrid');
+ const MY_STICKER_KEY='musa_custom_stickers_v1', OWN_PACK_KEY='musa_owned_sticker_packs_v1';
+ function customStickers(){try{return JSON.parse(localStorage.getItem(MY_STICKER_KEY)||'[]')}catch(e){return []}}
+ function ownedPacks(){try{return JSON.parse(localStorage.getItem(OWN_PACK_KEY)||'[]')}catch(e){return []}}
+ function isAdmin(){return String(window.MusaAppBridge?.me?.id||'').toUpperCase()==='ID-98333'||String(document.getElementById('profileName')?.textContent||'').includes('ID-98333')}
+ function stickerButton(item,custom=false){const b=document.createElement('button');b.type='button';b.className='sticker-item';b.title=item.name||'Стикер';b.style.background='transparent';b.style.border='0';b.style.boxShadow='none';b.style.padding='2px';
+   if(item.data){if(String(item.mime||item.data).startsWith('video/')||String(item.data).startsWith('data:video/')){const vd=document.createElement('video');vd.src=item.data;vd.autoplay=true;vd.loop=true;vd.muted=true;vd.defaultMuted=true;vd.playsInline=true;vd.controls=false;vd.preload='auto';vd.setAttribute('webkit-playsinline','');vd.addEventListener('loadedmetadata',()=>{try{vd.currentTime=0;const p=vd.play();if(p&&p.catch)p.catch(()=>{vd.poster='';})}catch(e){}});vd.addEventListener('click',()=>{try{vd.currentTime=0;vd.play().catch(()=>{})}catch(e){}});vd.style.width='100%';vd.style.height='76px';vd.style.objectFit='contain';vd.style.background='transparent';vd.style.borderRadius='8px';b.appendChild(vd)}else{const im=document.createElement('img');im.src=item.data;im.alt=item.name||'Стикер';im.style.width='100%';im.style.height='76px';im.style.objectFit='contain';im.style.background='transparent';im.style.mixBlendMode='normal';im.style.borderRadius='8px';b.appendChild(im)}}else{b.style.fontSize='29px';b.textContent=item.emoji||'☺'}
+   b.addEventListener('click',()=>sendSticker(item));return b;}
+ function drawStickers(){if(!grid)return;grid.innerHTML='';
+   const tabs=panel.querySelector('.sticker-tabs'); if(tabs){tabs.innerHTML='<button type="button" data-sticker-kind="free" class="'+(kind==='free'?'active':'')+'">Бесплатные</button><button type="button" data-sticker-kind="musya" class="'+(kind==='musya'?'active':'')+'">Муся</button><button type="button" data-sticker-kind="mine" class="'+(kind==='mine'?'active':'')+'">Мои</button>';tabs.querySelectorAll('[data-sticker-kind]').forEach(x=>x.onclick=()=>{kind=x.dataset.stickerKind;drawStickers()})}
+   const note=panel.querySelector('.sticker-note');if(note)note.textContent=kind==='musya'?'Пак «Муся» стоит 500 лапок. Для ID-98333 использование бесплатное. Стикеры отправляются отдельными сообщениями без звука.':kind==='mine'?'Создавайте стикеры из фото или видео. Создание стикера — 20 лапок, создание пака — 200 лапок.':'Бесплатные стикеры';
+   if(kind==='free'){freeEmoji.forEach(emoji=>grid.appendChild(stickerButton({emoji,name:emoji})));return}
+   if(kind==='musya'){const owned=ownedPacks().includes('Муся');if(!isAdmin()&&!owned){const buy=document.createElement('button');buy.className='sticker-item';buy.style.gridColumn='1/-1';buy.style.fontSize='15px';buy.textContent='🐾 Купить пак «Муся» — 500 лапок';buy.onclick=()=>{if(!window.MusaLapki?.spendLapki(500)){toast('Не хватает лапок для пака «Муся»');return}localStorage.setItem(OWN_PACK_KEY,JSON.stringify([...ownedPacks(),'Муся']));toast('Пак «Муся» куплен');drawStickers()};grid.appendChild(buy);return}MUSYA_STICKERS.forEach(x=>grid.appendChild(stickerButton(x)));return}
+   customStickers().forEach(x=>{const wrap=document.createElement('div');wrap.style.minWidth='0';wrap.appendChild(stickerButton(x,true));if(x.ownerId===window.MusaAppBridge?.me?.id){const ctl=document.createElement('button');ctl.type='button';ctl.className='sticker-item';ctl.style.fontSize='10px';ctl.style.minHeight='26px';ctl.textContent=x.paid?'Платный · 🐾 '+(x.price||20):'Бесплатный';ctl.onclick=()=>{const all=customStickers();const item=all.find(y=>y.id===x.id);if(!item)return;if(item.paid){item.paid=false;item.price=0}else{const price=Number(prompt('Цена этого стикера в лапках:', '20'));if(!Number.isFinite(price)||price<1){toast('Укажите цену больше 0');return}item.paid=true;item.price=Math.floor(price)}localStorage.setItem(MY_STICKER_KEY,JSON.stringify(all));drawStickers()};wrap.appendChild(ctl)}grid.appendChild(wrap)});
+   const controls=document.createElement('div');controls.style.gridColumn='1/-1';controls.style.display='flex';controls.style.flexWrap='wrap';controls.style.gap='8px';
+   const photo=document.createElement('button');photo.type='button';photo.className='primary';photo.textContent='＋ Создать стикер · 20 лапок';photo.onclick=()=>document.getElementById('customStickerPhoto').click();controls.appendChild(photo);
+   const pack=document.createElement('button');pack.type='button';pack.className='primary';pack.textContent='Создать пак · 200 лапок';pack.onclick=()=>{if(!window.MusaLapki?.spendLapki(200)){toast('Не хватает 200 лапок');return}const title=prompt('Название нового пака стикеров:','Мой пак');if(title===null){window.MusaLapki.addDemoLapki(200);return}toast('Пак «'+(title||'Мой пак')+'» создан. Добавьте в него стикеры через кнопку создания.');localStorage.setItem('musa_custom_pack_name',title||'Мой пак')};controls.appendChild(pack);grid.appendChild(controls);
+ }
+ function sendSticker(item){if(!window.MusaAppBridge?.selected){toast('Сначала откройте чат');return}if(!item)return;if(item.paid&&item.ownerId!==window.MusaAppBridge?.me?.id){const price=Math.max(1,Number(item.price)||20);if(!window.MusaLapki?.spendLapki(price)){toast('Не хватает '+price+' лапок для этого стикера');return}}const sticker={name:item.name||item.emoji||'Стикер',data:item.data||'',mime:item.mime||(String(item.data||'').startsWith('data:video/')?'video/mp4':'image/png'),emoji:item.emoji||'',kind:'sticker'};
+   if(window.MusaAppBridge.selected.community){if(String(window.MusaAppBridge.selected.name||'').trim().toLowerCase()==='муся канал'&&window.MusaAppBridge?.me?.id!=='ID-98333'){toast('В «Муся канал» писать может только владелец.');return}const m={id:crypto.randomUUID(),communityId:window.MusaAppBridge.selected.communityId,author:window.MusaAppBridge?.me?.name||'Пользователь',authorId:window.MusaAppBridge?.me?.id,sticker,text:'',time:Date.now()};window.MusaAppBridge.addCommunityMessage(m);if(window.MusaAppBridge?.ws?.readyState===1)window.MusaAppBridge.ws.send(JSON.stringify({type:'community_message',communityId:window.MusaAppBridge.selected.communityId,message:m}));}
+   else if(window.MusaAppBridge.selected.ai){toast('Стикеры нельзя отправлять в musa AI');return}
+   else {const m={id:crypto.randomUUID(),from:window.MusaAppBridge?.me?.id,to:window.MusaAppBridge.selected.id,sticker,text:'',time:Date.now()};window.MusaAppBridge.saveLocalDirectMessage(m);window.MusaAppBridge.addMessage(m);if(window.MusaAppBridge?.ws?.readyState===1)window.MusaAppBridge.ws.send(JSON.stringify({type:'message',to:window.MusaAppBridge.selected.id,text:'',sticker,id:m.id}));}
+   panel?.classList.add('hidden');
+ }
+ const stickerInput=document.createElement('input');stickerInput.type='file';stickerInput.id='customStickerPhoto';stickerInput.accept='image/*,video/*';stickerInput.className='hidden';document.body.appendChild(stickerInput);
+ stickerInput.addEventListener('change',()=>{const f=stickerInput.files?.[0];if(!f)return;if(f.size>2500000){toast('Файл стикера должен быть меньше 2,5 МБ, чтобы отправка работала на сервере');stickerInput.value='';return}if(!window.MusaLapki?.spendLapki(20)){toast('Не хватает 20 лапок');stickerInput.value='';return}const r=new FileReader();r.onload=()=>{const item={id:crypto.randomUUID(),name:f.name.replace(/\.[^.]+$/,''),data:String(r.result),mime:(f.type||((/\.(mp4|m4v)$/i.test(f.name))?'video/mp4':(/\.(webm)$/i.test(f.name)?'video/webm':(/\.(mov)$/i.test(f.name)?'video/quicktime':'application/octet-stream')))),ownerId:window.MusaAppBridge?.me?.id,paid:false,price:20};const all=customStickers();all.push(item);try{localStorage.setItem(MY_STICKER_KEY,JSON.stringify(all));toast('Стикер создан без звука');kind='mine';drawStickers()}catch(e){window.MusaLapki.addDemoLapki(20);toast('Не хватает места для сохранения стикера')}};r.readAsDataURL(f);stickerInput.value='';});
+ // Подарок лапок как отдельная карточка в переписке.
+ document.getElementById('giftLapkiBtn')?.addEventListener('click',()=>{
+   const target=window.MusaAppBridge?.selected;
+   if(!target||target.community||target.ai){toast('Откройте личный чат пользователя, которому хотите подарить лапки');return}
+   const amountRaw=prompt('Сколько лапок подарить пользователю '+(target.name||target.id)+'?','50');
+   if(amountRaw===null)return;
+   const amount=Number(amountRaw);
+   if(!Number.isInteger(amount)||amount<1){toast('Введите целое число лапок больше 0');return}
+   const wishRaw=prompt('Пожелание к подарку (необязательно):','');
+   if(wishRaw===null)return;
+   const wish=String(wishRaw).trim().slice(0,240);
+   if(!window.MusaLapki?.spendLapki(amount)){toast('Недостаточно лапок для подарка');return}
+   const me=window.MusaAppBridge?.me;
+   const gift={id:crypto.randomUUID(),from:me?.id,to:target.id,amount,wish,senderName:me?.name||'Пользователь',time:Date.now(),type:'lapki_gift'};
+   const key='musa_lapki_gifts_v1';let gifts=[];try{gifts=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}gifts.push(gift);localStorage.setItem(key,JSON.stringify(gifts));
+   if(window.MusaAppBridge?.ws?.readyState===1){try{window.MusaAppBridge.ws.send(JSON.stringify({type:'lapki_gift',gift}))}catch(e){}}
+   const m={id:gift.id,from:gift.from,to:gift.to,text:'',time:gift.time,gift:{amount,wish,senderName:gift.senderName}};
+   window.MusaAppBridge.saveLocalDirectMessage?.(m);window.MusaAppBridge.addMessage?.(m);
+   toast('Подарок на '+amount+' лапок отправлен');
+ });
+ document.getElementById('stickerToggle')?.addEventListener('click',()=>{if(!panel)return;panel.classList.toggle('hidden');drawStickers()});
+ drawStickers();
+ // Expose balance for future payment integration without storing sensitive data.
+ window.MusaLapki={getBalance:()=>balance,addDemoLapki:n=>{balance+=Math.max(0,Number(n)||0);localStorage.setItem(KEY,String(balance));paintBalance();},spendLapki:n=>{n=Math.max(0,Number(n)||0);if(balance<n)return false;balance-=n;localStorage.setItem(KEY,String(balance));paintBalance();return true;}};
+ drawStickers();
+})();
+</script>
+<script>
+(()=>{
+const $q=id=>document.getElementById(id); const qkey='musa_quests_v1';
+const initial={sentVideos:0,shortPublished:0,comments:0,reports:[],claimed:[]};
+function state(){try{return {...initial,...JSON.parse(localStorage.getItem(qkey)||'{}')}}catch(e){return {...initial}}}
+function save(st){localStorage.setItem(qkey,JSON.stringify(st));renderQuests()}
+function addPaws(n){try{const k='musa_lapki_balance_v1';localStorage.setItem(k,String(Math.max(0,Number(localStorage.getItem(k)||0)+n)));window.MusaLapki?.refresh?.()}catch(e){}}
+function questData(){let s=state();return [
+{id:'send',title:'Отправь 3 видео другу',desc:'Отправь три видео из раздела «Видео» в личный чат.',progress:Math.min(3,s.sentVideos),goal:3,reward:'🐾 30 лапок',kind:'paws',amount:30,action:'Перейти в видео'},
+{id:'short',title:'Выложи видео в Шортсы',desc:'Опубликуй короткое видео в разделе «Шортсы». Награда — аксессуар с котиком.',progress:Math.min(1,s.shortPublished),goal:1,reward:'🐈 Аксессуар «Котик-блогер»',kind:'accessory',action:'Перейти к шортсам'},
+{id:'comments',title:'Поддержи Муся Чат',desc:'Оставь 5 адекватных комментариев о мессенджерах или Муся Чат и загрузи фото-отчёты. За каждый принятый фото-отчёт — 20 лапок, за выполнение — ещё 100 лапок.',progress:Math.min(5,s.comments),goal:5,reward:'🐾 100 лапок + фото-отчёты по 20 лапок',kind:'paws',amount:100,action:'Перейти к видео'}
+]}
+function renderQuests(){const root=$q('questList');if(!root)return;let s=state();root.innerHTML='';questData().forEach(q=>{let done=q.progress>=q.goal,claimed=s.claimed.includes(q.id);let card=document.createElement('div');card.className='quest-card';card.innerHTML=`<h3>${q.title}</h3><p class="muted">${q.desc}</p><div class="quest-reward">Награда: ${q.reward}</div>${q.id==='short'?'<img alt="Аксессуар-котик за квест" style="display:block;width:100%;max-width:240px;border-radius:14px;margin:10px auto" src="./assets/embedded/89af489e674779a18b43.jpg">':''}<div class="quest-progress"><span style="width:${q.progress/q.goal*100}%"></span></div><p class="muted">${q.progress} из ${q.goal}</p><button>${claimed?'Награда получена':done?'Получить награду':q.action}</button>${q.id==='comments'?'<div class="quest-report"><input type="file" accept="image/*" multiple aria-label="Фото-отчёт"><button class="report-send">📷 Отправить фото-отчёт</button><p class="muted">Загружай снимки экрана с комментариями. Фото-отчёт отмечается на этом устройстве.</p></div>':''}`;
+let btn=card.querySelector(':scope > button');btn.disabled=claimed;if(!claimed)btn.onclick=()=>{if(done){s=state();if(s.claimed.includes(q.id))return;if(q.id==='send')addPaws(30);if(q.id==='short'){let a=JSON.parse(localStorage.getItem('musa_quest_accessories_v1')||'[]');if(!a.includes('Котик-блогер'))a.push('Котик-блогер');localStorage.setItem('musa_quest_accessories_v1',JSON.stringify(a))}if(q.id==='comments')addPaws(100);s.claimed.push(q.id);save(s);return} if(q.id==='short'){document.querySelector('[data-vmode="short"]')?.click();document.querySelector('[data-tab="video"]')?.click()}else document.querySelector('[data-tab="video"]')?.click()};
+let report=card.querySelector('.report-send');if(report)report.onclick=()=>{let files=card.querySelector('input[type=file]').files;if(!files.length){alert('Выбери фото-отчёт.');return}let st=state();st.reports=st.reports||[];st.reports.push(...Array.from(files).map(f=>({name:f.name,date:Date.now()})));addPaws(files.length*20);save(st);alert(`Добавлено фото-отчётов: ${files.length}. Начислено ${files.length*20} лапок.`)};root.appendChild(card)})}
+// Route navigation to quest page.
+function wireNav(){document.querySelectorAll('.nav button,.mobile-nav button').forEach(b=>{if(b.dataset.tab==='quests')b.addEventListener('click',()=>{['callsPage','supportPage','profilePage','communitiesPage','videoPage','gdzPage','lapkiPage','questsPage'].forEach(id=>$q(id)?.classList.toggle('hidden',id!=='questsPage'));$q('people')?.classList.add('hidden');$q('chatPanel')?.classList.add('hidden');$q('questsPage')?.classList.remove('hidden');document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab==='quests'));renderQuests()})})}
+function wireVideoModes(){document.querySelectorAll('[data-vmode]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-vmode]').forEach(x=>x.classList.toggle('active',x===b));const mode=b.dataset.vmode, page=$q('videoPage');page?.classList.toggle('shorts-mode',mode==='short');document.querySelectorAll('#videoPage .video-item').forEach(el=>{const kind=el.dataset.kind||el.dataset.videoKind||'long';el.style.display=(mode==='short'?(kind==='short'?'':'none'):(kind==='short'?'none':''));if(mode==='short'&&kind==='short'){const v=el.querySelector('video');if(v){v.loop=true;v.muted=false;v.playsInline=true}}});if(mode==='short'&&!document.querySelector('#videoPage .video-item[data-kind="short"]')){const feed=document.querySelector('#videoPage .video-feed');if(feed){const note=document.getElementById('shortsEmptyNote')||document.createElement('p');note.id='shortsEmptyNote';note.className='muted';note.textContent='Здесь будут шортсы. Нажми «Опубликовать видео», чтобы добавить короткий ролик.';if(!note.isConnected)feed.prepend(note)}}else document.getElementById('shortsEmptyNote')?.remove()})}
+function wireSendVideo(){document.querySelectorAll('#videoPage .video-item').forEach((el,i)=>{if(el.querySelector('.send-video-chat'))return;let b=document.createElement('button');b.className='send-video-chat';b.textContent='↗ Отправить в чат';b.style.cssText='margin:8px 0;padding:8px 12px;border:0;border-radius:10px;background:#8061ce;color:white';b.onclick=()=>{let us=window.users||[];let me=window.me;let others=us.filter(u=>u.id!==me?.id&&!u.ai);if(!others.length){alert('Сначала добавь друга в чаты.');return}let choice=prompt('Введи ID друга:\n'+others.map(u=>u.id+' — '+u.name).join('\n'));let u=others.find(x=>String(x.id)===String(choice));if(!u){alert('Друг с таким ID не найден в списке чатов.');return}if(typeof window.selectUser==='function')window.selectUser(u.id);let input=$q('chatFileInput');if(input){input.click();alert('Выбери видеофайл, который хочешь отправить. Видео из ленты пока нельзя переслать как файл без серверного хранения.');alert('После фактической отправки видео прогресс квеста должен быть подтверждён сервером; этот файл пока не может проверить доставку.');}};el.appendChild(b)})}
+function hookActions(){let pub=$q('publishVideoBtn');pub?.addEventListener('click',()=>{let input=$q('videoUploadInput');if(input)input.dataset.questShort=document.querySelector('[data-vmode="short"]')?.classList.contains('active')?'1':'0'});$q('videoUploadInput')?.addEventListener('change',e=>{if(e.target.files?.length){const f=e.target.files[0],isShort=e.target.dataset.questShort==='1';const feed=document.querySelector('#videoPage .video-feed');if(feed){const url=URL.createObjectURL(f),el=document.createElement('article');el.className='video-item';el.dataset.kind=isShort?'short':'long';el.innerHTML='<div class="video-thumb"><video src="'+url+'" controls playsinline '+(isShort?'loop':'')+' style="width:100%;height:100%;object-fit:cover"></video></div><div class="video-info"><h3></h3><p>Опубликовано вами</p></div>';el.querySelector('h3').textContent=f.name;feed.prepend(el);wireSendVideo();if(isShort)document.querySelector('[data-vmode="short"]')?.click();else document.querySelector('[data-vmode="long"]')?.click()}} });$q('videoCommentSend')?.addEventListener('click',()=>{let v=$q('videoCommentInput')?.value||'';if(v.trim().length>=8){let s=state();s.comments=Math.min(5,s.comments+1);save(s)}});}
+window.addEventListener('DOMContentLoaded',()=>{wireNav();document.querySelectorAll('[data-tab="quests"]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));$q('questsPage')?.classList.remove('hidden');$q('people')?.classList.add('hidden');$q('chatPanel')?.classList.add('hidden');document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab==='quests'));renderQuests()}));wireVideoModes();wireSendVideo();hookActions();renderQuests();setTimeout(()=>{if(Array.isArray(window.MusaStickerPack)){window.MusaStickerPack.push(...ADDED_STICKERS)}},1200)});
+const ADDED_STICKERS=[[{"name": "Создание GIF с анимацией(2).mp4", "data": "./assets/embedded/7d664116200309105a25.mp4"}, {"name": "Создание GIF с анимацией (1)(2).mp4", "data": "./assets/embedded/5b543b45bcbddb01717b.mp4"}],{"name": "Создание GIF (4)(2).mp4", "data": "./assets/embedded/9ea4adf9da716d3f43a5.mp4", "mime": "video/mp4", "mediaType": "video", "durationMode": "full"}, {"name": "Создание GIF с анимацией(1).mp4", "data": "./assets/embedded/7d664116200309105a25.mp4", "mime": "video/mp4", "mediaType": "video", "durationMode": "full"}, {"name": "Создание GIF с анимацией (1)(1).mp4", "data": "./assets/embedded/5b543b45bcbddb01717b.mp4", "mime": "video/mp4", "mediaType": "video", "durationMode": "full"}];
+})();
+</script>
+<script>
+(()=>{
+const KEY='musa_quests_v1', $=id=>document.getElementById(id);
+function st(){try{return Object.assign({sentVideos:0,shortPublished:0,comments:0,reports:[],claimed:[]},JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){return {sentVideos:0,shortPublished:0,comments:0,reports:[],claimed:[]}}}
+function save(x){localStorage.setItem(KEY,JSON.stringify(x));document.dispatchEvent(new Event('musa-quest-refresh'));}
+function paws(n){n=Math.max(0,Number(n)||0);try{if(window.MusaLapki?.addDemoLapki){window.MusaLapki.addDemoLapki(n);return}}catch(e){}const k='musa_lapki_balance_v1';localStorage.setItem(k,String(Math.max(0,Number(localStorage.getItem(k)||0)+n)));const el=document.getElementById('lapkiBalance');if(el)el.textContent=Number(localStorage.getItem(k)||0).toLocaleString('ru-RU');}
+function refresh(){const root=$('questList');if(!root)return;const x=st();root.querySelectorAll('.quest-card').forEach(card=>{const title=card.querySelector('h3')?.textContent||'';let id=title.includes('3 видео')?'send':title.includes('Шортсы')?'short':'comments';let n=id==='send'?Math.min(3,x.sentVideos):id==='short'?Math.min(1,x.shortPublished):Math.min(5,x.reports.length);let goal=id==='send'?3:id==='short'?1:5;let bar=card.querySelector('.quest-progress-fill'),label=card.querySelector('.quest-progress-label');if(!bar){let wrap=document.createElement('div');wrap.innerHTML=`<div class="quest-progress-label" style="margin:10px 0 5px">${n}/${goal}</div><div style="height:10px;background:#eee7fb;border-radius:20px;overflow:hidden"><div class="quest-progress-fill" style="height:100%;width:0;background:#c5a8ff;border-radius:20px;transition:width .25s"></div></div>`;let desc=card.querySelector('.quest-reward');desc?.after(wrap);bar=card.querySelector('.quest-progress-fill');label=card.querySelector('.quest-progress-label')}if(bar)bar.style.width=(100*n/goal)+'%';if(label)label.textContent=`${n}/${goal} выполнено`;let btn=Array.from(card.querySelectorAll('button')).find(b=>/выполнить|перейти|получить награду/i.test(b.textContent));if(btn&&!x.claimed.includes(id)){if(n>=goal){btn.textContent='Получить награду';btn.onclick=()=>claim(id)}else btn.textContent=id==='comments'?'Добавить фото-отчёт':'Выполнить'} });}
+function claim(id){let x=st();if(x.claimed.includes(id)){alert('Эта награда уже получена.');return}const done=id==='send'?Number(x.sentVideos)>=3:id==='short'?Number(x.shortPublished)>=1:Array.isArray(x.reports)&&x.reports.length>=5;if(!done){alert('Сначала выполни задание полностью.');return}if(id==='send')paws(30);else if(id==='comments')paws(100);else if(id==='short'){let acc=[];try{acc=JSON.parse(localStorage.getItem('musa_quest_accessories_v1')||'[]')}catch(e){}if(!acc.includes('Котик-блогер'))acc.push('Котик-блогер');localStorage.setItem('musa_quest_accessories_v1',JSON.stringify(acc));}x.claimed.push(id);save(x);refresh();if(id==='short')showRewardPhoto();else alert(id==='send'?'🎉 Награда получена: 30 лапок!':'🎉 Награда получена: 100 лапок!');}
+function showRewardPhoto(){const old=$('questRewardPhotoModal');old?.remove();const modal=document.createElement('div');modal.id='questRewardPhotoModal';modal.style='position:fixed;inset:0;background:#120d20dd;z-index:99999;display:grid;place-items:center;padding:18px';modal.innerHTML='<div style="background:white;border-radius:20px;padding:18px;max-width:420px;width:100%;text-align:center;color:#292139"><h2>🎉 Награда получена!</h2><p>Аксессуар «Котик-блогер»</p><img id="questRewardImage" alt="Аксессуар-котик" style="width:100%;max-height:45vh;object-fit:contain;border-radius:14px" src="'+(document.querySelector('#questList img')?.src||'')+'"><div style="display:flex;gap:8px;margin-top:14px"><button id="questSetAvatar" style="flex:1;padding:12px;border:0;border-radius:12px;background:#8d69d5;color:white">Поставить на аватарку</button><button id="questSaveGallery" style="flex:1;padding:12px;border:0;border-radius:12px;background:#eee7fb">Сохранить в галерею</button></div><button id="questRewardClose" style="margin-top:10px;padding:8px 16px">Закрыть</button></div>';document.body.append(modal);$('questRewardClose').onclick=()=>modal.remove();$('questSetAvatar').onclick=async()=>{const img=$('questRewardImage');try{let data=img.src;if(!data.startsWith('data:')){const r=await fetch(data);const b=await r.blob();data=await new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=rej;fr.readAsDataURL(b)})}const me=window.me||{};if(!me.id)throw Error('Сначала войди в аккаунт');localStorage.setItem('musa_avatar_'+me.id,data);localStorage.setItem('musa_avatar_'+String(me.id).replace(/^ID-/i,''),data);me.avatar=data;document.querySelectorAll('.side-user .avatar,.profile-avatar,.my-avatar').forEach(a=>a.src=data);if(window.ws?.readyState===1)window.ws.send(JSON.stringify({type:'avatar_update',avatar:data}));alert('Аватар обновлён.');}catch(e){alert('Не удалось поставить аксессуар на аватар: '+e.message)}};$('questSaveGallery').onclick=()=>{const a=document.createElement('a');a.href=$('questRewardImage').src;a.download='MusaChat-Kotik-Blogger.jpg';document.body.append(a);a.click();a.remove();};}
+// Keep original publish routine, then mark short only after the app confirms successful publication.
+const status=$('videoPublishStatus');if(status){new MutationObserver(()=>{if(/Видео опубликовано в ленте/.test(status.textContent||'')){const input=$('videoUploadInput');if(input?.dataset.questShort==='1'){let x=st();if(!x.shortPublished){x.shortPublished=1;save(x);refresh()}input.dataset.questShort='0'}}}).observe(status,{childList:true,subtree:true,characterData:true})}
+// Mark share quest only after the user confirms a direct send action.
+document.addEventListener('click',e=>{const b=e.target.closest('[data-share-video],.send-video-chat');if(!b)return;setTimeout(()=>{const ans=prompt('Если видео действительно отправлено пользователю, введи ОТПРАВЛЕНО для учёта в квесте. Иначе нажми Отмена.','');if(ans?.trim().toUpperCase()==='ОТПРАВЛЕНО'){let x=st();x.sentVideos=Math.min(3,(x.sentVideos||0)+1);save(x);refresh()}},100)},true);
+// Reports count each photo separately, award 20 paws once per selected photo and unlock reward after five.
+document.addEventListener('click',e=>{const b=e.target.closest('.report-send');if(!b)return;e.stopImmediatePropagation();e.preventDefault();const card=b.closest('.quest-card'),input=card?.querySelector('input[type=file]'),files=Array.from(input?.files||[]);if(!files.length){alert('Выбери фото-отчёт.');return}const x=st();x.reports=x.reports||[];const remaining=Math.max(0,5-x.reports.length),chosen=files.slice(0,remaining);if(!chosen.length){alert('Уже загружено 5 фото-отчётов. Можно получить награду.');refresh();return}x.reports.push(...chosen.map(f=>({name:f.name,date:Date.now()})));paws(chosen.length*20);save(x);refresh();alert(`Добавлено фото: ${chosen.length}. Начислено ${chosen.length*20} лапок. Прогресс: ${x.reports.length}/5.`)},true);
+document.addEventListener('musa-quest-refresh',refresh);window.addEventListener('load',()=>setTimeout(refresh,900));
+})();
+</script>
+
+<script>
+(()=>{
+ const page=document.getElementById('videoPage'); if(!page)return;
+ const feed=page.querySelector('.video-feed'); if(!feed)return;
+ function isShortMode(){return page.classList.contains('shorts-mode')}
+ function decorate(){
+   if(!isShortMode()){feed.querySelectorAll('.shorts-rail').forEach(x=>x.remove());feed.querySelectorAll('video.shorts-main').forEach(v=>{v.classList.remove('shorts-main');v.controls=false});return}
+   feed.querySelectorAll('.video-item').forEach((card)=>{
+     if(card.dataset.kind!=='short'&&card.dataset.videoKind!=='short'&&!card.dataset.videoId?.startsWith('demo-short'))return;
+     if(card.querySelector('.shorts-rail'))return;
+     const v=publishedVideos?.find(x=>String(x.id)===String(card.dataset.videoId));
+     if(v?.url){const thumb=card.querySelector('.video-thumb');if(thumb){thumb.innerHTML='';const video=document.createElement('video');video.className='shorts-main';video.src=v.url;video.playsInline=true;video.loop=true;video.muted=false;video.preload='metadata';video.setAttribute('playsinline','');thumb.appendChild(video);video.addEventListener('click',()=>{if(video.paused)video.play().catch(()=>{});else video.pause()});}}
+     const rail=document.createElement('div');rail.className='shorts-rail';
+     const like=document.createElement('button');like.innerHTML='♥';like.title='Нравится';like.addEventListener('click',e=>{e.stopPropagation();toggleVideoLike(card.dataset.videoId);decorate()});
+     const likes=document.createElement('small');likes.textContent=(videoLikeState(card.dataset.videoId).count||0)+' лайков';
+     const comment=document.createElement('button');comment.innerHTML='💬';comment.title='Комментарии';comment.addEventListener('click',e=>{e.stopPropagation();if(typeof window.__musaOpenVideo==='function'){const x=publishedVideos.find(z=>String(z.id)===String(card.dataset.videoId));window.__musaOpenVideo(x?.id,x?.url,x?.title,x?.author,x?.authorId,x?.username)}else document.querySelector('.video-comment')?.scrollIntoView({behavior:'smooth'})});
+     const share=document.createElement('button');share.innerHTML='↗';share.title='Отправить';share.addEventListener('click',e=>{e.stopPropagation();card.querySelector('[data-share-video]')?.click()});
+     const save=document.createElement('button');save.innerHTML='🔖';save.title='Сохранить в избранное';save.addEventListener('click',e=>{e.stopPropagation();const id=card.dataset.videoId;try{const a=JSON.parse(localStorage.getItem('musa_favorite_video_ids_v1')||'[]');if(!a.includes(id))a.push(id);localStorage.setItem('musa_favorite_video_ids_v1',JSON.stringify(a));toast('Добавлено в Избранное')}catch(_){toast('Не удалось сохранить')}});
+     rail.append(like,likes,comment,share,save);card.appendChild(rail);
+   });
+   // Scroll snapping + auto-play only the visible short.
+   if(!feed.__shortObserver){feed.__shortObserver=new IntersectionObserver(entries=>entries.forEach(en=>{const v=en.target.querySelector('video.shorts-main');if(!v)return;if(en.isIntersecting&&en.intersectionRatio>.65){v.play().catch(()=>{});}else v.pause()}),{root:feed,threshold:[.2,.65,.9]});}
+   feed.querySelectorAll('.video-item').forEach(c=>{if(c.dataset.kind==='short'||c.dataset.videoKind==='short'||c.dataset.videoId?.startsWith('demo-short'))feed.__shortObserver.observe(c)});
+ }
+ document.querySelectorAll('[data-vmode]').forEach(btn=>btn.addEventListener('click',()=>setTimeout(decorate,80)));
+ const old=window.renderPublishedVideos; if(typeof old==='function'){window.renderPublishedVideos=function(){old();setTimeout(decorate,60)}}
+ new MutationObserver(()=>{if(isShortMode())decorate()}).observe(feed,{childList:true,subtree:false});
+ setInterval(()=>{if(isShortMode())decorate()},900);
+})();
+</script>
+
+</body></html>
